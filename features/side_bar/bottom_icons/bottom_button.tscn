@@ -3,6 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://vgivcflmged3" path="res://assets/theme/buttons/bottom_button/bottom_button_normal.tres" id="1_b4vw4"]
 [ext_resource type="StyleBox" uid="uid://dqtm1dla5jva1" path="res://assets/theme/buttons/bottom_button/bottom_button_pressed.tres" id="2_wog1q"]
 [ext_resource type="StyleBox" uid="uid://bqa48twc2s6op" path="res://assets/theme/buttons/bottom_button/bottom_button_hover.tres" id="3_so0ii"]
+[ext_resource type="Script" path="res://ui/features/side_bar/bottom_icons/bottom_button.gd" id="4_payload"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_smqfi"]
 
@@ -24,6 +25,7 @@ theme_override_styles/normal = ExtResource("1_b4vw4")
 theme_override_styles/pressed = ExtResource("2_wog1q")
 theme_override_styles/hover = ExtResource("3_so0ii")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_smqfi")
+script = ExtResource("4_payload")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=527579629]
 custom_minimum_size = Vector2(25, 25)

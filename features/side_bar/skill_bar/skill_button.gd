@@ -1,27 +1,37 @@
 extends Button
 
 ## Skill side-bar button. Main updates via Dictionary — no Core Skill types.
+## On press, emits a small string payload (skill_id) for Main to route.
 
-signal skill_pressed(skill_id: String)
+signal payload_pressed(payload: String)
 
 @onready var icon_node: TextureRect = $TextureButton
 @onready var level_label: Label = $Label
 
-@export var skill_id: String = ""
+## Navigation / identity payload Main understands (e.g. "mining", "combat").
+@export var payload: String = ""
 
 var skill_name: String = ""
 var skill_level: int = 0
 var skill_xp: float = 0.0
 
+## Alias used by skill data binding; kept in sync with payload.
+var skill_id: String:
+	get:
+		return payload
+	set(value):
+		payload = value
+
 
 func _ready() -> void:
-	pressed.connect(_on_pressed)
+	if not pressed.is_connected(_on_pressed):
+		pressed.connect(_on_pressed)
 
 
 ## data keys: skill_id, name, level, xp, icon (Texture2D)
 func update_from_data(data: Dictionary) -> void:
 	if data.has("skill_id"):
-		skill_id = str(data["skill_id"])
+		payload = str(data["skill_id"])
 	if data.has("name"):
 		set_skill_name(str(data["name"]))
 	if data.has("level"):
@@ -53,4 +63,6 @@ func change_icon(new_icon: Texture2D) -> void:
 
 
 func _on_pressed() -> void:
-	skill_pressed.emit(skill_id)
+	if payload.is_empty():
+		return
+	payload_pressed.emit(payload)

@@ -54,24 +54,31 @@ vertical_alignment = 1
 
 [node name="SkillButton" parent="Panel/SkillBoxContainer/ArtisanContainer" unique_id=1545645048 instance=ExtResource("2_8a2jd")]
 layout_mode = 2
+payload = "mining"
 
 [node name="SkillButton2" parent="Panel/SkillBoxContainer/ArtisanContainer" unique_id=610309134 instance=ExtResource("2_8a2jd")]
 layout_mode = 2
+payload = "smithing"
 
 [node name="SkillButton3" parent="Panel/SkillBoxContainer/ArtisanContainer" unique_id=818017190 instance=ExtResource("2_8a2jd")]
 layout_mode = 2
+payload = "fishing"
 
 [node name="SkillButton4" parent="Panel/SkillBoxContainer/ArtisanContainer" unique_id=867618281 instance=ExtResource("2_8a2jd")]
 layout_mode = 2
+payload = "cooking"
 
 [node name="SkillButton5" parent="Panel/SkillBoxContainer/ArtisanContainer" unique_id=200091491 instance=ExtResource("2_8a2jd")]
 layout_mode = 2
+payload = "thief"
 
 [node name="SkillButton6" parent="Panel/SkillBoxContainer/ArtisanContainer" unique_id=554551817 instance=ExtResource("2_8a2jd")]
 layout_mode = 2
+payload = "alchemy"
 
 [node name="SkillButton7" parent="Panel/SkillBoxContainer/ArtisanContainer" unique_id=1670588629 instance=ExtResource("2_8a2jd")]
 layout_mode = 2
+payload = "woodcutting"
 
 [node name="HSeparator" type="HSeparator" parent="Panel/SkillBoxContainer" unique_id=1890384561]
 layout_mode = 2
@@ -94,18 +101,23 @@ vertical_alignment = 1
 
 [node name="SkillButton" parent="Panel/SkillBoxContainer/CombatContainer" unique_id=1694926075 instance=ExtResource("2_8a2jd")]
 layout_mode = 2
+payload = "vitality"
 
 [node name="SkillButton2" parent="Panel/SkillBoxContainer/CombatContainer" unique_id=949017013 instance=ExtResource("2_8a2jd")]
 layout_mode = 2
+payload = "attack"
 
 [node name="SkillButton3" parent="Panel/SkillBoxContainer/CombatContainer" unique_id=1953503165 instance=ExtResource("2_8a2jd")]
 layout_mode = 2
+payload = "strength"
 
 [node name="SkillButton4" parent="Panel/SkillBoxContainer/CombatContainer" unique_id=481084279 instance=ExtResource("2_8a2jd")]
 layout_mode = 2
+payload = "defence"
 
 [node name="SkillButton5" parent="Panel/SkillBoxContainer/CombatContainer" unique_id=2082282499 instance=ExtResource("2_8a2jd")]
 layout_mode = 2
+payload = "dexterity"
 
 [node name="UIUpdater" type="Node" parent="." unique_id=986935080]
 script = ExtResource("1_ye0mj")

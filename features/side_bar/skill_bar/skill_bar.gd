@@ -1,8 +1,9 @@
 extends Control
 
 ## Side bar skill binding. Main pushes Dictionary skill data.
+## Buttons emit string payloads; this bubbles them as payload_pressed.
 
-signal skill_selected(skill_id: String)
+signal payload_pressed(payload: String)
 
 @onready var skill_box: BoxContainer = $Panel/SkillBoxContainer
 
@@ -33,7 +34,7 @@ func update_skills(skills) -> void:
 
 func update_skill(skill_id: String, data: Dictionary) -> void:
 	for btn in _collect_skill_buttons():
-		var btn_id := str(btn.skill_id) if "skill_id" in btn else ""
+		var btn_id := str(btn.payload) if "payload" in btn else (str(btn.skill_id) if "skill_id" in btn else "")
 		if btn_id == skill_id or (data.has("skill_id") and str(data["skill_id"]) == btn_id):
 			if btn.has_method("update_from_data"):
 				var merged: Dictionary = data.duplicate()
@@ -52,13 +53,13 @@ func set_skill_xp(skill_id: String, xp: float) -> void:
 
 func _ready() -> void:
 	for btn in _collect_skill_buttons():
-		if btn.has_signal("skill_pressed"):
-			if not btn.skill_pressed.is_connected(_on_skill_pressed):
-				btn.skill_pressed.connect(_on_skill_pressed)
+		if btn.has_signal("payload_pressed"):
+			if not btn.payload_pressed.is_connected(_on_payload_pressed):
+				btn.payload_pressed.connect(_on_payload_pressed)
 
 
-func _on_skill_pressed(skill_id: String) -> void:
-	skill_selected.emit(skill_id)
+func _on_payload_pressed(payload: String) -> void:
+	payload_pressed.emit(payload)
 
 
 func _collect_skill_buttons() -> Array:
@@ -68,8 +69,6 @@ func _collect_skill_buttons() -> Array:
 	for group in skill_box.get_children():
 		if group is VBoxContainer:
 			for child in group.get_children():
-				if child is Button and child.has_method("update_from_data"):
-					result.append(child)
-				elif child is Button and child.get_script() != null:
+				if child is Button and ("payload" in child or child.has_method("update_from_data")):
 					result.append(child)
 	return result
