@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="1_803at"]
 [ext_resource type="Script" uid="uid://carvpmditqqcl" path="res://ui/features/side_bar/skill_bar/skill_bar_ui_updater.gd" id="1_ye0mj"]
 [ext_resource type="PackedScene" uid="uid://csffjh8ldg2ng" path="res://ui/features/side_bar/skill_bar/skill_button.tscn" id="2_8a2jd"]
+[ext_resource type="Script" path="res://ui/features/side_bar/skill_bar/skill_bar.gd" id="3_skillbar"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jd5fe"]
 bg_color = Color(0.14509805, 0.12156863, 0.101960786, 1)
@@ -18,6 +19,7 @@ anchors_preset = 0
 offset_right = 55.0
 offset_bottom = 345.0
 size_flags_vertical = 3
+script = ExtResource("3_skillbar")
 
 [node name="Panel" type="Panel" parent="." unique_id=864454285]
 layout_mode = 1

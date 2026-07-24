@@ -1,0 +1,431 @@
+[gd_scene format=3]
+
+[ext_resource type="StyleBox" uid="uid://ctilmg3au4kq6" path="res://assets/ui/equipment_slots/gear_slot.tres" id="1_slot"]
+[ext_resource type="StyleBox" uid="uid://bikejrsy4bsqu" path="res://assets/ui/equipment_slots/gear_slot_small.tres" id="2_small"]
+[ext_resource type="Texture2D" path="res://assets/ui/equipment_slots/helmet.svg" id="icon_3"]
+[ext_resource type="Texture2D" path="res://assets/ui/equipment_slots/body.svg" id="icon_4"]
+[ext_resource type="Texture2D" path="res://assets/ui/equipment_slots/leg.svg" id="icon_5"]
+[ext_resource type="Texture2D" path="res://assets/ui/equipment_slots/gloves.svg" id="icon_6"]
+[ext_resource type="Texture2D" path="res://assets/ui/equipment_slots/boots.svg" id="icon_7"]
+[ext_resource type="Texture2D" path="res://assets/ui/equipment_slots/main_hand.svg" id="icon_8"]
+[ext_resource type="Texture2D" path="res://assets/ui/equipment_slots/off_hand.svg" id="icon_9"]
+[ext_resource type="Texture2D" path="res://assets/ui/equipment_slots/ring.svg" id="icon_10"]
+[ext_resource type="Texture2D" path="res://assets/ui/equipment_slots/necklace.svg" id="icon_11"]
+[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="font"]
+
+[node name="EquipmentSlotsHost" type="Control"]
+custom_minimum_size = Vector2(416, 305)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -152.5
+offset_right = 208.0
+offset_bottom = 152.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cells" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Helmet" type="Panel" parent="Cells"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31
+offset_top = 9.5
+offset_right = 35
+offset_bottom = 75.5
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("1_slot")
+
+[node name="Icon" type="TextureRect" parent="Cells/Helmet"]
+modulate = Color(1, 1, 1, 0.0980392)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20
+offset_top = -20
+offset_right = 20
+offset_bottom = 20
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("icon_3")
+stretch_mode = 3
+
+[node name="SlotMount" type="Control" parent="Cells/Helmet"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Body" type="Panel" parent="Cells"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33
+offset_top = 86.5
+offset_right = 37
+offset_bottom = 188.5
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("1_slot")
+
+[node name="Icon" type="TextureRect" parent="Cells/Body"]
+modulate = Color(1, 1, 1, 0.0980392)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27
+offset_top = -41
+offset_right = 27
+offset_bottom = 42
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("icon_4")
+stretch_mode = 3
+
+[node name="SlotMount" type="Control" parent="Cells/Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Leg" type="Panel" parent="Cells"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33
+offset_top = 199
+offset_right = 37
+offset_bottom = 301
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("1_slot")
+
+[node name="Icon" type="TextureRect" parent="Cells/Leg"]
+modulate = Color(1, 1, 1, 0.0980392)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25
+offset_top = -33
+offset_right = 25
+offset_bottom = 34
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("icon_5")
+stretch_mode = 3
+
+[node name="SlotMount" type="Control" parent="Cells/Leg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Glove" type="Panel" parent="Cells"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 42
+offset_top = 228.5
+offset_right = 108
+offset_bottom = 294.5
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("1_slot")
+
+[node name="Icon" type="TextureRect" parent="Cells/Glove"]
+modulate = Color(1, 1, 1, 0.0980392)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20
+offset_top = -20
+offset_right = 20
+offset_bottom = 20
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("icon_6")
+stretch_mode = 3
+
+[node name="SlotMount" type="Control" parent="Cells/Glove"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Boots" type="Panel" parent="Cells"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -103
+offset_top = 228
+offset_right = -37
+offset_bottom = 294
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("1_slot")
+
+[node name="Icon" type="TextureRect" parent="Cells/Boots"]
+modulate = Color(1, 1, 1, 0.0980392)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24
+offset_top = -21
+offset_right = 23
+offset_bottom = 22
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("icon_7")
+stretch_mode = 3
+
+[node name="SlotMount" type="Control" parent="Cells/Boots"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MHand" type="Panel" parent="Cells"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138
+offset_top = 84
+offset_right = -42
+offset_bottom = 212
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("1_slot")
+
+[node name="Icon" type="TextureRect" parent="Cells/MHand"]
+modulate = Color(1, 1, 1, 0.0980392)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -23.5
+offset_right = 25.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("icon_8")
+stretch_mode = 3
+
+[node name="SlotMount" type="Control" parent="Cells/MHand"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OffHand" type="Panel" parent="Cells"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 47
+offset_top = 80
+offset_right = 143
+offset_bottom = 208
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("1_slot")
+
+[node name="Icon" type="TextureRect" parent="Cells/OffHand"]
+modulate = Color(1, 1, 1, 0.0980392)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26
+offset_top = -23
+offset_right = 26
+offset_bottom = 25
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("icon_9")
+stretch_mode = 3
+
+[node name="SlotMount" type="Control" parent="Cells/OffHand"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Ring" type="Panel" parent="Cells"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 113
+offset_top = 242
+offset_right = 151
+offset_bottom = 280
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("2_small")
+
+[node name="Icon" type="TextureRect" parent="Cells/Ring"]
+modulate = Color(1, 1, 1, 0.0980392)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26
+offset_top = -24
+offset_right = 26
+offset_bottom = 24
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("icon_10")
+stretch_mode = 3
+
+[node name="SlotMount" type="Control" parent="Cells/Ring"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Ring2" type="Panel" parent="Cells"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -145
+offset_top = 244
+offset_right = -107
+offset_bottom = 282
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("2_small")
+
+[node name="Icon" type="TextureRect" parent="Cells/Ring2"]
+modulate = Color(1, 1, 1, 0.0980392)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26
+offset_top = -24
+offset_right = 26
+offset_bottom = 24
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("icon_10")
+stretch_mode = 3
+
+[node name="SlotMount" type="Control" parent="Cells/Ring2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Amulet" type="Panel" parent="Cells"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80
+offset_top = 39
+offset_right = -42
+offset_bottom = 77
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("2_small")
+
+[node name="Icon" type="TextureRect" parent="Cells/Amulet"]
+modulate = Color(1, 1, 1, 0.0980392)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -15.5
+offset_right = 17.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("icon_11")
+stretch_mode = 3
+
+[node name="SlotMount" type="Control" parent="Cells/Amulet"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Placeholder" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -18.0
+offset_right = 300.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.55, 0.6, 0.63, 1)
+theme_override_fonts/font = ExtResource("font")
+theme_override_font_sizes/font_size = 11
+text = "Equipment chrome · Main mounts InventoryView"

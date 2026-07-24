@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://bht7u5kqj8ga8"]
+
+[ext_resource type="Script" path="res://ui/features/skills/lock_requirement/quest_lock_requirement.gd" id="1_inujn"]
+[ext_resource type="StyleBox" uid="uid://ccfdeer8qmqm0" path="res://assets/theme/lock_requirement.tres" id="2_78drr"]
+[ext_resource type="Texture2D" uid="uid://bbjicwa3qipha" path="res://assets/skill_icons/smithing.svg" id="2_ln6e8"]
+[ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="4_78drr"]
+
+[node name="LockRequirement" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+script = ExtResource("1_inujn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -21.0
+offset_right = 92.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_78drr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -13.0
+offset_right = 220.0
+offset_bottom = 14.0
+grow_vertical = 2
+
+[node name="SkillIcon" type="TextureRect" parent="Panel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ln6e8")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="QuestName" type="Label" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(125, 25)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.831373, 0.392157, 0.384314, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_78drr")
+text = "A really long questnameafghd"
+vertical_alignment = 1
+autowrap_mode = 1
+text_overrun_behavior = 3

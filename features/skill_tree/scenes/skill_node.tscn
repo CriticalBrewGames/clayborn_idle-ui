@@ -1,0 +1,284 @@
+[gd_scene load_steps=35 format=3 uid="uid://duxvjcvc3eekf"]
+
+[ext_resource type="Script" uid="uid://s5njv1gp2d35" path="res://ui/features/skill_tree/scripts/skill_node.gd" id="1_bscfu"]
+[ext_resource type="Shader" uid="uid://d1txu841gx34t" path="res://assets/shaders/node_system/node_link_inactive.gdshader" id="2_2oyfl"]
+[ext_resource type="Texture2D" uid="uid://bwhsout7pk2t2" path="res://assets/node_system/node_graph.png" id="2_66xnu"]
+[ext_resource type="Texture2D" uid="uid://bo6i44pxbbcdq" path="res://assets/node_system/smoke_text.png" id="2_h5et8"]
+[ext_resource type="Shader" uid="uid://cjf1btyin70pd" path="res://assets/shaders/node_system/node_link.gdshader" id="3_7akcn"]
+[ext_resource type="Shader" uid="uid://bkee661v13lbc" path="res://assets/shaders/node_system/skill_enabled_shader.gdshader" id="3_713m4"]
+[ext_resource type="Script" uid="uid://ma857okarau7" path="res://ui/features/skill_tree/scripts/state_machine/node_state_machine.gd" id="5_xghj4"]
+[ext_resource type="Script" uid="uid://tjqkauevsjtm" path="res://ui/features/skill_tree/scripts/state_machine/states/inactive_state.gd" id="6_7wvvi"]
+[ext_resource type="Shader" uid="uid://bhcwlijck1nkm" path="res://assets/shaders/node_system/skill_node_shine.gdshader" id="6_m5m78"]
+[ext_resource type="Script" uid="uid://vk1lmecopoxg" path="res://ui/features/skill_tree/scripts/state_machine/states/active_state.gd" id="7_qseob"]
+[ext_resource type="Script" uid="uid://depke1b2u3225" path="res://ui/features/skill_tree/scripts/state_machine/states/root_state.gd" id="8_00y0f"]
+[ext_resource type="Script" uid="uid://bw14bwugs242g" path="res://ui/features/skill_tree/scripts/node_tooltip.gd" id="12_ctwf2"]
+[ext_resource type="FontFile" uid="uid://bdiyspkytp7n0" path="res://assets/font/fredoka/Fredoka-Regular.ttf" id="13_b3rkb"]
+[ext_resource type="FontFile" uid="uid://dy6m0urder1re" path="res://assets/font/fredoka/Fredoka-Bold.ttf" id="14_ptrgg"]
+
+[sub_resource type="Gradient" id="Gradient_i8ix3"]
+offsets = PackedFloat32Array(0.445652, 0.496377, 0.561594)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nfijw"]
+gradient = SubResource("Gradient_i8ix3")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g3sqe"]
+shader = ExtResource("2_2oyfl")
+shader_parameter/gradient_texture_inactive = SubResource("GradientTexture2D_nfijw")
+shader_parameter/color_inactive = Color(0.494118, 0.372549, 0.188235, 1)
+
+[sub_resource type="Gradient" id="Gradient_vkpfl"]
+offsets = PackedFloat32Array(0.376997, 0.485623, 0.616613)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7abp5"]
+gradient = SubResource("Gradient_vkpfl")
+fill_from = Vector2(0, 0.200855)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_vr2my"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ewwoy"]
+frequency = 0.0059
+fractal_type = 2
+fractal_octaves = 10
+fractal_lacunarity = 1.935
+fractal_gain = 0.555
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_82xgs"]
+width = 925
+height = 972
+normalize = false
+color_ramp = SubResource("Gradient_vr2my")
+noise = SubResource("FastNoiseLite_ewwoy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2gvxv"]
+shader = ExtResource("3_7akcn")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_82xgs")
+shader_parameter/gradient_texture = SubResource("GradientTexture2D_7abp5")
+shader_parameter/color = Color(0, 0.85098, 0.929412, 1)
+shader_parameter/distortion = 0.125
+shader_parameter/noise_speed_x = -0.0800002
+
+[sub_resource type="Curve" id="Curve_c7pho"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_x4s2d"]
+offsets = PackedFloat32Array(0.736224, 1)
+colors = PackedColorArray(1, 1, 1, 0.211765, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_0vdrw"]
+offsets = PackedFloat32Array(0, 0.996377)
+colors = PackedColorArray(0, 0.957036, 0.957808, 1, 0.270588, 0.619608, 0.792157, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vhkpp"]
+gradient = SubResource("Gradient_0vdrw")
+fill_from = Vector2(0.602564, 0.790598)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tenjq"]
+shader = ExtResource("3_713m4")
+shader_parameter/color = SubResource("GradientTexture2D_vhkpp")
+shader_parameter/radius = 0.455
+shader_parameter/feather = 0.24
+shader_parameter/center = Vector2(0.5, 0.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_f8dtj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xoxvu"]
+resource_local_to_scene = true
+shader = ExtResource("6_m5m78")
+shader_parameter/shine_color = Color(0.313726, 0.313726, 0, 1)
+shader_parameter/offset = 0.0
+shader_parameter/line_width = 0.28
+shader_parameter/angle = 0.785398
+shader_parameter/speed = 2.7
+shader_parameter/wait_cycles = 1.0
+
+[sub_resource type="Animation" id="Animation_sfghn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/wait_cycles")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5sokp"]
+resource_name = "activation"
+length = 0.21
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/wait_cycles")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.594604, 1),
+"update": 0,
+"values": [0.379, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ddctn"]
+_data = {
+&"RESET": SubResource("Animation_sfghn"),
+&"activation": SubResource("Animation_5sokp")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3pj6m"]
+radius = 26.0
+
+[node name="SkillNode" type="Node2D"]
+script = ExtResource("1_bscfu")
+
+[node name="Connections" type="Node2D" parent="."]
+z_index = -2
+
+[node name="Connection" type="Line2D" parent="Connections"]
+material = SubResource("ShaderMaterial_g3sqe")
+position = Vector2(-1, 1)
+points = PackedVector2Array(0, 0, 0, 0)
+width = 80.0
+texture_mode = 2
+
+[node name="ConnectionActive" type="Line2D" parent="Connections"]
+material = SubResource("ShaderMaterial_2gvxv")
+position = Vector2(0, 1)
+points = PackedVector2Array(0, 0, 0, 0)
+width = 80.0
+default_color = Color(0.466667, 0.780392, 0.996078, 1)
+texture_mode = 2
+
+[node name="Selected" type="Node2D" parent="."]
+visible = false
+
+[node name="Particles" type="CPUParticles2D" parent="Selected"]
+scale = Vector2(0.0656566, 0.0656566)
+amount = 500
+texture = ExtResource("2_h5et8")
+direction = Vector2(100, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 410.46
+initial_velocity_max = 1000.0
+damping_min = 28.409
+damping_max = 36.71
+angle_min = -335.5
+angle_max = -57.3
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_c7pho")
+color_ramp = SubResource("Gradient_x4s2d")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+anim_offset_max = 1.0
+
+[node name="ExtraLaxer" type="MeshInstance2D" parent="Selected"]
+material = SubResource("ShaderMaterial_tenjq")
+position = Vector2(3.8147e-06, 1.90735e-06)
+scale = Vector2(86, 86)
+mesh = SubResource("QuadMesh_f8dtj")
+
+[node name="Highlight2" type="Polygon2D" parent="."]
+scale = Vector2(1.2, 1.2)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, -15, -5, -14, -10, -11, -14, -6, -15, 0, -14, 5, -11, 10, -8, 13, -4, 15, 0, 15, 4, 15, 8, 13, 10, 11, 12, 9, 14, 6, 15, 2, 15, 0, 15, -3, 14, -6, 12, -9, 10, -11, 7.28295, -13.2466, 3, -15)
+
+[node name="AttribSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.21, 0.21)
+
+[node name="NodeGraph" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xoxvu")
+scale = Vector2(0.0656566, 0.0656566)
+texture = ExtResource("2_66xnu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NodeGraph"]
+libraries = {
+&"": SubResource("AnimationLibrary_ddctn")
+}
+
+[node name="Childs" type="Node2D" parent="."]
+
+[node name="hoverArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hoverArea"]
+shape = SubResource("CircleShape2D_3pj6m")
+
+[node name="Highlight" type="Polygon2D" parent="."]
+visible = false
+color = Color(1, 1, 1, 0.152941)
+polygon = PackedVector2Array(0, -15, -5, -14, -10, -11, -14, -6, -15, 0, -14, 5, -11, 10, -8, 13, -4, 15, 0, 15, 4, 15, 8, 13, 10, 11, 12, 9, 14, 6, 15, 2, 15, 0, 15, -3, 14, -6, 12, -9, 10, -11, 7, -13, 3, -15)
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("5_xghj4")
+
+[node name="InactiveState" type="Node" parent="StateMachine" node_paths=PackedStringArray("node_root")]
+script = ExtResource("6_7wvvi")
+node_root = NodePath("../..")
+
+[node name="ActiveState" type="Node" parent="StateMachine" node_paths=PackedStringArray("node_root")]
+script = ExtResource("7_qseob")
+node_root = NodePath("../..")
+
+[node name="RootState" type="Node" parent="StateMachine" node_paths=PackedStringArray("node_graph")]
+script = ExtResource("8_00y0f")
+node_graph = NodePath("../../NodeGraph")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 100
+offset_left = -266.0
+offset_top = -102.0
+offset_right = -10.0
+offset_bottom = -8.0
+mouse_filter = 1
+color = Color(0.207843, 0.207843, 0.286275, 0.376471)
+script = ExtResource("12_ctwf2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" groups=["scalable_text"]]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 245.0
+offset_bottom = 83.0
+theme_override_fonts/normal_font = ExtResource("13_b3rkb")
+theme_override_fonts/bold_font = ExtResource("14_ptrgg")
+bbcode_enabled = true
+text = "[b]Crit Chance[/b] 
++ 25%"
+
+[connection signal="input_event" from="hoverArea" to="." method="_on_hover_area_input_event"]
+[connection signal="mouse_entered" from="hoverArea" to="." method="_on_hover_area_mouse_entered"]
+[connection signal="mouse_exited" from="hoverArea" to="." method="_on_hover_area_mouse_exited"]

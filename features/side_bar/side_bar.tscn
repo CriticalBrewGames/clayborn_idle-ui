@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://5cwx3jwyubui" path="res://ui/features/side_bar/skill_bar/skill_bar.tscn" id="1_0f027"]
 [ext_resource type="PackedScene" uid="uid://cqf778bhb6rau" path="res://ui/features/side_bar/utility_button/utility_button_group_container.tscn" id="2_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://vgkknq51l28s" path="res://ui/features/side_bar/bottom_icons/bottom_button.tscn" id="3_gyfs4"]
+[ext_resource type="Script" path="res://ui/features/side_bar/side_bar.gd" id="4_sidebar"]
 
 [node name="SideBarContainer" type="VBoxContainer" unique_id=2086662701]
 anchors_preset = 9
@@ -11,6 +12,7 @@ offset_right = 1279.0
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.15
+script = ExtResource("4_sidebar")
 
 [node name="SkillBar" parent="." unique_id=1255244563 instance=ExtResource("1_0f027")]
 layout_mode = 2

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://onydd7pk3wii"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t31uc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_giwsf"]
+
+[node name="NodeConnection" type="Node2D"]
+
+[node name="Connection" type="Line2D" parent="."]
+material = SubResource("ShaderMaterial_t31uc")
+position = Vector2(-1, 1)
+points = PackedVector2Array(0, 0, 0, 0)
+width = 80.0
+default_color = Color(0.466667, 0.780392, 0.996078, 1)
+texture_mode = 2
+
+[node name="ConnectionActive" type="Line2D" parent="."]
+material = SubResource("ShaderMaterial_giwsf")
+position = Vector2(-1, 1)
+points = PackedVector2Array(0, 0, 0, 0)
+width = 80.0
+default_color = Color(0.466667, 0.780392, 0.996078, 1)
+texture_mode = 2

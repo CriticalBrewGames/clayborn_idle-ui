@@ -1,0 +1,412 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/features/inventory/widgets/stat_panel/stat_panel.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="1_font"]
+[ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="2_semi"]
+[ext_resource type="StyleBox" uid="uid://dqeqcl7x72qce" path="res://assets/ui/equipment_slots/stats_panel_sub_menu.tres" id="3_sub"]
+[ext_resource type="StyleBox" uid="uid://cxsnr73fpbu0s" path="res://assets/ui/equipment_slots/stats_panel_soft_shadow.tres" id="4_soft"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.105882, 0.176471, 0.231373, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="StatPanel" type="Panel"]
+custom_minimum_size = Vector2(246, 464)
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+script = ExtResource("1_script")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 19.0
+offset_right = -14.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_soft")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 3.0
+offset_right = -9.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="HdrResources" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.894118, 0.858824, 0.74902, 1)
+theme_override_fonts/font = ExtResource("2_semi")
+theme_override_font_sizes/font_size = 18
+text = "Resources"
+
+[node name="Resource" type="PanelContainer" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_sub")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Resource"]
+layout_mode = 2
+
+[node name="HP" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Resource/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Resource/VBoxContainer/HP"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Health:"
+
+[node name="HpAmount" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Resource/VBoxContainer/HP"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="Mana" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Resource/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Resource/VBoxContainer/Mana"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Mana:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Resource/VBoxContainer/Mana"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="Rage" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Resource/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Resource/VBoxContainer/Rage"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Rage:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Resource/VBoxContainer/Rage"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="HdrDefense" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.894118, 0.858824, 0.74902, 1)
+theme_override_fonts/font = ExtResource("2_semi")
+theme_override_font_sizes/font_size = 18
+text = "Defense"
+
+[node name="Defensive" type="PanelContainer" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_sub")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Defensive"]
+layout_mode = 2
+
+[node name="Resistance" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Defensive/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Defensive/VBoxContainer/Resistance"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Resistance:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Defensive/VBoxContainer/Resistance"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="Armour" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Defensive/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Defensive/VBoxContainer/Armour"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Armour:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Defensive/VBoxContainer/Armour"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="Evasion" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Defensive/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Defensive/VBoxContainer/Evasion"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Evasion:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Defensive/VBoxContainer/Evasion"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="HdrDamage" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.894118, 0.858824, 0.74902, 1)
+theme_override_fonts/font = ExtResource("2_semi")
+theme_override_font_sizes/font_size = 18
+text = "Damage"
+
+[node name="Damage" type="PanelContainer" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_sub")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Damage"]
+layout_mode = 2
+
+[node name="Attack" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer/Attack"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Attack:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer/Attack"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="Strength" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer/Strength"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Strength:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer/Strength"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="Marksman" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer/Marksman"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Marksman:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer/Marksman"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="Skirmisher" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer/Skirmisher"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Skirmisher:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer/Skirmisher"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="Magic" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer/Magic"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Magic:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Damage/VBoxContainer/Magic"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="HdrUtility" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.894118, 0.858824, 0.74902, 1)
+theme_override_fonts/font = ExtResource("2_semi")
+theme_override_font_sizes/font_size = 18
+text = "Utility"
+
+[node name="Utility" type="PanelContainer" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_sub")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Utility"]
+layout_mode = 2
+
+[node name="ManaRegen" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer/ManaRegen"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Mana Regen:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer/ManaRegen"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="AttackSpeed" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer/AttackSpeed"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Attack Speed:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer/AttackSpeed"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="CastSpeed" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer/CastSpeed"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Cast Speed:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer/CastSpeed"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="MagicEfficiency" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer/MagicEfficiency"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Magic Efficiency:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer/MagicEfficiency"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="CritChance" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer/CritChance"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Crit Chance:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer/CritChance"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="CritDamage" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer/CritDamage"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "Crit Damage:"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Utility/VBoxContainer/CritDamage"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "0"

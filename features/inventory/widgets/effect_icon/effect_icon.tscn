@@ -1,0 +1,68 @@
+[gd_scene format=3]
+
+[ext_resource type="StyleBox" uid="uid://d3afnvu3emnxs" path="res://assets/theme/effect_icon_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/features/inventory/widgets/effect_icon/effect_icon.gd" id="2_script"]
+[ext_resource type="Texture2D" path="res://assets/items/amulet_icon.png" id="3_icon"]
+[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="4_font"]
+
+[sub_resource type="Gradient" id="Gradient_ubcqf"]
+colors = PackedColorArray(1, 1, 1, 0.431373, 1, 1, 1, 0.431373)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lw5xl"]
+gradient = SubResource("Gradient_ubcqf")
+width = 32
+height = 32
+
+[node name="EffectIcon" type="Panel"]
+custom_minimum_size = Vector2(35, 35)
+theme_override_styles/panel = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_icon")
+stretch_mode = 3
+
+[node name="Stack" type="Label" parent="." groups=["scalable_text"]]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 12
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Progress" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -15.5
+offset_right = 16.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 4
+texture_progress = SubResource("GradientTexture2D_lw5xl")

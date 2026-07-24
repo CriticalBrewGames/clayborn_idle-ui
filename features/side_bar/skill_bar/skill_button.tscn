@@ -5,6 +5,7 @@
 [ext_resource type="StyleBox" uid="uid://bk24ovi85wf8x" path="res://assets/theme/buttons/skill_button/side_variant/skill_button_pressed.tres" id="2_k5rao"]
 [ext_resource type="Texture2D" uid="uid://c6vxyfx51agia" path="res://assets/skill_icons/icon_sets/gilded_set/gilded_mining.svg" id="2_xwl0h"]
 [ext_resource type="StyleBox" uid="uid://dus1sti58rp36" path="res://assets/theme/buttons/skill_button/full_variant/skill_button_hover.tres" id="3_k5rao"]
+[ext_resource type="Script" path="res://ui/features/side_bar/skill_bar/skill_button.gd" id="4_btn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fr502"]
 
@@ -26,6 +27,7 @@ theme_override_styles/normal = ExtResource("1_kiog6")
 theme_override_styles/pressed = ExtResource("2_k5rao")
 theme_override_styles/hover = ExtResource("3_k5rao")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fr502")
+script = ExtResource("4_btn")
 
 [node name="Label" type="Label" parent="." unique_id=187900219]
 layout_mode = 1
