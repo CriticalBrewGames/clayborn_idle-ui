@@ -1,0 +1,132 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://bltjd5bcnn1af" path="res://assets/close_button.png" id="1_close"]
+[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="2_font"]
+[ext_resource type="Script" path="res://ui/features/inventory/popups/inventory_popup_ui.gd" id="3_script"]
+[ext_resource type="Script" uid="uid://gl7ybdwjrquj" path="res://ui/features/popup/drag_and_drop.gd" id="4_drag"]
+[ext_resource type="PackedScene" path="res://ui/features/inventory/panels/inventory_bag_panel.tscn" id="5_inventory"]
+[ext_resource type="PackedScene" path="res://ui/features/inventory/panels/gear_panel.tscn" id="6_gear"]
+[ext_resource type="PackedScene" path="res://ui/features/inventory/panels/stats_popup_panel.tscn" id="7_stats"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shell"]
+bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.09803922)
+shadow_size = 15
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_title"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[node name="InventoryPopupUi" type="Control"]
+custom_minimum_size = Vector2(360, 420)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 420.0
+script = ExtResource("3_script")
+
+[node name="MainPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_shell")
+
+[node name="TilePanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 25)
+custom_maximum_size = Vector2(-1, 25)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 28.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_title")
+
+[node name="Label" type="Label" parent="TilePanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -8.5
+offset_right = 120.0
+offset_bottom = 8.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+text = "Inventory"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="TilePanel"]
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -8.0
+offset_right = -7.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 6
+icon = ExtResource("1_close")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ContentHost" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryBagPanel" parent="ContentHost" instance=ExtResource("5_inventory")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GearPanel" parent="ContentHost" instance=ExtResource("6_gear")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatsPopupPanel" parent="ContentHost" instance=ExtResource("7_stats")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DragAndDrop" type="Node" parent="." node_paths=PackedStringArray("grabbable", "moveable")]
+script = ExtResource("4_drag")
+grabbable = NodePath("../TilePanel")
+moveable = NodePath("..")
