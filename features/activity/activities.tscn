@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bwlvxpc6culbp"]
 
 [ext_resource type="Script" uid="uid://cbc6r3x84ejtj" path="res://addons/radial_progress/RadialProgress.gd" id="1_dotl8"]
+[ext_resource type="Script" path="res://ui/features/activity/activities.gd" id="1_activities"]
 [ext_resource type="Script" uid="uid://djojdpy4jt2x3" path="res://ui/features/activity/activities_ui_updater.gd" id="2_hhkpp"]
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="2_tehpr"]
 
@@ -34,6 +35,7 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_t3m43")
+script = ExtResource("1_activities")
 
 [node name="RadialProgress" type="Control" parent="." unique_id=92613960]
 visible = false
@@ -101,6 +103,24 @@ grow_vertical = 2
 custom_minimum_size = Vector2(44, 44)
 custom_maximum_size = Vector2(44, 44)
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Panel"]
+custom_minimum_size = Vector2(36, 36)
+custom_maximum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=275274954]
 layout_mode = 2
