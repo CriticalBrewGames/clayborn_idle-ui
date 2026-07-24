@@ -1,0 +1,86 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://ui/features/bestiary/widgets/bestiary_enemy_bar/bestiary_enemy_bar.tscn" id="1_enemy_bar"]
+[ext_resource type="PackedScene" path="res://ui/features/bestiary/widgets/bestiary_stats_panel/bestiary_stats_panel.tscn" id="2_stats"]
+[ext_resource type="PackedScene" path="res://ui/features/bestiary/widgets/bestiary_art/bestiary_art.tscn" id="3_art"]
+[ext_resource type="PackedScene" path="res://ui/features/bestiary/widgets/bestiary_lore/bestiary_lore.tscn" id="4_lore"]
+[ext_resource type="PackedScene" path="res://ui/features/bestiary/widgets/bestiary_progress_footer/bestiary_progress_footer.tscn" id="5_progress"]
+[ext_resource type="Script" path="res://ui/features/bestiary/bestiary_controller.gd" id="6_controller"]
+[ext_resource type="Script" path="res://ui/features/bestiary/bestiary_template_ui_updater.gd" id="7_updater"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shell"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.32156864)
+shadow_size = 15
+
+[node name="BestiaryTemplate" type="Panel"]
+custom_minimum_size = Vector2(0, 720)
+custom_maximum_size = Vector2(1000, 820)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_right = 500.0
+offset_bottom = 720.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_shell")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="BestiaryEnemyBar" parent="VBoxContainer" instance=ExtResource("1_enemy_bar")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="BestiaryMain" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="StatsPanel" parent="VBoxContainer/BestiaryMain" instance=ExtResource("2_stats")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ArtLoreColumn" type="VBoxContainer" parent="VBoxContainer/BestiaryMain"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="BestiaryArt" parent="VBoxContainer/BestiaryMain/ArtLoreColumn" instance=ExtResource("3_art")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="BestiaryLore" parent="VBoxContainer/BestiaryMain/ArtLoreColumn" instance=ExtResource("4_lore")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BestiaryProgressFooter" parent="VBoxContainer" instance=ExtResource("5_progress")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Controller" type="Node" parent="."]
+script = ExtResource("6_controller")
+
+[node name="UIUpdater" type="Node" parent="."]
+script = ExtResource("7_updater")

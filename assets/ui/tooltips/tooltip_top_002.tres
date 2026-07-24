@@ -1,0 +1,13 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://yaliseqjs4j7"]
+
+[resource]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0992813, 0.320579, 0.427282, 1)
+border_width_bottom = 2
+border_color = Color(0.062, 0.231467, 0.31, 1)
+corner_detail = 20
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+shadow_color = Color(0, 0, 0, 0.0784314)
+shadow_size = 10

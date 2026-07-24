@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://gdv2gs6niccp"]
+
+[ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="1_ddiaw"]
+
+[node name="SkillCard" type="Panel" unique_id=856198864]
+custom_minimum_size = Vector2(200, 370)
+custom_maximum_size = Vector2(200, 370)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -185.0
+offset_right = 115.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=371960995]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.5
+offset_top = 14.0
+offset_right = -17.5
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=811592761]
+custom_minimum_size = Vector2(195, 40)
+custom_maximum_size = Vector2(195, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel" unique_id=173555421]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ddiaw")
+theme_override_font_sizes/font_size = 18
+text = "Copper Ore"
+
+[node name="Panel2" type="Panel" parent="VBoxContainer" unique_id=846556773]
+custom_minimum_size = Vector2(196, 30)
+custom_maximum_size = Vector2(195, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Panel3" type="Panel" parent="VBoxContainer" unique_id=1021350298]
+custom_minimum_size = Vector2(195, 160)
+custom_maximum_size = Vector2(195, 160)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=770008853]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=2109757257]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

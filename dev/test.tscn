@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://culwohusrx5l2"]
+
+[ext_resource type="PackedScene" uid="uid://dbj86ld8dpkva" path="res://ui/features/combat/views/combat_ui.tscn" id="1_37kl0"]
+
+[node name="Test" type="Control" unique_id=614422685]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AspectRatioContainer" type="BoxContainer" parent="." unique_id=570589133]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -444.0
+offset_top = -351.0
+offset_right = 444.0
+offset_bottom = 351.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="CombatUi" parent="AspectRatioContainer" unique_id=2059505449 instance=ExtResource("1_37kl0")]
+layout_mode = 2

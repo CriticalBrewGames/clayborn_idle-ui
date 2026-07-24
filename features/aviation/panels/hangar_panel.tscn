@@ -1,0 +1,123 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://ui/features/aviation/widgets/plane_bay/plane_bay.tscn" id="1_bay"]
+[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="2_font"]
+[ext_resource type="Script" path="res://ui/features/aviation/panels/hangar_panel_ui_updater.gd" id="3_updater"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.085962914, 0.14803103, 0.1962944, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_filters"]
+
+[node name="HangarPanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="FilterRow" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="FilterAll" type="Button" parent="Margin/VBox/FilterRow"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_filters")
+text = "All"
+
+[node name="FilterReady" type="Button" parent="Margin/VBox/FilterRow"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_filters")
+text = "Ready"
+
+[node name="FilterRepairing" type="Button" parent="Margin/VBox/FilterRow"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_filters")
+text = "Repairing"
+
+[node name="FilterLocked" type="Button" parent="Margin/VBox/FilterRow"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_filters")
+text = "Locked"
+
+[node name="Scroll" type="ScrollContainer" parent="Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="PlaneBayGrid" type="GridContainer" parent="Margin/VBox/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="PlaneBay" parent="Margin/VBox/Scroll/PlaneBayGrid" instance=ExtResource("1_bay")]
+layout_mode = 2
+plane_name = "Copper Sparrow"
+tier = "T1"
+status = "Ready"
+cargo = "8 slots"
+
+[node name="PlaneBay2" parent="Margin/VBox/Scroll/PlaneBayGrid" instance=ExtResource("1_bay")]
+layout_mode = 2
+plane_name = "Iron Condor"
+tier = "T2"
+status = "Ready"
+cargo = "14 slots"
+
+[node name="PlaneBay3" parent="Margin/VBox/Scroll/PlaneBayGrid" instance=ExtResource("1_bay")]
+layout_mode = 2
+plane_name = "Sky Freighter"
+tier = "T3"
+status = "Repairing"
+cargo = "24 slots"
+
+[node name="PlaneBay4" parent="Margin/VBox/Scroll/PlaneBayGrid" instance=ExtResource("1_bay")]
+layout_mode = 2
+plane_name = "Cloud Hopper"
+tier = "T1"
+status = "Selected"
+cargo = "6 slots"
+
+[node name="UIUpdater" type="Node" parent="."]
+script = ExtResource("3_updater")

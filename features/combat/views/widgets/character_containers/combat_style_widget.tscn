@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbh1vmvqxr76m"]
+
+[ext_resource type="StyleBox" uid="uid://d0ovkjdjkcflw" path="res://assets/theme/panels/deep_panel.tres" id="1_buijt"]
+[ext_resource type="StyleBox" uid="uid://cdu4kcaou50xo" path="res://assets/theme/panels/base_panel_highlights_with_stroke.tres" id="2_7wtiy"]
+[ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="2_ve4xv"]
+[ext_resource type="PackedScene" uid="uid://cscv4bjp20n30" path="res://ui/features/combat/views/components/combat_style_button.tscn" id="3_7wtiy"]
+
+[node name="CombatStyleWidget" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -38.0
+offset_right = 62.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_buijt")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 7.0
+offset_right = -10.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_7wtiy")
+
+[node name="CombatStyleGrid" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -31.0
+offset_right = 53.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/CombatStyleGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.108524, 0.10324, 0.0935114, 1)
+theme_override_fonts/font = ExtResource("2_ve4xv")
+text = "Combat style:"
+horizontal_alignment = 1
+
+[node name="Offensive" type="HBoxContainer" parent="Panel/CombatStyleGrid"]
+layout_mode = 2
+alignment = 1
+
+[node name="AttackStyle" parent="Panel/CombatStyleGrid/Offensive" instance=ExtResource("3_7wtiy")]
+layout_mode = 2
+script = null
+
+[node name="DefenseStyle" parent="Panel/CombatStyleGrid/Offensive" instance=ExtResource("3_7wtiy")]
+layout_mode = 2
+script = null

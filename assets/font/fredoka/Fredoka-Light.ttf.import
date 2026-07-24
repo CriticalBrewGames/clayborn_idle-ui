@@ -1,0 +1,41 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://bu5fh4hbeumsd"
+path="res://.godot/imported/Fredoka-Light.ttf-856e31163e743d99d1fa041dd658f385.fontdata"
+
+[deps]
+
+source_file="res://assets/font/fredoka/Fredoka-Light.ttf"
+dest_files=["res://.godot/imported/Fredoka-Light.ttf-856e31163e743d99d1fa041dd658f385.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=true
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0),
+&"variation_embolden": 0.0
+}]
+language_support={}
+script_support={}
+opentype_features={}

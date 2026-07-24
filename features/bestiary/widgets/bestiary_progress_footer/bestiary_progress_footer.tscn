@@ -1,0 +1,114 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/features/bestiary/widgets/bestiary_progress_footer/bestiary_progress_footer.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="2_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.06666667, 0.12156863, 0.16470589, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar_bg"]
+bg_color = Color(0.06666667, 0.12156863, 0.16470589, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar_fill"]
+bg_color = Color(0.25, 0.55, 0.82, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="BestiaryProgressFooter" type="Panel"]
+custom_minimum_size = Vector2(0, 140)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+script = ExtResource("1_script")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Header" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Margin/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.95, 0.97, 0.98, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 14
+text = "Kill progress"
+
+[node name="NextLabel" type="Label" parent="Margin/VBox/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.86, 0.9, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+text = "Next · …"
+horizontal_alignment = 2
+
+[node name="MasteryRow" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="Mastery" type="Label" parent="Margin/VBox/MasteryRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.7, 0.78, 0.84, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+text = "0 / 0 toward mastery"
+
+[node name="Pct" type="Label" parent="Margin/VBox/MasteryRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.78, 0.84, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+text = "0% to next"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Margin/VBox"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bar_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bar_fill")
+max_value = 100.0
+value = 40.0
+show_percentage = false
+
+[node name="Markers" type="Control" parent="Margin/VBox"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PillsScroll" type="ScrollContainer" parent="Margin/VBox"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+vertical_scroll_mode = 0
+
+[node name="Pills" type="HBoxContainer" parent="Margin/VBox/PillsScroll"]
+layout_mode = 2
+theme_override_constants/separation = 8

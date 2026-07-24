@@ -1,0 +1,88 @@
+[gd_scene format=3]
+
+[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="1_font"]
+[ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="2_semibold"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_row"]
+bg_color = Color(0.085, 0.14, 0.185, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tier"]
+bg_color = Color(0.06666667, 0.12156863, 0.16470589, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="EnchantListRow" type="Panel"]
+custom_minimum_size = Vector2(0, 36)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_row")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="HBox" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TierBadge" type="Panel" parent="Margin/HBox"]
+custom_minimum_size = Vector2(28, 28)
+custom_maximum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_tier")
+
+[node name="TierLabel" type="Label" parent="Margin/HBox/TierBadge"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
+theme_override_fonts/font = ExtResource("2_semibold")
+theme_override_font_sizes/font_size = 12
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatText" type="Label" parent="Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.85, 0.88, 0.9, 1)
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 12
+text = "+(12–18) Attack"
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="Margin/HBox"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.6, 0.65, 0.68, 1)
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 11
+text = "lvl 12"
+vertical_alignment = 1
+
+[node name="CostLabel" type="Label" parent="Margin/HBox"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.75, 0.78, 0.8, 1)
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 11
+text = "x2 ore"
+vertical_alignment = 1

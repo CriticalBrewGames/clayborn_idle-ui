@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://buba23e484wnv"]
+
+[ext_resource type="Script" uid="uid://j0tauoek0vu3" path="res://ui/features/combat/views/widgets/character_containers/attack_timer/scripts/helpers/attack_timer_ui.gd" id="1_7r7is"]
+[ext_resource type="Texture2D" uid="uid://c882bp8yhpefr" path="res://assets/skill_icons/strength.svg" id="2_3uvti"]
+[ext_resource type="Script" uid="uid://cymknyljhajs7" path="res://ui/features/combat/views/components/offensive_type.gd" id="3_gmto1"]
+[ext_resource type="PackedScene" uid="uid://dv3anpfr71yai" path="res://ui/features/combat/views/widgets/attack_bar.tscn" id="4_byw7j"]
+[ext_resource type="Script" uid="uid://di7lwc2xymrdn" path="res://ui/features/combat/views/widgets/character_containers/attack_timer/scripts/helpers/attack_timer_type_selector.gd" id="5_06yib"]
+[ext_resource type="Script" uid="uid://cy23j2hr31oy8" path="res://ui/features/combat/views/widgets/character_containers/attack_timer/scripts/ui_updaters/attack_timer_ui_updater.gd" id="6_vkb7q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2wf1"]
+bg_color = Color(0.105882, 0.176471, 0.231373, 1)
+border_width_top = 15
+border_width_right = 15
+border_color = Color(0.0674381, 0.121497, 0.163524, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
+
+[node name="AttackTimer" type="BoxContainer"]
+offset_right = 135.0
+offset_bottom = 30.0
+size_flags_vertical = 4
+alignment = 1
+script = ExtResource("1_7r7is")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_f2wf1")
+
+[node name="OffensiveType" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -11.0
+offset_right = 13.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3uvti")
+expand_mode = 2
+stretch_mode = 5
+script = ExtResource("3_gmto1")
+
+[node name="PlayerAttackBar" parent="." instance=ExtResource("4_byw7j")]
+custom_minimum_size = Vector2(90, 18)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AttackTimerOwnerSelector" type="Node" parent="." node_paths=PackedStringArray("progress_bar", "combat_style_icon_container")]
+script = ExtResource("5_06yib")
+progress_bar = NodePath("../PlayerAttackBar")
+combat_style_icon_container = NodePath("../Panel")
+metadata/_custom_type_script = "uid://di7lwc2xymrdn"
+
+[node name="UIUpdater" type="Node" parent="." node_paths=PackedStringArray("attack_type_selector")]
+script = ExtResource("6_vkb7q")
+attack_type_selector = NodePath("../AttackTimerOwnerSelector")
+metadata/_custom_type_script = "uid://bbmfsyjbdjgao"

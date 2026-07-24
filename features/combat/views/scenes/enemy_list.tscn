@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgqnjxe2usdw4"]
+
+[ext_resource type="StyleBox" uid="uid://ddapcmqajhcs2" path="res://assets/ui/default_panel_without_softshadow.tres" id="2_c0ihl"]
+[ext_resource type="StyleBox" uid="uid://dcirmk71heunm" path="res://assets/ui/line_edit.tres" id="3_1tr7y"]
+[ext_resource type="Texture2D" uid="uid://k6fkfdqyfnwg" path="res://assets/ui/button/bg/clay.webp" id="3_c0ihl"]
+[ext_resource type="StyleBox" uid="uid://dlrus3s6qcn83" path="res://assets/ui/backdrop.tres" id="3_cl6b7"]
+[ext_resource type="StyleBox" uid="uid://u8krheyde3nn" path="res://assets/ui/large_panel_rim.tres" id="5_i0crp"]
+[ext_resource type="Script" uid="uid://clb1yg5nyra26" path="res://ui/features/combat/views/scenes/enemy_list_ui_updater.gd" id="6_1cjah"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cl6b7"]
+
+[node name="EnemyList" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_right = 500.0
+offset_bottom = 350.0
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="."]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_c0ihl")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+modulate = Color(0.0823529, 0.207843, 0.34902, 0.329412)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 894.0
+offset_bottom = 462.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_c0ihl")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 15.0
+offset_right = -18.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cl6b7")
+theme_override_styles/normal = ExtResource("3_1tr7y")
+placeholder_text = "Search"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_cl6b7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_i0crp")
+
+[node name="UIUpdater" type="Node" parent="."]
+script = ExtResource("6_1cjah")
+metadata/_custom_type_script = "uid://bbmfsyjbdjgao"
+
+[connection signal="text_changed" from="Panel/VBoxContainer/LineEdit" to="Panel/VBoxContainer/LineEdit" method="_on_text_changed"]

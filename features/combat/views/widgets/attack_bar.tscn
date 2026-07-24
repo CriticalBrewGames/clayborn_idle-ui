@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv3anpfr71yai"]
+
+[ext_resource type="Script" uid="uid://5eoj5ksn4ief" path="res://ui/features/combat/views/widgets/extended_progress_bar.gd" id="1_p5uni"]
+[ext_resource type="StyleBox" uid="uid://1g1k5vaglwsj" path="res://assets/theme/progress_bar/progress_bar/progress_bar_bg.tres" id="2_q7oxs"]
+[ext_resource type="StyleBox" uid="uid://beahj2gyireiw" path="res://assets/theme/progress_bar/progress_bar/progress_bar_fill.tres" id="3_h8j1i"]
+[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="4_h8j1i"]
+
+[node name="AttackBar" type="ProgressBar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/background = ExtResource("2_q7oxs")
+theme_override_styles/fill = ExtResource("3_h8j1i")
+show_percentage = false
+script = ExtResource("1_p5uni")
+
+[node name="LabelRefreshTimer" type="Timer" parent="."]
+wait_time = 0.02
+
+[node name="ProcessTimer" type="Timer" parent="."]
+
+[node name="ProgressBarLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -11.5
+offset_right = 16.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_h8j1i")
+theme_override_font_sizes/font_size = 13
+text = "0 sec"
+horizontal_alignment = 1
+vertical_alignment = 1

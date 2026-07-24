@@ -1,0 +1,258 @@
+[gd_scene format=3]
+
+[ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="1_semibold"]
+[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="2_medium"]
+[ext_resource type="FontFile" uid="uid://bdiyspkytp7n0" path="res://assets/font/fredoka/Fredoka-Regular.ttf" id="3_regular"]
+[ext_resource type="Script" path="res://ui/features/quests/widgets/quest_card/quest_card.gd" id="4_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.06666667, 0.12156863, 0.16470589, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_title"]
+bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slot"]
+bg_color = Color(0.06666667, 0.12156863, 0.16470589, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_art"]
+bg_color = Color(0.06666667, 0.12156863, 0.16470589, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lock"]
+bg_color = Color(0.05, 0.08, 0.1, 0.72)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="QuestCard" type="Panel"]
+custom_minimum_size = Vector2(430, 300)
+custom_maximum_size = Vector2(460, 320)
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+script = ExtResource("4_script")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TitlePanel" type="Panel" parent="Margin/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_title")
+
+[node name="QuestName" type="Label" parent="Margin/VBox/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_semibold")
+theme_override_font_sizes/font_size = 18
+text = "Tower of Gems"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Details" type="VBoxContainer" parent="Margin/VBox/Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Duration" type="Label" parent="Margin/VBox/Body/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.65, 0.65, 1)
+theme_override_fonts/font = ExtResource("2_medium")
+theme_override_font_sizes/font_size = 11
+text = "5 minute quest"
+
+[node name="Description" type="Label" parent="Margin/VBox/Body/Details"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.85, 0.85, 0.85, 1)
+theme_override_fonts/font = ExtResource("3_regular")
+theme_override_font_sizes/font_size = 12
+text = "Activate the imbued gems in the correct order to open the barrier."
+autowrap_mode = 3
+
+[node name="RequirementsLabel" type="Label" parent="Margin/VBox/Body/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
+theme_override_fonts/font = ExtResource("2_medium")
+theme_override_font_sizes/font_size = 13
+text = "Requirements"
+
+[node name="Requirements" type="HBoxContainer" parent="Margin/VBox/Body/Details"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ReqSlot1" type="Panel" parent="Margin/VBox/Body/Details/Requirements"]
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+
+[node name="ReqSlot2" type="Panel" parent="Margin/VBox/Body/Details/Requirements"]
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+
+[node name="RewardsLabel" type="Label" parent="Margin/VBox/Body/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
+theme_override_fonts/font = ExtResource("2_medium")
+theme_override_font_sizes/font_size = 13
+text = "Rewards"
+
+[node name="Rewards" type="HBoxContainer" parent="Margin/VBox/Body/Details"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="RewardSlot1" type="Panel" parent="Margin/VBox/Body/Details/Rewards"]
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+
+[node name="RewardSlot2" type="Panel" parent="Margin/VBox/Body/Details/Rewards"]
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+
+[node name="RewardXp" type="Panel" parent="Margin/VBox/Body/Details/Rewards"]
+custom_minimum_size = Vector2(48, 32)
+custom_maximum_size = Vector2(48, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+
+[node name="XpLabel" type="Label" parent="Margin/VBox/Body/Details/Rewards/RewardXp"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_fonts/font = ExtResource("2_medium")
+theme_override_font_sizes/font_size = 10
+text = "XP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArtPanel" type="Panel" parent="Margin/VBox/Body"]
+custom_minimum_size = Vector2(110, 0)
+custom_maximum_size = Vector2(120, 9999)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_art")
+
+[node name="ArtPlaceholder" type="Label" parent="Margin/VBox/Body/ArtPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5, 0.55, 0.58, 1)
+theme_override_fonts/font = ExtResource("2_medium")
+theme_override_font_sizes/font_size = 12
+text = "art"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Footer" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Status" type="Label" parent="Margin/VBox/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.55, 0.75, 0.9, 1)
+theme_override_fonts/font = ExtResource("2_medium")
+theme_override_font_sizes/font_size = 12
+text = "Available"
+
+[node name="ActionButton" type="Button" parent="Margin/VBox/Footer"]
+custom_minimum_size = Vector2(90, 28)
+layout_mode = 2
+text = "Start"
+
+[node name="ProgressBar" type="ProgressBar" parent="Margin/VBox"]
+visible = false
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+value = 40.0
+show_percentage = false
+
+[node name="LockOverlay" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lock")
+
+[node name="LockLabel" type="Label" parent="LockOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -12.0
+offset_right = 60.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
+theme_override_fonts/font = ExtResource("1_semibold")
+theme_override_font_sizes/font_size = 16
+text = "Locked"
+horizontal_alignment = 1
+vertical_alignment = 1

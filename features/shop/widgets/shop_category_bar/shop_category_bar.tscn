@@ -1,0 +1,102 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://bfxu8sfumbdog" path="res://assets/skill_icons/mining.svg" id="1_mining"]
+[ext_resource type="Texture2D" uid="uid://bbjicwa3qipha" path="res://assets/skill_icons/smithing.svg" id="2_smithing"]
+[ext_resource type="Texture2D" uid="uid://cnvatmv8mmufa" path="res://assets/skill_icons/cooking.svg" id="3_cooking"]
+[ext_resource type="Texture2D" uid="uid://bq1yjcj4rbrks" path="res://assets/skill_icons/herblore.svg" id="4_herblore"]
+[ext_resource type="Texture2D" uid="uid://wjh7l7kcgr0p" path="res://assets/skill_icons/attack.svg" id="5_attack"]
+[ext_resource type="Texture2D" uid="uid://bamal228y4qx4" path="res://assets/skill_icons/defence.svg" id="6_defence"]
+[ext_resource type="Script" path="res://ui/features/shop/widgets/shop_category_bar/shop_category_bar.gd" id="7_script"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_categories"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar"]
+bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ShopCategoryBar" type="Panel"]
+custom_minimum_size = Vector2(0, 68)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_bar")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="Scroll" type="ScrollContainer" parent="Margin"]
+layout_mode = 2
+vertical_scroll_mode = 0
+
+[node name="Buttons" type="HBoxContainer" parent="Margin/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+alignment = 1
+theme_override_constants/separation = 8
+script = ExtResource("7_script")
+
+[node name="MiningBtn" type="Button" parent="Margin/Scroll/Buttons"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_categories")
+icon = ExtResource("1_mining")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SmithingBtn" type="Button" parent="Margin/Scroll/Buttons"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_categories")
+icon = ExtResource("2_smithing")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CookingBtn" type="Button" parent="Margin/Scroll/Buttons"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_categories")
+icon = ExtResource("3_cooking")
+icon_alignment = 1
+expand_icon = true
+
+[node name="HerbloreBtn" type="Button" parent="Margin/Scroll/Buttons"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_categories")
+icon = ExtResource("4_herblore")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AttackBtn" type="Button" parent="Margin/Scroll/Buttons"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_categories")
+icon = ExtResource("5_attack")
+icon_alignment = 1
+expand_icon = true
+
+[node name="DefenceBtn" type="Button" parent="Margin/Scroll/Buttons"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_categories")
+icon = ExtResource("6_defence")
+icon_alignment = 1
+expand_icon = true

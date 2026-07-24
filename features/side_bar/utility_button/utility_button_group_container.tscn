@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cqf778bhb6rau"]
+
+[ext_resource type="PackedScene" uid="uid://b0iwf24q2swqa" path="res://ui/features/side_bar/utility_button/utility_button.tscn" id="1_v07qw"]
+[ext_resource type="Script" uid="uid://bsvfu8ttw64h7" path="res://ui/features/side_bar/utility_button/utility_button_group_ui_updater.gd" id="2_c0jme"]
+
+[node name="UtilityButtons" type="CenterContainer" unique_id=120361669]
+offset_right = 125.0
+offset_bottom = 191.0
+
+[node name="UtilityButtonBoxContainer" type="VBoxContainer" parent="." unique_id=2067681404]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.45
+
+[node name="Button" parent="UtilityButtonBoxContainer" unique_id=1363086837 instance=ExtResource("1_v07qw")]
+layout_mode = 2
+
+[node name="Button2" parent="UtilityButtonBoxContainer" unique_id=1247596458 instance=ExtResource("1_v07qw")]
+layout_mode = 2
+
+[node name="Button3" parent="UtilityButtonBoxContainer" unique_id=1242623442 instance=ExtResource("1_v07qw")]
+layout_mode = 2
+
+[node name="Button4" parent="UtilityButtonBoxContainer" unique_id=1115358711 instance=ExtResource("1_v07qw")]
+layout_mode = 2
+
+[node name="Button5" parent="UtilityButtonBoxContainer" unique_id=1852368873 instance=ExtResource("1_v07qw")]
+layout_mode = 2
+
+[node name="UtilityButtonGridContainer" type="GridContainer" parent="." unique_id=972403771]
+layout_mode = 2
+columns = 2
+
+[node name="UIUpdater" type="Node" parent="." unique_id=2014957606]
+script = ExtResource("2_c0jme")
+metadata/_custom_type_script = "uid://bbmfsyjbdjgao"

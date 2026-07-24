@@ -1,0 +1,106 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://ui/features/quests/widgets/quest_card/quest_card.tscn" id="1_card"]
+[ext_resource type="Script" path="res://ui/features/quests/widgets/quest_main_content/quest_main_content_ui_updater.gd" id="2_updater"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_outer"]
+bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inner"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.085962914, 0.14803103, 0.1962944, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="QuestMainContent" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_outer")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 20.0
+offset_right = -28.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_inner")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="QuestCard" parent="Panel/ScrollContainer/GridContainer" instance=ExtResource("1_card")]
+layout_mode = 2
+quest_name = "Tower of Gems"
+duration = "5 minute quest"
+description = "Activate the imbued gems in the correct order to open the barrier."
+status = "Available"
+action_label = "Start"
+
+[node name="QuestCard2" parent="Panel/ScrollContainer/GridContainer" instance=ExtResource("1_card")]
+layout_mode = 2
+quest_name = "Mosswood Hunt"
+duration = "Kill quest"
+description = "Clear the forest of Moss Golems before the grove is overrun."
+status = "In progress"
+action_label = "Track"
+show_progress = true
+progress_value = 40.0
+
+[node name="QuestCard3" parent="Panel/ScrollContainer/GridContainer" instance=ExtResource("1_card")]
+layout_mode = 2
+quest_name = "Ore Delivery"
+duration = "Delivery quest"
+description = "Bring copper ore to the smith once Mining reaches level 10."
+status = "Locked"
+action_label = "Start"
+locked = true
+
+[node name="QuestCard4" parent="Panel/ScrollContainer/GridContainer" instance=ExtResource("1_card")]
+layout_mode = 2
+quest_name = "Apprentice Trials"
+duration = "Chapter quest"
+description = "Prove yourself to Xylem’s circle and unlock the next chapter."
+status = "Completed"
+action_label = "View"
+
+[node name="UIUpdater" type="Node" parent="."]
+script = ExtResource("2_updater")

@@ -1,0 +1,33 @@
+# Godot 4+
+.godot/
+.import/
+**/android/
+.nomedia
+
+# Exports / secrets
+export.cfg
+export_credentials.cfg
+*.tmp
+~*.dll
+
+# Imported translations (generated from CSV)
+*.translation
+
+# Local-only junctions so res://ui/... and res://assets/... match Main (recreate after clone)
+# Windows:
+#   cmd /c mklink /J "dev\ui\features" "..\..\features"
+#   cmd /c mklink /J "dev\ui\singleton" "..\..\singleton"
+#   cmd /c mklink /J "dev\assets" "..\..\assets"
+# Linux/macOS:
+#   ln -s ../../features dev/ui/features
+#   ln -s ../../singleton dev/ui/singleton
+#   ln -s ../../assets dev/assets
+dev/ui/features/
+dev/ui/singleton/
+dev/assets/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~

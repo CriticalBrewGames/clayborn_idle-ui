@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://c2k83ben3cdlv"]
+
+[ext_resource type="Script" uid="uid://byrjtirw2ljm2" path="res://ui/features/combat/views/enemy_selector_ui_updater.gd" id="1_0ni18"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47nqo"]
+bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4fjw"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.06743786, 0.121496625, 0.16352373, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrw0g"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.06666667, 0.12156863, 0.16470589, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="EnemySelector" type="Panel" unique_id=1984032994]
+custom_minimum_size = Vector2(0, 110)
+custom_maximum_size = Vector2(-1, 190)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_47nqo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1935089574]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = -10.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer" unique_id=543311555]
+custom_minimum_size = Vector2(180, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_q4fjw")
+
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=1191207326]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_mrw0g")
+
+[node name="UIUpdater" type="Node" parent="." unique_id=1673874550]
+script = ExtResource("1_0ni18")
+metadata/_custom_type_script = "uid://bbmfsyjbdjgao"

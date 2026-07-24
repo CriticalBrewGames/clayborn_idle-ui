@@ -1,0 +1,61 @@
+[gd_scene format=3]
+
+[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="1_font"]
+[ext_resource type="Script" path="res://ui/features/crafting/widgets/crafting_mode_bar/crafting_mode_bar.gd" id="2_script"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_modes"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar"]
+bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CraftingModeBar" type="Panel"]
+custom_minimum_size = Vector2(0, 52)
+custom_maximum_size = Vector2(-1, 56)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_bar")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="Buttons" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+script = ExtResource("2_script")
+
+[node name="DiscoveryBtn" type="Button" parent="Margin/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_font")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_modes")
+text = "Discovery"
+
+[node name="CombinatorBtn" type="Button" parent="Margin/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_font")
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_modes")
+text = "Combinator"
+
+[node name="EnchantmentsBtn" type="Button" parent="Margin/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_font")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_modes")
+text = "Enchantments"

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b4xwc62ddtr2p"]
+
+[ext_resource type="PackedScene" uid="uid://dbjwxlq1cr3uo" path="res://ui/features/skills/widgets/skill_header/skill_header.tscn" id="1_qbipn"]
+[ext_resource type="PackedScene" uid="uid://pydhk2hbx5f6" path="res://ui/features/skills/widgets/main_content/skill_main_content.tscn" id="2_2ierw"]
+[ext_resource type="Script" uid="uid://cv3rm74jwph0k" path="res://ui/features/skills/skill_template_ui_updater.gd" id="3_2ierw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yyqo"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.32156864)
+shadow_size = 15
+
+[node name="SkillTemplate" type="Panel" unique_id=2057558776]
+custom_maximum_size = Vector2(1000, -1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_right = 500.0
+offset_bottom = 720.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_2yyqo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1550608969]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="SkillHeader" parent="VBoxContainer" unique_id=1754958015 instance=ExtResource("1_qbipn")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SkillMainContent" parent="VBoxContainer" unique_id=631256832 instance=ExtResource("2_2ierw")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="UIUpdater" type="Node" parent="." unique_id=520372911]
+script = ExtResource("3_2ierw")
+metadata/_custom_type_script = "uid://bbmfsyjbdjgao"

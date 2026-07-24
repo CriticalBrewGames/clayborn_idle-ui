@@ -1,0 +1,71 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://ui/features/shop/widgets/shop_mode_bar/shop_mode_bar.tscn" id="1_mode_bar"]
+[ext_resource type="PackedScene" path="res://ui/features/shop/panels/buy_panel.tscn" id="2_buy"]
+[ext_resource type="PackedScene" path="res://ui/features/shop/panels/sell_panel.tscn" id="3_sell"]
+[ext_resource type="Script" path="res://ui/features/shop/shop_mode_switcher.gd" id="4_switcher"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shell"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.32156864)
+shadow_size = 15
+
+[node name="ShopTemplate" type="Panel"]
+custom_minimum_size = Vector2(0, 720)
+custom_maximum_size = Vector2(1000, 820)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_right = 500.0
+offset_bottom = 720.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_shell")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="ShopModeBar" parent="VBoxContainer" instance=ExtResource("1_mode_bar")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="ShopBody" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BuyPanel" parent="VBoxContainer/ShopBody" instance=ExtResource("2_buy")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SellPanel" parent="VBoxContainer/ShopBody" instance=ExtResource("3_sell")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ModeSwitcher" type="Node" parent="."]
+script = ExtResource("4_switcher")

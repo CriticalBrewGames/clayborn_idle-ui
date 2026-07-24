@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct8ko5h83kmpi"]
+
+[ext_resource type="StyleBox" uid="uid://cdu4kcaou50xo" path="res://assets/theme/panels/base_panel_highlights_with_stroke.tres" id="1_ig0xx"]
+[ext_resource type="PackedScene" uid="uid://buba23e484wnv" path="res://ui/features/combat/views/widgets/character_containers/attack_timer/scenes/attack_timer.tscn" id="2_4m05h"]
+[ext_resource type="Script" uid="uid://sishstawx7c8" path="res://ui/features/combat/views/widgets/character_containers/attack_timer/scripts/ui_updaters/attack_timers_collection_ui_updater.gd" id="3_yx4l6"]
+
+[node name="AttackTimersCollection" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -37.0
+offset_right = 71.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("1_ig0xx")
+
+[node name="BoxContainer3" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = -32.0
+offset_right = 83.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+vertical = true
+
+[node name="PlayerAttackTimer" parent="BoxContainer3" instance=ExtResource("2_4m05h")]
+layout_mode = 2
+
+[node name="EnemyAttackTimer" parent="BoxContainer3" instance=ExtResource("2_4m05h")]
+layout_mode = 2
+ui_owner = 1
+
+[node name="UIUpdater" type="Node" parent="."]
+script = ExtResource("3_yx4l6")
+metadata/_custom_type_script = "uid://bbmfsyjbdjgao"

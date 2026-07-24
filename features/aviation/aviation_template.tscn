@@ -1,0 +1,76 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://ui/features/aviation/widgets/aviation_header/aviation_header.tscn" id="1_header"]
+[ext_resource type="PackedScene" path="res://ui/features/aviation/widgets/aviation_mode_bar/aviation_mode_bar.tscn" id="2_mode_bar"]
+[ext_resource type="PackedScene" path="res://ui/features/aviation/panels/travel_panel.tscn" id="3_travel"]
+[ext_resource type="PackedScene" path="res://ui/features/aviation/panels/hangar_panel.tscn" id="4_hangar"]
+[ext_resource type="Script" path="res://ui/features/aviation/aviation_mode_switcher.gd" id="5_switcher"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shell"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.32156864)
+shadow_size = 15
+
+[node name="AviationTemplate" type="Panel"]
+custom_minimum_size = Vector2(0, 720)
+custom_maximum_size = Vector2(1000, 820)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_right = 500.0
+offset_bottom = 720.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_shell")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="AviationHeader" parent="VBoxContainer" instance=ExtResource("1_header")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="AviationModeBar" parent="VBoxContainer" instance=ExtResource("2_mode_bar")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="AviationBody" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TravelPanel" parent="VBoxContainer/AviationBody" instance=ExtResource("3_travel")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HangarPanel" parent="VBoxContainer/AviationBody" instance=ExtResource("4_hangar")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ModeSwitcher" type="Node" parent="."]
+script = ExtResource("5_switcher")

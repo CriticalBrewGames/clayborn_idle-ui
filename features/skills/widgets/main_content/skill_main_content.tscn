@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://pydhk2hbx5f6"]
+
+[ext_resource type="PackedScene" uid="uid://gdv2gs6niccp" path="res://ui/features/skills/widgets/skill_card/skill_card.tscn" id="1_o1dkb"]
+[ext_resource type="Script" uid="uid://bin48i8aeaj8n" path="res://ui/features/skills/widgets/main_content/skill_main_content_ui_updater.gd" id="2_jcmw3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqdhe"]
+bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7y5k"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.085962914, 0.14803103, 0.1962944, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="SkillMainContent" type="Panel" unique_id=542696994]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eqdhe")
+
+[node name="Panel" type="Panel" parent="." unique_id=1884047053]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 25.0
+offset_right = -28.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o7y5k")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=838528736]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/ScrollContainer" unique_id=460306693]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+columns = 3
+
+[node name="SkillCard" parent="Panel/ScrollContainer/GridContainer" unique_id=856198864 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard2" parent="Panel/ScrollContainer/GridContainer" unique_id=117473241 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard3" parent="Panel/ScrollContainer/GridContainer" unique_id=1214525657 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard4" parent="Panel/ScrollContainer/GridContainer" unique_id=641746257 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard5" parent="Panel/ScrollContainer/GridContainer" unique_id=591767508 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard6" parent="Panel/ScrollContainer/GridContainer" unique_id=2055152824 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard7" parent="Panel/ScrollContainer/GridContainer" unique_id=255438000 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard8" parent="Panel/ScrollContainer/GridContainer" unique_id=2084406628 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard9" parent="Panel/ScrollContainer/GridContainer" unique_id=136259555 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard10" parent="Panel/ScrollContainer/GridContainer" unique_id=1403165771 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard11" parent="Panel/ScrollContainer/GridContainer" unique_id=1856510774 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard12" parent="Panel/ScrollContainer/GridContainer" unique_id=1991916341 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard13" parent="Panel/ScrollContainer/GridContainer" unique_id=2114867700 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard14" parent="Panel/ScrollContainer/GridContainer" unique_id=1299354905 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="SkillCard15" parent="Panel/ScrollContainer/GridContainer" unique_id=982764326 instance=ExtResource("1_o1dkb")]
+layout_mode = 2
+
+[node name="UIUpdater" type="Node" parent="." unique_id=1056055199]
+script = ExtResource("2_jcmw3")
+metadata/_custom_type_script = "uid://bbmfsyjbdjgao"

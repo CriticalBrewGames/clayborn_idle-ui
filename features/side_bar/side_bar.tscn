@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://d0koh2gqejhhh"]
+
+[ext_resource type="PackedScene" uid="uid://5cwx3jwyubui" path="res://ui/features/side_bar/skill_bar/skill_bar.tscn" id="1_0f027"]
+[ext_resource type="PackedScene" uid="uid://cqf778bhb6rau" path="res://ui/features/side_bar/utility_button/utility_button_group_container.tscn" id="2_gyfs4"]
+[ext_resource type="PackedScene" uid="uid://vgkknq51l28s" path="res://ui/features/side_bar/bottom_icons/bottom_button.tscn" id="3_gyfs4"]
+
+[node name="SideBarContainer" type="VBoxContainer" unique_id=2086662701]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1279.0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+
+[node name="SkillBar" parent="." unique_id=1255244563 instance=ExtResource("1_0f027")]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="UtilityButtons" parent="." unique_id=2067681404 instance=ExtResource("2_gyfs4")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="ButtomButtonContainer" type="HBoxContainer" parent="." unique_id=63224294]
+layout_mode = 2
+
+[node name="Button" parent="ButtomButtonContainer" unique_id=1172877254 instance=ExtResource("3_gyfs4")]
+layout_mode = 2
+
+[node name="Button2" parent="ButtomButtonContainer" unique_id=1199500205 instance=ExtResource("3_gyfs4")]
+layout_mode = 2
+
+[node name="Button3" parent="ButtomButtonContainer" unique_id=885552100 instance=ExtResource("3_gyfs4")]
+layout_mode = 2
+
+[node name="Button4" parent="ButtomButtonContainer" unique_id=1138267299 instance=ExtResource("3_gyfs4")]
+layout_mode = 2

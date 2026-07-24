@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://dx1dln0nvj5si"]
+
+[ext_resource type="PackedScene" uid="uid://tc3lktancd5q" path="res://ui/features/combat/views/widgets/character_containers/name_plate.tscn" id="1_dyx26"]
+[ext_resource type="Theme" uid="uid://twy1sfypoxqq" path="res://assets/theme_test.tres" id="4_fufcb"]
+[ext_resource type="Shader" uid="uid://b8l3pjhsfavnt" path="res://player_shader.gdshader" id="5_gengt"]
+[ext_resource type="Texture2D" uid="uid://cujlex4gy1yrs" path="res://assets/player_combat_arts/begineer_zoltan.png" id="6_jow45"]
+[ext_resource type="PackedScene" uid="uid://cbh1vmvqxr76m" path="res://ui/features/combat/views/widgets/character_containers/combat_style_widget.tscn" id="7_b5f1e"]
+[ext_resource type="Script" uid="uid://dws04k576ptf7" path="res://ui/features/combat/views/widgets/character_containers/ui_updater.gd" id="8_fufcb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eju0a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0iqon"]
+shader = ExtResource("5_gengt")
+
+[node name="CharacterContainer" type="VBoxContainer"]
+custom_minimum_size = Vector2(200, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -250.0
+offset_right = 100.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="NamePlate" parent="." instance=ExtResource("1_dyx26")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_eju0a")
+
+[node name="CharacterCard" type="Panel" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_fufcb")
+theme_type_variation = &"DeepPanel"
+
+[node name="Sprite" type="TextureRect" parent="CharacterCard"]
+material = SubResource("ShaderMaterial_0iqon")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 53.0
+offset_top = 42.0
+offset_right = -52.625
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_jow45")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="HSeparator2" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_eju0a")
+
+[node name="CombatStyleWidget" parent="." instance=ExtResource("7_b5f1e")]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="UIUpdater" type="Node" parent="."]
+script = ExtResource("8_fufcb")
+metadata/_custom_type_script = "uid://bbmfsyjbdjgao"

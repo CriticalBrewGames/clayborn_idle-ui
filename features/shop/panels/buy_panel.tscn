@@ -1,0 +1,156 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://ui/features/shop/widgets/shop_category_bar/shop_category_bar.tscn" id="1_category"]
+[ext_resource type="PackedScene" path="res://ui/features/shop/widgets/shop_item_card/shop_item_card.tscn" id="2_card"]
+[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="3_font"]
+[ext_resource type="Script" path="res://ui/features/shop/panels/buy_panel_ui_updater.gd" id="4_updater"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.085962914, 0.14803103, 0.1962944, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="BuyPanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ShopCategoryBar" parent="Margin/VBox" instance=ExtResource("1_category")]
+layout_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ShopItemGrid" type="GridContainer" parent="Margin/VBox/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 6
+
+[node name="ShopItemCard" parent="Margin/VBox/Scroll/ShopItemGrid" instance=ExtResource("2_card")]
+layout_mode = 2
+item_name = "Copper Ore"
+price = 4
+
+[node name="ShopItemCard2" parent="Margin/VBox/Scroll/ShopItemGrid" instance=ExtResource("2_card")]
+layout_mode = 2
+item_name = "Iron Ore"
+price = 12
+
+[node name="ShopItemCard3" parent="Margin/VBox/Scroll/ShopItemGrid" instance=ExtResource("2_card")]
+layout_mode = 2
+item_name = "Tin Ore"
+price = 6
+
+[node name="ShopItemCard4" parent="Margin/VBox/Scroll/ShopItemGrid" instance=ExtResource("2_card")]
+layout_mode = 2
+item_name = "Coal"
+price = 18
+
+[node name="ShopItemCard5" parent="Margin/VBox/Scroll/ShopItemGrid" instance=ExtResource("2_card")]
+layout_mode = 2
+item_name = "Copper Pick"
+price = 45
+stock_label = "12"
+
+[node name="ShopItemCard6" parent="Margin/VBox/Scroll/ShopItemGrid" instance=ExtResource("2_card")]
+layout_mode = 2
+item_name = "Iron Pick"
+price = 120
+stock_label = "8"
+
+[node name="ShopItemCard7" parent="Margin/VBox/Scroll/ShopItemGrid" instance=ExtResource("2_card")]
+layout_mode = 2
+item_name = "Mining Charm"
+price = 250
+stock_label = "3"
+
+[node name="ShopItemCard8" parent="Margin/VBox/Scroll/ShopItemGrid" instance=ExtResource("2_card")]
+layout_mode = 2
+item_name = "Ore Sack"
+price = 80
+
+[node name="ShopItemCard9" parent="Margin/VBox/Scroll/ShopItemGrid" instance=ExtResource("2_card")]
+layout_mode = 2
+item_name = "Lantern"
+price = 35
+stock_label = "20"
+
+[node name="ShopItemCard10" parent="Margin/VBox/Scroll/ShopItemGrid" instance=ExtResource("2_card")]
+layout_mode = 2
+item_name = "Rope Coil"
+price = 15
+
+[node name="ShopItemCard11" parent="Margin/VBox/Scroll/ShopItemGrid" instance=ExtResource("2_card")]
+layout_mode = 2
+item_name = "Survey Map"
+price = 95
+stock_label = "5"
+
+[node name="ShopItemCard12" parent="Margin/VBox/Scroll/ShopItemGrid" instance=ExtResource("2_card")]
+layout_mode = 2
+item_name = "Gem Dust"
+price = 55
+
+[node name="PageRow" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PrevPage" type="Button" parent="Margin/VBox/PageRow"]
+custom_minimum_size = Vector2(40, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+disabled = true
+text = "<"
+
+[node name="PageLabel" type="Label" parent="Margin/VBox/PageRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "1 / 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextPage" type="Button" parent="Margin/VBox/PageRow"]
+custom_minimum_size = Vector2(40, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+text = ">"
+
+[node name="UIUpdater" type="Node" parent="."]
+script = ExtResource("4_updater")

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dju1mgch30u17"]
+
+[ext_resource type="PackedScene" uid="uid://bwlvxpc6culbp" path="res://ui/features/activity/activities.tscn" id="1_44ow5"]
+[ext_resource type="PackedScene" uid="uid://cqf778bhb6rau" path="res://ui/features/side_bar/utility_button/utility_button_group_container.tscn" id="2_7t3nk"]
+
+[node name="Side" type="VBoxContainer" unique_id=1096975682]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Activities" type="VBoxContainer" parent="." unique_id=847665066]
+layout_mode = 2
+size_flags_vertical = 2
+alignment = 2
+
+[node name="Activities" parent="Activities" unique_id=825117967 instance=ExtResource("1_44ow5")]
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="Activities2" parent="Activities" unique_id=1511725949 instance=ExtResource("1_44ow5")]
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="Activities3" parent="Activities" unique_id=1020157427 instance=ExtResource("1_44ow5")]
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1658856559]
+layout_mode = 2
+alignment = 1
+
+[node name="UtilityButtons" parent="VBoxContainer" unique_id=120361669 instance=ExtResource("2_7t3nk")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2

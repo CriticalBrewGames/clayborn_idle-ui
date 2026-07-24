@@ -1,0 +1,101 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://fqykx7modlcd" path="res://assets/skill_icons/icon_sets/gilded_set/gilded_agility.svg" id="1_icon"]
+[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="2_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_outer"]
+bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.07450981, 0.26666668, 0.3529412, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inner"]
+bg_color = Color(0.5372549, 0.59607846, 0.61960787, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="AviationHeader" type="Panel"]
+custom_minimum_size = Vector2(0, 110)
+custom_maximum_size = Vector2(-1, 145)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_outer")
+
+[node name="MainPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 15.0
+offset_right = -12.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_inner")
+
+[node name="Margin" type="MarginContainer" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 17
+theme_override_constants/margin_bottom = 12
+
+[node name="HBox" type="HBoxContainer" parent="MainPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="MainPanel/Margin/HBox"]
+custom_minimum_size = Vector2(48, 48)
+custom_maximum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("1_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Titles" type="VBoxContainer" parent="MainPanel/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="SkillName" type="Label" parent="MainPanel/Margin/HBox/Titles"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 28
+text = "Aviation"
+
+[node name="SkillLevel" type="Label" parent="MainPanel/Margin/HBox/Titles"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 14
+text = "Level 27 · Active plane · Cloud Hopper"
+
+[node name="SpacerBtn" type="Button" parent="MainPanel/Margin/HBox"]
+custom_minimum_size = Vector2(50, 50)
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4

@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://drri0043lgerx"]
+
+[ext_resource type="Theme" uid="uid://twy1sfypoxqq" path="res://assets/theme_test.tres" id="1_y05kp"]
+[ext_resource type="StyleBox" uid="uid://d0ovkjdjkcflw" path="res://assets/theme/panels/deep_panel.tres" id="13_seli0"]
+[ext_resource type="StyleBox" uid="uid://cdu4kcaou50xo" path="res://assets/theme/panels/base_panel_highlights_with_stroke.tres" id="22_p7udw"]
+[ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="23_0oqpj"]
+[ext_resource type="PackedScene" uid="uid://deh2qaa1cvdqg" path="res://ui/features/combat/views/components/hp_bar.tscn" id="24_6dqki"]
+[ext_resource type="PackedScene" uid="uid://jn4anfdslcoj" path="res://ui/features/combat/views/components/enemy_stat.tscn" id="35_y0uud"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eju0a"]
+bg_color = Color(0.131472, 0.410388, 0.696064, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eju0a"]
+
+[node name="EnemyContainer" type="VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -342.0
+offset_right = 150.0
+offset_bottom = 342.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme = ExtResource("1_y05kp")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("22_p7udw")
+
+[node name="EnemyName" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -41.5
+offset_right = 137.0
+offset_bottom = -18.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.145098, 0.121569, 0.101961, 1)
+theme_override_fonts/font = ExtResource("23_0oqpj")
+text = "PlayerName"
+horizontal_alignment = 1
+
+[node name="EnemyHp" parent="Panel" instance=ExtResource("24_6dqki")]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 30.0
+offset_right = -10.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.637026, 0, 0.245932, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+
+[node name="EnemyMana" parent="Panel" instance=ExtResource("24_6dqki")]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 66.0
+offset_right = -11.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.637026, 0, 0.245932, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_eju0a")
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_eju0a")
+
+[node name="Panel2" type="Panel" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(0, 420)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("13_seli0")
+
+[node name="Sprite" type="TextureRect" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_eju0a")
+
+[node name="BuffContainer" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("13_seli0")
+
+[node name="HSeparator3" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_eju0a")
+
+[node name="EnemyStatsPanel" parent="." instance=ExtResource("35_y0uud")]
+layout_mode = 2
+size_flags_vertical = 3

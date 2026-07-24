@@ -1,0 +1,166 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://ui/features/aviation/widgets/map_host/map_host.tscn" id="1_map"]
+[ext_resource type="PackedScene" path="res://ui/features/aviation/widgets/cargo_inventory_host/cargo_inventory_host.tscn" id="2_cargo"]
+[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="3_font"]
+[ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="4_semibold"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.085962914, 0.14803103, 0.1962944, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_strip"]
+bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dest"]
+bg_color = Color(0.06666667, 0.12156863, 0.16470589, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="TravelPanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="MapHost" parent="Margin/VBox" instance=ExtResource("1_map")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BottomStrip" type="Panel" parent="Margin/VBox"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_strip")
+
+[node name="StripMargin" type="MarginContainer" parent="Margin/VBox/BottomStrip"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="StripRow" type="HBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="CargoColumn" type="VBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="CargoHeader" type="HBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/CargoColumn"]
+layout_mode = 2
+
+[node name="CargoTitle" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/CargoColumn/CargoHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
+theme_override_fonts/font = ExtResource("4_semibold")
+theme_override_font_sizes/font_size = 13
+text = "Cargo hold"
+
+[node name="CargoHint" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/CargoColumn/CargoHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.75, 0.78, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 11
+text = "Grid inventory · reserved"
+
+[node name="CargoInventoryHost" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/CargoColumn" instance=ExtResource("2_cargo")]
+layout_mode = 2
+
+[node name="TravelColumn" type="VBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow"]
+custom_minimum_size = Vector2(180, 0)
+custom_maximum_size = Vector2(200, 9999)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="DestTitle" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
+theme_override_fonts/font = ExtResource("4_semibold")
+theme_override_font_sizes/font_size = 13
+text = "Destination"
+
+[node name="DestinationSummary" type="Panel" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn"]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dest")
+
+[node name="DestMargin" type="MarginContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn/DestinationSummary"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="DestVBox" type="VBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn/DestinationSummary/DestMargin"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="DestName" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn/DestinationSummary/DestMargin/DestVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.84, 0.86, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 12
+text = "None selected"
+
+[node name="DestMeta" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn/DestinationSummary/DestMargin/DestVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.65, 0.68, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 11
+text = "Distance · fuel cost"
+
+[node name="TravelButton" type="Button" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+text = "Travel"

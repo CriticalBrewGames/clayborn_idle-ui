@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dckpkhfpkwq37"]
+
+[ext_resource type="PackedScene" uid="uid://d0koh2gqejhhh" path="res://ui/features/side_bar/side_bar.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" path="res://ui/features/bestiary/bestiary_template.tscn" id="2_bestiary"]
+[ext_resource type="PackedScene" uid="uid://dju1mgch30u17" path="res://side.tscn" id="2_h2yge"]
+
+[node name="Main" type="Control" unique_id=1124161793]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1468598554]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SideBarContainer" parent="HBoxContainer" unique_id=2086662701 instance=ExtResource("1_0xm2m")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.25
+
+[node name="BestiaryTemplate" parent="HBoxContainer" instance=ExtResource("2_bestiary")]
+layout_mode = 2
+
+[node name="Side" parent="HBoxContainer" unique_id=1458067840 instance=ExtResource("2_h2yge")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
