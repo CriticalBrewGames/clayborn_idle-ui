@@ -28,12 +28,16 @@ layout_mode = 2
 
 [node name="Button" parent="ButtomButtonContainer" unique_id=1172877254 instance=ExtResource("3_gyfs4")]
 layout_mode = 2
+payload = "save"
 
 [node name="Button2" parent="ButtomButtonContainer" unique_id=1199500205 instance=ExtResource("3_gyfs4")]
 layout_mode = 2
+payload = "load"
 
 [node name="Button3" parent="ButtomButtonContainer" unique_id=885552100 instance=ExtResource("3_gyfs4")]
 layout_mode = 2
+payload = "options"
 
 [node name="Button4" parent="ButtomButtonContainer" unique_id=1138267299 instance=ExtResource("3_gyfs4")]
 layout_mode = 2
+payload = "wishlist"
