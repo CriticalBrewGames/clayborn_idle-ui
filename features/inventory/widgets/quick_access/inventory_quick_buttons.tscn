@@ -1,0 +1,44 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/features/inventory/widgets/quick_access/inventory_quick_buttons.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://vgkknq51l28s" path="res://ui/features/side_bar/bottom_icons/bottom_button.tscn" id="2_button"]
+[ext_resource type="Texture2D" uid="uid://bcxooe3nkswha" path="res://assets/ui/bottom_right_icons/backpack.webp" id="3_backpack"]
+[ext_resource type="Texture2D" uid="uid://5ydiplxpqexx" path="res://assets/ui/others/equipment_button.webp" id="4_equipment"]
+[ext_resource type="Texture2D" path="res://assets/ui/combat_icons/attack_combat_stats.svg" id="5_stats"]
+[ext_resource type="Script" path="res://ui/features/inventory/widgets/quick_access/inventory_quick_buttons_ui_updater.gd" id="6_updater"]
+
+[node name="InventoryQuickButtons" type="HBoxContainer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -43.0
+offset_right = 128.0
+offset_bottom = -8.0
+grow_vertical = 0
+theme_override_constants/separation = 6
+script = ExtResource("1_script")
+
+[node name="InventoryButton" parent="." instance=ExtResource("2_button")]
+layout_mode = 2
+payload = "inventory"
+
+[node name="TextureRect" parent="InventoryButton" index="0"]
+texture = ExtResource("3_backpack")
+
+[node name="GearButton" parent="." instance=ExtResource("2_button")]
+layout_mode = 2
+payload = "gear"
+
+[node name="TextureRect" parent="GearButton" index="0"]
+texture = ExtResource("4_equipment")
+
+[node name="StatsButton" parent="." instance=ExtResource("2_button")]
+layout_mode = 2
+payload = "stats"
+
+[node name="TextureRect" parent="StatsButton" index="0"]
+texture = ExtResource("5_stats")
+
+[node name="UIUpdater" type="Node" parent="."]
+script = ExtResource("6_updater")
