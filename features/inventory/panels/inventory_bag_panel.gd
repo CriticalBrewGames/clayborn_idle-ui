@@ -1,6 +1,6 @@
 extends Control
 
-## Popup content for the player bag grid. Main mounts Wyvernbox InventoryView into the host.
+## Player bag panel for SM/MD breakpoints. Main mounts Wyvernbox InventoryView into the host.
 
 signal heal_requested(amount: int)
 

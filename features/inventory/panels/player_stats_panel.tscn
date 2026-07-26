@@ -1,6 +1,6 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://ui/features/inventory/panels/stats_popup_panel.gd" id="1_script"]
+[ext_resource type="Script" path="res://ui/features/inventory/panels/player_stats_panel.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://ui/features/inventory/widgets/stat_panel/stat_panel.tscn" id="2_stats"]
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="3_font"]
 
@@ -11,7 +11,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="StatsPopupPanel" type="Control"]
+[node name="PlayerStatsPanel" type="Control"]
 custom_minimum_size = Vector2(280, 480)
 layout_mode = 3
 anchors_preset = 15

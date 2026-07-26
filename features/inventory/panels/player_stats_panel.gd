@@ -1,6 +1,7 @@
 extends Control
 
-## Popup content for player stats on the SM breakpoint (separate from gear).
+## Standalone player stats panel for the SM breakpoint (separate from gear).
+## Main mounts this inside its own window at runtime.
 
 signal stats_looked_at(toggled: bool, data: Dictionary)
 

@@ -1,7 +1,7 @@
 extends Control
 
 ## Responsive player inventory HUD.
-## SM/MD: bottom-left quick buttons emit payloads for Main to open popup panels.
+## SM/MD: bottom-left quick buttons emit payloads for Main to route.
 ## LG+: archive-style desktop panel anchored bottom-right.
 
 signal payload_pressed(payload: String)

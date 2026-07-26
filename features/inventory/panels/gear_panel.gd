@@ -1,6 +1,6 @@
 extends Control
 
-## Popup content for player equipment. At MD breakpoint stats are shown inline below gear.
+## Player equipment panel for SM/MD breakpoints. At MD, stats are shown inline below gear.
 ## Main mounts Wyvernbox InventoryView into the equipment host.
 
 signal stats_looked_at(toggled: bool, data: Dictionary)

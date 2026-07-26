@@ -15,32 +15,17 @@ const _SAMPLE_STATS := {
 }
 
 @onready var _hud: Control = $PlayerInventoryHud
-@onready var _popup: Control = $InventoryPopupUi
+@onready var _hint: Label = $Panel/Hint
 
 
 func _ready() -> void:
-	if _hud and _hud.has_signal("payload_pressed"):
-		_hud.payload_pressed.connect(_on_hud_payload)
-	if _popup:
-		_popup.visible = false
-		_popup.set_stats(_SAMPLE_STATS)
-		_popup.set_hp(95, 120)
 	if _hud:
 		_hud.set_stats(_SAMPLE_STATS)
 		_hud.set_hp(95, 120)
+		if _hud.has_signal("payload_pressed"):
+			_hud.payload_pressed.connect(_on_hud_payload)
 
 
 func _on_hud_payload(payload: String) -> void:
-	if not _popup:
-		return
-	_popup.visible = true
-	match payload:
-		"inventory":
-			_popup.show_inventory()
-		"gear":
-			var include_stats := UiRules.current_breakpoint == BreakpointsSchemas.Breakpoint.MD
-			_popup.show_gear(include_stats)
-		"stats":
-			_popup.show_stats()
-		_:
-			pass
+	if _hint:
+		_hint.text = "Payload emitted: %s (Main handles routing)" % payload
