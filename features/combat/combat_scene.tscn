@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://daq80hna71hyl"]
 
-[ext_resource type="PackedScene" uid="uid://c2k83ben3cdlv" path="res://ui/features/combat/views/enemy_selector.tscn" id="1_5346u"]
+[ext_resource type="PackedScene" uid="uid://cgqnjxe2usdw4" path="res://ui/features/combat/views/scenes/enemy_list.tscn" id="1_enemy_list"]
 [ext_resource type="PackedScene" uid="uid://dbj86ld8dpkva" path="res://ui/features/combat/views/combat_ui.tscn" id="2_snbyo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ni18"]
@@ -12,7 +12,7 @@ corner_radius_bottom_left = 10
 shadow_color = Color(0, 0, 0, 0.32156864)
 shadow_size = 15
 
-[node name="Panel" type="Panel" unique_id=466169543]
+[node name="Panel" type="Panel"]
 custom_maximum_size = Vector2(1000, 820)
 anchors_preset = 5
 anchor_left = 0.5
@@ -24,7 +24,7 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_0ni18")
 
-[node name="CombatScene" type="VBoxContainer" parent="." unique_id=167958275]
+[node name="CombatScene" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,11 +35,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 12
 
-[node name="EnemySelector" parent="CombatScene" unique_id=1984032994 instance=ExtResource("1_5346u")]
+[node name="EnemyList" parent="CombatScene" instance=ExtResource("1_enemy_list")]
 layout_mode = 2
 size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 180)
 
-[node name="CombatUi" parent="CombatScene" unique_id=1626700648 instance=ExtResource("2_snbyo")]
+[node name="CombatUi" parent="CombatScene" instance=ExtResource("2_snbyo")]
 layout_mode = 2
 size_flags_horizontal = 1
 size_flags_vertical = 3
+
+[node name="MobDropHost" type="Control" parent="CombatScene"]
+visible = false
+layout_mode = 2
