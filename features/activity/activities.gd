@@ -26,6 +26,14 @@ func set_activity(type: String, activity_label: String, progress: float) -> void
 	activity_set.emit(type, activity_label, progress)
 
 
+func update_progress(type: String, progress: float) -> void:
+	if not _activities.has(type):
+		return
+	_activities[type]["progress"] = clampf(progress, 0.0, 1.0)
+	if _active_type == type:
+		_apply_display(type)
+
+
 func set_activity_icon(type: String, texture: Texture2D) -> void:
 	if not _activities.has(type):
 		_activities[type] = {"label": "", "progress": 0.0}

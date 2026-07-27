@@ -8,24 +8,47 @@ extends Node
 
 var _entries: Array[BestiaryEntry] = []
 var _selected_id: String = ""
+var _wired: bool = false
 
 
 func _ready() -> void:
-	_entries = BestiarySampleCatalog.build()
+	_ensure_wired()
+	## Standalone / preview: use sample catalog when Main has not injected entries yet.
 	if _entries.is_empty():
+		load_entries(BestiarySampleCatalog.build())
+
+
+func load_entries(entries: Array[BestiaryEntry]) -> void:
+	_ensure_wired()
+	_entries = entries
+	if _entries.is_empty():
+		_selected_id = ""
+		_refresh_bar()
 		return
 
-	_selected_id = _entries[0].id
+	var keep_selection := false
 	for entry in _entries:
-		if entry.is_discovered():
-			_selected_id = entry.id
+		if entry.id == _selected_id:
+			keep_selection = true
 			break
-
-	if enemy_bar and enemy_bar.has_signal("enemy_selected"):
-		enemy_bar.enemy_selected.connect(_on_enemy_selected)
+	if not keep_selection:
+		_selected_id = _entries[0].id
+		for entry in _entries:
+			if entry.is_discovered():
+				_selected_id = entry.id
+				break
 
 	_refresh_bar()
 	_bind_selected()
+
+
+func _ensure_wired() -> void:
+	if _wired:
+		return
+	if enemy_bar and enemy_bar.has_signal("enemy_selected"):
+		if not enemy_bar.enemy_selected.is_connected(_on_enemy_selected):
+			enemy_bar.enemy_selected.connect(_on_enemy_selected)
+	_wired = true
 
 
 func _refresh_bar() -> void:
