@@ -4,8 +4,8 @@ const MAXIMUM_SIZE: Vector2 = Vector2(125, 35)
 const MINIMUM_SIZE: Vector2 = Vector2(45, 45)
 
 @onready var root: Button = $".."
-@onready var label: Label = $"../Label"
-@onready var icon: TextureRect = $"../IconText"
+@onready var label: Label = $"../HBoxContainer/Label"
+@onready var icon: TextureRect = $"../HBoxContainer/IconText"
 
 
 func _update_gui_bp(new_breakpoint: BreakpointsSchemas.Breakpoint) -> void:
