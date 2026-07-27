@@ -138,8 +138,8 @@ static func build() -> Array[BestiaryEntry]:
 
 	entries.append(
 		_entry(
-			"mine_rat",
-			"Mine Rat",
+			"cave_rat",
+			"Cave Rat",
 			1,
 			"Copper Depths",
 			"Skirmisher",

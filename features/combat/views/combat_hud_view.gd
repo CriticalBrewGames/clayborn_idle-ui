@@ -8,6 +8,9 @@ signal defensive_style_selected(style: int)
 
 const _DamageNumberScene = preload("res://ui/features/combat/views/components/damage_number.tscn")
 
+var _offensive_grid: Node
+var _defensive_grid: Node
+
 
 func _resolve_layout() -> void:
 	if layout_profile == null:
@@ -16,6 +19,36 @@ func _resolve_layout() -> void:
 
 func bind_layout(profile: CombatLayoutProfile) -> void:
 	layout_profile = profile
+
+
+func bind_style_grids(offensive_grid: Node, defensive_grid: Node) -> void:
+	if _offensive_grid and _offensive_grid.has_signal("style_selected") and _offensive_grid.style_selected.is_connected(_on_offensive_style_selected):
+		_offensive_grid.style_selected.disconnect(_on_offensive_style_selected)
+	if _defensive_grid and _defensive_grid.has_signal("style_selected") and _defensive_grid.style_selected.is_connected(_on_defensive_style_selected):
+		_defensive_grid.style_selected.disconnect(_on_defensive_style_selected)
+
+	_offensive_grid = offensive_grid
+	_defensive_grid = defensive_grid
+
+	if _offensive_grid and _offensive_grid.has_signal("style_selected") and not _offensive_grid.style_selected.is_connected(_on_offensive_style_selected):
+		_offensive_grid.style_selected.connect(_on_offensive_style_selected)
+	if _defensive_grid and _defensive_grid.has_signal("style_selected") and not _defensive_grid.style_selected.is_connected(_on_defensive_style_selected):
+		_defensive_grid.style_selected.connect(_on_defensive_style_selected)
+
+
+func select_styles(offensive_payload: int, defensive_payload: int) -> void:
+	if _offensive_grid and _offensive_grid.has_method("select_button_by_payload"):
+		_offensive_grid.select_button_by_payload(offensive_payload)
+	if _defensive_grid and _defensive_grid.has_method("select_button_by_payload"):
+		_defensive_grid.select_button_by_payload(defensive_payload)
+
+
+func _on_offensive_style_selected(payload: int) -> void:
+	offensive_style_selected.emit(payload)
+
+
+func _on_defensive_style_selected(payload: int) -> void:
+	defensive_style_selected.emit(payload)
 
 
 func set_player_hp(current: int, max_hp: int, reset: bool = false) -> void:
@@ -93,9 +126,8 @@ func set_enemy_display(
 		layout_profile.enemy_sprite.texture = sprite
 	if layout_profile.enemy_name:
 		layout_profile.enemy_name.text = enemy_name
-	if layout_profile.enemy_stats_panel:
-		pass
-		#layout_profile.enemy_stats_panel.update_panel(stats, attack_style, defense_style)
+	if layout_profile.enemy_stats_panel and layout_profile.enemy_stats_panel.has_method("update_panel"):
+		layout_profile.enemy_stats_panel.update_panel(stats, attack_style, defense_style)
 
 
 func hide_enemy() -> void:
