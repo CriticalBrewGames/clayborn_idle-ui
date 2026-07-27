@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="4_ceym7"]
 [ext_resource type="Texture2D" uid="uid://c6vxyfx51agia" path="res://assets/skill_icons/icon_sets/gilded_set/gilded_mining.svg" id="5_0aesq"]
 [ext_resource type="Script" uid="uid://ctadpca0nrokw" path="res://ui/features/side_bar/utility_button/utility_button_ui_updater.gd" id="6_ou4hq"]
-[ext_resource type="Script" path="res://ui/features/side_bar/utility_button/utility_button.gd" id="7_payload"]
+[ext_resource type="Script" uid="uid://ccb7c5mrgoylr" path="res://ui/features/side_bar/utility_button/utility_button.gd" id="7_payload"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_smqfi"]
 
@@ -30,40 +30,32 @@ theme_override_styles/hover = ExtResource("3_pbddq")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_smqfi")
 script = ExtResource("7_payload")
 
-[node name="Label" type="Label" parent="." unique_id=336181333]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=257239526]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -11.5
-offset_right = -6.0
-offset_bottom = 11.5
-grow_horizontal = 0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.5
+offset_right = -3.0
+offset_bottom = -3.5
+grow_horizontal = 2
 grow_vertical = 2
+
+[node name="IconText" type="TextureRect" parent="HBoxContainer" unique_id=190233695]
+custom_minimum_size = Vector2(28, 28)
+custom_maximum_size = Vector2(28, 28)
+layout_mode = 2
+texture = ExtResource("5_0aesq")
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=336181333]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_ceym7")
 theme_override_font_sizes/font_size = 13
 text = "Achievements"
-horizontal_alignment = 2
 vertical_alignment = 1
-
-[node name="IconText" type="TextureRect" parent="." unique_id=190233695]
-custom_minimum_size = Vector2(28, 28)
-custom_maximum_size = Vector2(28, 28)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 4.0
-offset_top = -7.5
-offset_right = 19.0
-offset_bottom = 7.5
-grow_vertical = 2
-texture = ExtResource("5_0aesq")
 
 [node name="UIUpdater" type="Node" parent="." unique_id=710266844]
 script = ExtResource("6_ou4hq")
