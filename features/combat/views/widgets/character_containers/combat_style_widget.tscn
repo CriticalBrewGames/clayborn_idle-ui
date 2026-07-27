@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbh1vmvqxr76m"]
+[gd_scene load_steps=6 format=3 uid="uid://cbh1vmvqxr76m"]
 
 [ext_resource type="StyleBox" uid="uid://d0ovkjdjkcflw" path="res://assets/theme/panels/deep_panel.tres" id="1_buijt"]
 [ext_resource type="StyleBox" uid="uid://cdu4kcaou50xo" path="res://assets/theme/panels/base_panel_highlights_with_stroke.tres" id="2_7wtiy"]
 [ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="2_ve4xv"]
 [ext_resource type="PackedScene" uid="uid://cscv4bjp20n30" path="res://ui/features/combat/views/components/combat_style_button.tscn" id="3_7wtiy"]
+[ext_resource type="Script" path="res://ui/features/combat/views/widgets/style_button_grid.gd" id="4_style_grid"]
 
 [node name="CombatStyleWidget" type="Panel"]
 anchors_preset = 8
@@ -57,11 +58,33 @@ horizontal_alignment = 1
 [node name="Offensive" type="HBoxContainer" parent="Panel/CombatStyleGrid"]
 layout_mode = 2
 alignment = 1
+script = ExtResource("4_style_grid")
 
 [node name="AttackStyle" parent="Panel/CombatStyleGrid/Offensive" instance=ExtResource("3_7wtiy")]
 layout_mode = 2
-script = null
+size_flags_horizontal = 3
+attack_type = 0
+payload = 1
 
-[node name="DefenseStyle" parent="Panel/CombatStyleGrid/Offensive" instance=ExtResource("3_7wtiy")]
+[node name="StrengthStyle" parent="Panel/CombatStyleGrid/Offensive" instance=ExtResource("3_7wtiy")]
 layout_mode = 2
-script = null
+size_flags_horizontal = 3
+attack_type = 1
+payload = 0
+
+[node name="Defensive" type="HBoxContainer" parent="Panel/CombatStyleGrid"]
+layout_mode = 2
+alignment = 1
+script = ExtResource("4_style_grid")
+
+[node name="DefenceStyle" parent="Panel/CombatStyleGrid/Defensive" instance=ExtResource("3_7wtiy")]
+layout_mode = 2
+size_flags_horizontal = 3
+attack_type = 2
+payload = 0
+
+[node name="AgilityStyle" parent="Panel/CombatStyleGrid/Defensive" instance=ExtResource("3_7wtiy")]
+layout_mode = 2
+size_flags_horizontal = 3
+attack_type = 3
+payload = 1

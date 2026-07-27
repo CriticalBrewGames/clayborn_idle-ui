@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://tc3lktancd5q" path="res://ui/features/combat/views/widgets/character_containers/name_plate.tscn" id="1_dyx26"]
 [ext_resource type="Theme" uid="uid://twy1sfypoxqq" path="res://assets/theme_test.tres" id="4_fufcb"]
-[ext_resource type="Shader" uid="uid://b8l3pjhsfavnt" path="res://player_shader.gdshader" id="5_gengt"]
+[ext_resource type="Shader" uid="uid://b8l3pjhsfavnt" path="res://ui/features/combat/views/widgets/character_containers/player_shader.gdshader" id="5_gengt"]
 [ext_resource type="Texture2D" uid="uid://cujlex4gy1yrs" path="res://assets/player_combat_arts/begineer_zoltan.png" id="6_jow45"]
 [ext_resource type="PackedScene" uid="uid://cbh1vmvqxr76m" path="res://ui/features/combat/views/widgets/character_containers/combat_style_widget.tscn" id="7_b5f1e"]
 [ext_resource type="Script" uid="uid://dws04k576ptf7" path="res://ui/features/combat/views/widgets/character_containers/ui_updater.gd" id="8_fufcb"]
