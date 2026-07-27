@@ -81,10 +81,14 @@ func set_enemy_display(
 	_resolve_layout()
 	if layout_profile == null:
 		return
-	layout_profile.enemy_container.visible = true
+	if layout_profile.enemy_container:
+		layout_profile.enemy_container.visible = true
 	if layout_profile.enemy_attack_type:
 		layout_profile.enemy_attack_type.visible = true
-		layout_profile.enemy_attack_type.set_type(attack_style)
+		if layout_profile.enemy_attack_type.has_method("set_type_from_int"):
+			layout_profile.enemy_attack_type.set_type_from_int(int(attack_style))
+		elif layout_profile.enemy_attack_type.has_method("set_type"):
+			layout_profile.enemy_attack_type.set_type(attack_style)
 	if layout_profile.enemy_sprite:
 		layout_profile.enemy_sprite.texture = sprite
 	if layout_profile.enemy_name:

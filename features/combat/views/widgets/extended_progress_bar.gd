@@ -28,6 +28,7 @@ var time_left: float:
 func _ready() -> void:
 	label_refresh.timeout.connect(_on_label_refresh_timer_timeout)
 	process_timer.timeout.connect(_on_process_timer_timeout)
+	process_timer.one_shot = true
 
 
 func _re_evaluate_process_time(new_time: float) -> void:

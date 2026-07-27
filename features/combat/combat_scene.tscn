@@ -44,3 +44,7 @@ custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
 size_flags_horizontal = 1
 size_flags_vertical = 3
+
+[node name="MobDropHost" type="Control" parent="CombatScene"]
+visible = false
+layout_mode = 2
