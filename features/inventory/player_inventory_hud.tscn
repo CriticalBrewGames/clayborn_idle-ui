@@ -1,11 +1,11 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://blnlm6613vb32"]
 
-[ext_resource type="Script" path="res://ui/features/inventory/player_inventory_hud.gd" id="1_script"]
-[ext_resource type="PackedScene" path="res://ui/features/inventory/widgets/quick_access/inventory_quick_buttons.tscn" id="2_quick"]
-[ext_resource type="PackedScene" path="res://ui/features/inventory/player_inventory_panel.tscn" id="3_desktop"]
-[ext_resource type="Script" path="res://ui/features/inventory/player_inventory_hud_ui_updater.gd" id="4_updater"]
+[ext_resource type="Script" uid="uid://c5otdpcllujcc" path="res://ui/features/inventory/player_inventory_hud.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://53dwuwwbn0qb" path="res://ui/features/inventory/widgets/quick_access/inventory_quick_buttons.tscn" id="2_quick"]
+[ext_resource type="PackedScene" uid="uid://2upqnpd2ya6n" path="res://ui/features/inventory/player_inventory_panel.tscn" id="3_desktop"]
+[ext_resource type="Script" uid="uid://cggpsog3xftk8" path="res://ui/features/inventory/player_inventory_hud_ui_updater.gd" id="4_updater"]
 
-[node name="PlayerInventoryHud" type="Control"]
+[node name="PlayerInventoryHud" type="Control" unique_id=472996807]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,12 +15,12 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_script")
 
-[node name="QuickAccessButtons" parent="." instance=ExtResource("2_quick")]
+[node name="QuickAccessButtons" parent="." unique_id=617150935 instance=ExtResource("2_quick")]
 layout_mode = 1
 
-[node name="DesktopPanel" parent="." instance=ExtResource("3_desktop")]
+[node name="DesktopPanel" parent="." unique_id=74737615 instance=ExtResource("3_desktop")]
 visible = false
 layout_mode = 1
 
-[node name="UIUpdater" type="Node" parent="."]
+[node name="UIUpdater" type="Node" parent="." unique_id=471302238]
 script = ExtResource("4_updater")

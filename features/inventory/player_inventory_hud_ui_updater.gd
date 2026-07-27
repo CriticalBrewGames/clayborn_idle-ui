@@ -6,7 +6,7 @@ extends UIUpdaterBreakpoint
 
 func _update_gui_bp(new_breakpoint: BreakpointsSchemas.Breakpoint) -> void:
 	match new_breakpoint:
-		BreakpointsSchemas.Breakpoint.SM, BreakpointsSchemas.Breakpoint.MD:
+		BreakpointsSchemas.Breakpoint.SM, BreakpointsSchemas.Breakpoint.MD, BreakpointsSchemas.Breakpoint.LG:
 			if _quick_buttons:
 				_quick_buttons.visible = true
 			if _desktop_panel:
