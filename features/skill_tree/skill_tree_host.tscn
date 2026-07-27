@@ -1,32 +1,30 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cyekfdvjuaeu8"]
 
-[ext_resource type="Script" path="res://ui/features/skill_tree/skill_tree_host.gd" id="1_host"]
-[ext_resource type="Script" path="res://ui/features/skill_tree/scripts/skill_tree.gd" id="2_tree"]
-[ext_resource type="PackedScene" path="res://ui/features/skill_tree/scenes/skill_node.tscn" id="3_node"]
-[ext_resource type="Script" path="res://ui/features/skill_tree/scripts/camera/camera_script.gd" id="4_cam"]
+[ext_resource type="Script" uid="uid://diw3mnmacf6qn" path="res://ui/features/skill_tree/skill_tree_host.gd" id="1_host"]
+[ext_resource type="Script" uid="uid://dcbnuuvupnvta" path="res://ui/features/skill_tree/scripts/skill_tree.gd" id="2_tree"]
+[ext_resource type="PackedScene" uid="uid://duxvjcvc3eekf" path="res://ui/features/skill_tree/scenes/skill_node.tscn" id="3_node"]
+[ext_resource type="Script" uid="uid://ddriugueqtted" path="res://ui/features/skill_tree/scripts/camera/camera_script.gd" id="4_cam"]
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="5_font"]
 
-[node name="SkillTreeHost" type="Node2D"]
+[node name="SkillTreeHost" type="Node2D" unique_id=848963119]
 script = ExtResource("1_host")
 tree_name = "skill_tree"
-skill_tree_path = NodePath("SkillTree")
 skill_points_label_path = NodePath("UILayer/SkillPointsLabel")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=676901660]
 script = ExtResource("4_cam")
 camera_bounds = Array[Vector2]([Vector2(-800, -600), Vector2(800, 600)])
 
-[node name="SkillTree" type="Node2D" parent="." node_paths=PackedStringArray("root_node")]
+[node name="SkillTree" type="Node2D" parent="." unique_id=2070256018 node_paths=PackedStringArray("root_node")]
 script = ExtResource("2_tree")
 root_node = NodePath("Root")
 
-[node name="Root" parent="SkillTree" instance=ExtResource("3_node")]
-node_state = 0
+[node name="Root" parent="SkillTree" unique_id=1793086060 instance=ExtResource("3_node")]
 id = 0
 
-[node name="UILayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=864425755]
 
-[node name="SkillPointsLabel" type="Label" parent="UILayer"]
+[node name="SkillPointsLabel" type="Label" parent="UILayer" unique_id=106564181]
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 220.0

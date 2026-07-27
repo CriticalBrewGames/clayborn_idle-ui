@@ -26,7 +26,7 @@ static var _EMPTY_STYLE: StyleBoxEmpty = StyleBoxEmpty.new()
 		_update_placeholder()
 
 
-var injected_inventory: Control
+var injected_inventory: InventoryView
 
 
 func _ready() -> void:
@@ -49,7 +49,7 @@ func _update_placeholder() -> void:
 	placeholder_label.text = "%s\n%s" % [template_name, type_text]
 
 
-func inject_invetory(inventory: Control) -> void:
+func inject_invetory(inventory: InventoryView) -> void:
 	injected_inventory = inventory
 	placeholder_label.visible = false
 	
