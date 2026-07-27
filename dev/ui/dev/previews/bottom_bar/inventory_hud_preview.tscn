@@ -1,11 +1,11 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cwc3oj3kedg47"]
 
 [ext_resource type="StyleBox" uid="uid://ddapcmqajhcs2" path="res://assets/ui/default_panel_without_softshadow.tres" id="1_bg"]
 [ext_resource type="Texture2D" uid="uid://k6fkfdqyfnwg" path="res://assets/ui/button/bg/clay.webp" id="2_clay"]
 [ext_resource type="PackedScene" path="res://ui/features/inventory/player_inventory_hud.tscn" id="3_hud"]
-[ext_resource type="Script" path="res://ui/features/inventory/scenes/inventory_hud_preview.gd" id="4_script"]
+[ext_resource type="Script" uid="uid://d187hg4erl14v" path="res://ui/dev/previews/bottom_bar/inventory_hud_preview.gd" id="4_script"]
 
-[node name="InventoryHudPreview" type="Control"]
+[node name="InventoryHudPreview" type="Control" unique_id=1715673587]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_script")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=545239494]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("1_bg")
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1874352993]
 modulate = Color(0.0823529, 0.207843, 0.34902, 0.329412)
 layout_mode = 1
 anchors_preset = 15
@@ -36,7 +36,7 @@ texture = ExtResource("2_clay")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Hint" type="Label" parent="Panel"]
+[node name="Hint" type="Label" parent="Panel" unique_id=1547375141]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -50,10 +50,5 @@ theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 text = "Resize viewport: SM/MD = quick buttons · LG+ = desktop panel"
 horizontal_alignment = 1
 
-[node name="PlayerInventoryHud" parent="." instance=ExtResource("3_hud")]
+[node name="PlayerInventoryHud" parent="." unique_id=1605838538 instance=ExtResource("3_hud")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
