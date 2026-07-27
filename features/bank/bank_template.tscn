@@ -1,7 +1,7 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://d0vhqjvlkmcp8"]
 
 [ext_resource type="PackedScene" path="res://ui/features/bank/widgets/bank_header/bank_header.tscn" id="1_header"]
-[ext_resource type="PackedScene" path="res://ui/features/bank/widgets/bank_inventory_host/bank_inventory_host.tscn" id="2_inventory"]
+[ext_resource type="PackedScene" uid="uid://dbhl3ltdvox7u" path="res://ui/features/utils/wyvenbox_template/wyvenbox_template.tscn" id="2_pg575"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shell"]
 bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
@@ -25,7 +25,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="BankTemplate" type="Panel"]
+[node name="BankTemplate" type="Panel" unique_id=839717232]
 custom_minimum_size = Vector2(0, 720)
 custom_maximum_size = Vector2(1000, 820)
 anchors_preset = 5
@@ -39,7 +39,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_shell")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=704953858]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,17 +52,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="BankHeader" parent="VBoxContainer" instance=ExtResource("1_header")]
+[node name="BankHeader" parent="VBoxContainer" unique_id=1783008119 instance=ExtResource("1_header")]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="BankBody" type="Panel" parent="VBoxContainer"]
+[node name="BankBody" type="Panel" parent="VBoxContainer" unique_id=1452695115]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_body")
 
-[node name="Margin" type="MarginContainer" parent="VBoxContainer/BankBody"]
+[node name="Margin" type="MarginContainer" parent="VBoxContainer/BankBody" unique_id=620137020]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,13 +74,13 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/BankBody/Margin"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/BankBody/Margin" unique_id=1310789783]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="BankInventoryHost" parent="VBoxContainer/BankBody/Margin/ScrollContainer" instance=ExtResource("2_inventory")]
+[node name="BankInventoryHost" parent="VBoxContainer/BankBody/Margin/ScrollContainer" unique_id=589318067 instance=ExtResource("2_pg575")]
+custom_minimum_size = Vector2(448, 480)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+template_name = "Bank Inventory Grid"

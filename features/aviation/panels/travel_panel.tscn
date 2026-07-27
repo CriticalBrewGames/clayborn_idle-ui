@@ -1,8 +1,8 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://uu311qg3wcap"]
 
 [ext_resource type="PackedScene" path="res://ui/features/aviation/widgets/map_host/map_host.tscn" id="1_map"]
-[ext_resource type="PackedScene" path="res://ui/features/aviation/widgets/cargo_inventory_host/cargo_inventory_host.tscn" id="2_cargo"]
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="3_font"]
+[ext_resource type="PackedScene" uid="uid://dbhl3ltdvox7u" path="res://ui/features/utils/wyvenbox_template/wyvenbox_template.tscn" id="4_ex55x"]
 [ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="4_semibold"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
@@ -32,7 +32,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="TravelPanel" type="Panel"]
+[node name="TravelPanel" type="Panel" unique_id=1142123970]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -42,7 +42,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="Margin" type="MarginContainer" parent="."]
+[node name="Margin" type="MarginContainer" parent="." unique_id=829941455]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,21 +54,20 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="VBox" type="VBoxContainer" parent="Margin"]
+[node name="VBox" type="VBoxContainer" parent="Margin" unique_id=1265784395]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="MapHost" parent="Margin/VBox" instance=ExtResource("1_map")]
+[node name="MapHost" parent="Margin/VBox" unique_id=676853812 instance=ExtResource("1_map")]
 layout_mode = 2
-size_flags_vertical = 3
 
-[node name="BottomStrip" type="Panel" parent="Margin/VBox"]
+[node name="BottomStrip" type="Panel" parent="Margin/VBox" unique_id=1944401290]
 custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_strip")
 
-[node name="StripMargin" type="MarginContainer" parent="Margin/VBox/BottomStrip"]
+[node name="StripMargin" type="MarginContainer" parent="Margin/VBox/BottomStrip" unique_id=2128566551]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,19 +79,19 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 10
 
-[node name="StripRow" type="HBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin"]
+[node name="StripRow" type="HBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin" unique_id=354801310]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="CargoColumn" type="VBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow"]
+[node name="CargoColumn" type="VBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow" unique_id=966697626]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 6
 
-[node name="CargoHeader" type="HBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/CargoColumn"]
+[node name="CargoHeader" type="HBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/CargoColumn" unique_id=585410646]
 layout_mode = 2
 
-[node name="CargoTitle" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/CargoColumn/CargoHeader"]
+[node name="CargoTitle" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/CargoColumn/CargoHeader" unique_id=400068875]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
@@ -100,36 +99,32 @@ theme_override_fonts/font = ExtResource("4_semibold")
 theme_override_font_sizes/font_size = 13
 text = "Cargo hold"
 
-[node name="CargoHint" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/CargoColumn/CargoHeader"]
+[node name="CargoHost" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/CargoColumn" unique_id=589318067 instance=ExtResource("4_ex55x")]
+custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.75, 0.78, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 11
-text = "Grid inventory · reserved"
+template_name = "Cargo Inventory Grid"
+inventory_size = Vector2i(0, 0)
 
-[node name="CargoInventoryHost" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/CargoColumn" instance=ExtResource("2_cargo")]
-layout_mode = 2
-
-[node name="TravelColumn" type="VBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow"]
+[node name="TravelColumn" type="VBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow" unique_id=519601216]
 custom_minimum_size = Vector2(180, 0)
 custom_maximum_size = Vector2(200, 9999)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 8
 
-[node name="DestTitle" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn"]
+[node name="DestTitle" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn" unique_id=1800476871]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("4_semibold")
 theme_override_font_sizes/font_size = 13
 text = "Destination"
 
-[node name="DestinationSummary" type="Panel" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn"]
+[node name="DestinationSummary" type="Panel" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn" unique_id=306364623]
 custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dest")
 
-[node name="DestMargin" type="MarginContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn/DestinationSummary"]
+[node name="DestMargin" type="MarginContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn/DestinationSummary" unique_id=439807235]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -141,25 +136,25 @@ theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 6
 
-[node name="DestVBox" type="VBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn/DestinationSummary/DestMargin"]
+[node name="DestVBox" type="VBoxContainer" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn/DestinationSummary/DestMargin" unique_id=715859876]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="DestName" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn/DestinationSummary/DestMargin/DestVBox"]
+[node name="DestName" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn/DestinationSummary/DestMargin/DestVBox" unique_id=612850518]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8, 0.84, 0.86, 1)
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 12
 text = "None selected"
 
-[node name="DestMeta" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn/DestinationSummary/DestMargin/DestVBox"]
+[node name="DestMeta" type="Label" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn/DestinationSummary/DestMargin/DestVBox" unique_id=1854092177]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6, 0.65, 0.68, 1)
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 11
 text = "Distance · fuel cost"
 
-[node name="TravelButton" type="Button" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn"]
+[node name="TravelButton" type="Button" parent="Margin/VBox/BottomStrip/StripMargin/StripRow/TravelColumn" unique_id=1025371955]
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")

@@ -1,21 +1,18 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://2upqnpd2ya6n"]
 
-[ext_resource type="Script" path="res://ui/features/inventory/player_inventory_panel.gd" id="1_script"]
-[ext_resource type="PackedScene" path="res://ui/features/inventory/widgets/bag_inventory_host/bag_inventory_host.tscn" id="2_bag"]
-[ext_resource type="PackedScene" path="res://ui/features/inventory/widgets/equipment_slots_host/equipment_slots_host.tscn" id="3_equip"]
+[ext_resource type="Script" uid="uid://du4byxw1a8yue" path="res://ui/features/inventory/player_inventory_panel.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://ui/features/inventory/widgets/effect_icon/effect_icons_host.tscn" id="4_effects"]
 [ext_resource type="PackedScene" path="res://ui/features/inventory/widgets/stat_panel/stat_panel.tscn" id="5_stats"]
-[ext_resource type="Script" path="res://ui/features/inventory/widgets/stat_panel/stat_button.gd" id="6_statbtn"]
-[ext_resource type="Script" path="res://ui/features/inventory/widgets/stat_panel/stats_animator.gd" id="7_anim"]
-[ext_resource type="PackedScene" path="res://ui/features/combat/views/components/hp_bar.tscn" id="8_hp"]
+[ext_resource type="PackedScene" uid="uid://dbhl3ltdvox7u" path="res://ui/features/utils/wyvenbox_template/wyvenbox_template.tscn" id="6_2m7h1"]
+[ext_resource type="Script" uid="uid://dtw4edgrexh0q" path="res://ui/features/inventory/widgets/stat_panel/stat_button.gd" id="6_statbtn"]
+[ext_resource type="Script" uid="uid://btnrunxah38gb" path="res://ui/features/inventory/widgets/stat_panel/stats_animator.gd" id="7_anim"]
+[ext_resource type="PackedScene" uid="uid://deh2qaa1cvdqg" path="res://ui/features/combat/views/components/hp_bar.tscn" id="8_hp"]
 [ext_resource type="StyleBox" uid="uid://dbujs0fxvutpm" path="res://assets/theme/inventory_background.tres" id="9_bg"]
 [ext_resource type="StyleBox" uid="uid://7borivr1yme6" path="res://assets/ui/orange_button_hover.tres" id="10_hover"]
 [ext_resource type="StyleBox" uid="uid://2w2q7858qctc" path="res://assets/ui/orange_button_pressed.tres" id="11_pressed"]
 [ext_resource type="StyleBox" uid="uid://b6qu4yffylup7" path="res://assets/ui/orange_button_base.tres" id="12_base"]
 [ext_resource type="FontFile" uid="uid://dy6m0urder1re" path="res://assets/font/fredoka/Fredoka-Bold.ttf" id="13_bold"]
 [ext_resource type="PackedScene" path="res://ui/features/tooltip/tooltip.tscn" id="14_tip"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bag_wrap"]
 bg_color = Color(0.105882, 0.176471, 0.231373, 1)
@@ -27,7 +24,9 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="PlayerInventoryPanel" type="Control"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
+
+[node name="PlayerInventoryPanel" type="Control" unique_id=1637201688]
 layout_mode = 3
 anchors_preset = 3
 anchor_left = 1.0
@@ -40,15 +39,12 @@ grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("1_script")
 
-[node name="EffectIconsHost" parent="." instance=ExtResource("4_effects")]
+[node name="EffectIconsHost" parent="." unique_id=1332942470 instance=ExtResource("4_effects")]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
 offset_top = -40.0
-offset_bottom = 0.0
 grow_horizontal = 2
 
-[node name="StatMenu" type="Control" parent="."]
+[node name="StatMenu" type="Control" parent="." unique_id=2037833170]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,27 +54,24 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("7_anim")
 
-[node name="Control" type="Control" parent="StatMenu"]
-layout_mode = 0
-offset_left = 0.0
+[node name="Control" type="Control" parent="StatMenu" unique_id=1739054934]
+anchors_preset = 0
 offset_top = 40.0
 offset_right = 40.0
 offset_bottom = 80.0
 
-[node name="StatPanel" parent="StatMenu/Control" instance=ExtResource("5_stats")]
+[node name="StatPanel" parent="StatMenu/Control" unique_id=1951879653 instance=ExtResource("5_stats")]
 layout_mode = 0
 offset_left = -260.0
-offset_top = 0.0
 offset_right = -14.0
 offset_bottom = 464.0
 
-[node name="Button" type="Button" parent="StatMenu/Control"]
-visible = false
+[node name="Button" type="Button" parent="StatMenu/Control" unique_id=1191081789]
 layout_mode = 0
 offset_right = 30.0
 offset_bottom = 30.0
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1735879234]
 clip_children = 2
 layout_mode = 1
 anchors_preset = 15
@@ -89,52 +82,57 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("9_bg")
 
-[node name="EquipmentHost" parent="Panel" instance=ExtResource("3_equip")]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1429555378]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -208.0
-offset_top = 8.0
-offset_right = 208.0
-offset_bottom = 313.0
-grow_horizontal = 2
-
-[node name="BagWrap" type="Panel" parent="Panel"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 324.0
-offset_right = 326.0
-offset_bottom = 604.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_bag_wrap")
-
-[node name="BagHost" parent="Panel/BagWrap" instance=ExtResource("2_bag")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -153.0
-offset_top = -136.0
-offset_right = 153.0
-offset_bottom = 136.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 15.0
+offset_right = -14.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 13
 
-[node name="StatToggle" type="Button" parent="Panel"]
+[node name="EquipmentHost" parent="Panel/VBoxContainer" unique_id=589318067 instance=ExtResource("6_2m7h1")]
+layout_mode = 2
+template_name = "Equipment Inventory"
+inventory_type = 1
+
+[node name="PlayerHp" parent="Panel/VBoxContainer" unique_id=294311437 instance=ExtResource("8_hp")]
+custom_maximum_size = Vector2(-1, 5)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BagWrap" type="Panel" parent="Panel/VBoxContainer" unique_id=1094118446]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_bag_wrap")
+
+[node name="WyvenboxTemplate" parent="Panel/VBoxContainer/BagWrap" unique_id=270009430 instance=ExtResource("6_2m7h1")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+template_name = "Player Bag"
+inventory_size = Vector2i(9, 8)
+
+[node name="StatToggle" type="Button" parent="Panel" unique_id=1595646302]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 24.0
 offset_right = 59.0
 offset_bottom = 54.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
-theme_override_styles/hover = ExtResource("10_hover")
-theme_override_styles/pressed = ExtResource("11_pressed")
 theme_override_styles/normal = ExtResource("12_base")
+theme_override_styles/pressed = ExtResource("11_pressed")
+theme_override_styles/hover = ExtResource("10_hover")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
 script = ExtResource("6_statbtn")
 
-[node name="Label" type="Label" parent="Panel/StatToggle" groups=["scalable_text"]]
+[node name="Label" type="Label" parent="Panel/StatToggle" unique_id=398298796 groups=["scalable_text"]]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -155,21 +153,7 @@ text = "<"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayerHp" parent="Panel" instance=ExtResource("8_hp")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = 3.0
-offset_right = 151.0
-offset_bottom = 7.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Tooltip" parent="." instance=ExtResource("14_tip")]
+[node name="Tooltip" parent="." unique_id=608278408 instance=ExtResource("14_tip")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -178,6 +162,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -44.0
 offset_top = -28.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 0
 offset = Vector2(-15, -50)

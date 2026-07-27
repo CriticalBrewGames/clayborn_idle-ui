@@ -1,9 +1,9 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dj5ljfjpbu2tu"]
 
-[ext_resource type="Script" path="res://ui/features/inventory/panels/inventory_bag_panel.gd" id="1_script"]
-[ext_resource type="PackedScene" path="res://ui/features/inventory/widgets/bag_inventory_host/bag_inventory_host.tscn" id="2_bag"]
+[ext_resource type="Script" uid="uid://8v566hri3e44" path="res://ui/features/inventory/panels/inventory_bag_panel.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://ui/features/inventory/widgets/effect_icon/effect_icons_host.tscn" id="3_effects"]
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="4_font"]
+[ext_resource type="PackedScene" uid="uid://dbhl3ltdvox7u" path="res://ui/features/utils/wyvenbox_template/wyvenbox_template.tscn" id="4_jvfpq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shell"]
 bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
@@ -12,19 +12,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_body"]
-bg_color = Color(0.06666667, 0.12156863, 0.16470589, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[node name="InventoryBagPanel" type="Control"]
+[node name="InventoryBagPanel" type="Control" unique_id=1472359377]
 custom_minimum_size = Vector2(340, 360)
 layout_mode = 3
 anchors_preset = 15
@@ -34,14 +22,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="EffectIconsHost" parent="." instance=ExtResource("3_effects")]
+[node name="EffectIconsHost" parent="." unique_id=2024967193 instance=ExtResource("3_effects")]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
 offset_bottom = 40.0
 grow_horizontal = 2
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1315019535]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,7 +37,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_shell")
 
-[node name="Title" type="Label" parent="Panel"]
+[node name="Title" type="Label" parent="Panel" unique_id=1299329639]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 8.0
@@ -62,7 +48,8 @@ theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 14
 text = "Inventory"
 
-[node name="BagHost" parent="Panel" instance=ExtResource("2_bag")]
+[node name="BagHost" parent="Panel" unique_id=589318067 instance=ExtResource("4_jvfpq")]
+custom_minimum_size = Vector2(306, 272)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -75,4 +62,5 @@ offset_right = 153.0
 offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_body")
+template_name = "Bag Grid"
+inventory_size = Vector2i(9, 8)
