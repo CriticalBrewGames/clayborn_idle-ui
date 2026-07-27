@@ -1,9 +1,9 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dqplpp41f73l8"]
 
-[ext_resource type="Script" path="res://ui/features/inventory/panels/gear_panel.gd" id="1_script"]
-[ext_resource type="PackedScene" path="res://ui/features/inventory/widgets/equipment_slots_host/equipment_slots_host.tscn" id="2_equip"]
+[ext_resource type="Script" uid="uid://dfovnq8niii1w" path="res://ui/features/inventory/panels/gear_panel.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://ui/features/inventory/widgets/stat_panel/stat_panel.tscn" id="3_stats"]
-[ext_resource type="PackedScene" path="res://ui/features/combat/views/components/hp_bar.tscn" id="4_hp"]
+[ext_resource type="PackedScene" uid="uid://deh2qaa1cvdqg" path="res://ui/features/combat/views/components/hp_bar.tscn" id="4_hp"]
+[ext_resource type="PackedScene" uid="uid://dbhl3ltdvox7u" path="res://ui/features/utils/wyvenbox_template/wyvenbox_template.tscn" id="4_k3kre"]
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="5_font"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shell"]
@@ -13,7 +13,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="GearPanel" type="Control"]
+[node name="GearPanel" type="Control" unique_id=604250301]
 custom_minimum_size = Vector2(340, 520)
 layout_mode = 3
 anchors_preset = 15
@@ -23,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1749922880]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_shell")
 
-[node name="Title" type="Label" parent="Panel"]
+[node name="Title" type="Label" parent="Panel" unique_id=659879695]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 8.0
@@ -43,7 +43,7 @@ theme_override_fonts/font = ExtResource("5_font")
 theme_override_font_sizes/font_size = 14
 text = "Equipment"
 
-[node name="VBox" type="VBoxContainer" parent="Panel"]
+[node name="VBox" type="VBoxContainer" parent="Panel" unique_id=1416955791]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,34 +56,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
 
-[node name="HpRow" type="CenterContainer" parent="Panel/VBox"]
+[node name="HpRow" type="CenterContainer" parent="Panel/VBox" unique_id=713293618]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="PlayerHp" parent="Panel/VBox/HpRow" instance=ExtResource("4_hp")]
-layout_mode = 2
+[node name="PlayerHp" parent="Panel/VBox/HpRow" unique_id=162262033 instance=ExtResource("4_hp")]
 custom_minimum_size = Vector2(280, 8)
-
-[node name="EquipmentHost" parent="Panel/VBox" instance=ExtResource("2_equip")]
 layout_mode = 2
-size_flags_vertical = 3
+
+[node name="EquipmentHost2" parent="Panel/VBox" unique_id=589318067 instance=ExtResource("4_k3kre")]
 custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+template_name = "Equipments"
+inventory_type = 1
 
-[node name="StatsHost" type="Control" parent="Panel/VBox"]
-visible = false
+[node name="StatsHost" type="Control" parent="Panel/VBox" unique_id=845828118]
+custom_minimum_size = Vector2(0, 220)
 layout_mode = 2
 size_flags_vertical = 3
-custom_minimum_size = Vector2(0, 220)
 
-[node name="StatPanel" parent="Panel/VBox/StatsHost" instance=ExtResource("3_stats")]
+[node name="StatPanel" parent="Panel/VBox/StatsHost" unique_id=456800633 instance=ExtResource("3_stats")]
+custom_minimum_size = Vector2(0, 220)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_minimum_size = Vector2(0, 220)

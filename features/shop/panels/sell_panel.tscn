@@ -1,8 +1,7 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://wsyrd8w7c5rj"]
 
-[ext_resource type="PackedScene" path="res://ui/features/shop/widgets/income_inventory_host/income_inventory_host.tscn" id="1_income"]
-[ext_resource type="PackedScene" path="res://ui/features/shop/widgets/outcome_inventory_host/outcome_inventory_host.tscn" id="2_outcome"]
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="3_font"]
+[ext_resource type="PackedScene" uid="uid://dbhl3ltdvox7u" path="res://ui/features/utils/wyvenbox_template/wyvenbox_template.tscn" id="3_scvq3"]
 [ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="4_semibold"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
@@ -32,7 +31,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="SellPanel" type="Panel"]
+[node name="SellPanel" type="Panel" unique_id=2029143507]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -42,7 +41,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="Margin" type="MarginContainer" parent="."]
+[node name="Margin" type="MarginContainer" parent="." unique_id=1456441761]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,24 +53,24 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="VBox" type="VBoxContainer" parent="Margin"]
+[node name="VBox" type="VBoxContainer" parent="Margin" unique_id=1466795030]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="MainRow" type="HBoxContainer" parent="Margin/VBox"]
+[node name="MainRow" type="HBoxContainer" parent="Margin/VBox" unique_id=1665845097]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 14
 
-[node name="IncomeColumn" type="VBoxContainer" parent="Margin/VBox/MainRow"]
+[node name="IncomeColumn" type="VBoxContainer" parent="Margin/VBox/MainRow" unique_id=1787742209]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 6
 
-[node name="IncomeHeader" type="HBoxContainer" parent="Margin/VBox/MainRow/IncomeColumn"]
+[node name="IncomeHeader" type="HBoxContainer" parent="Margin/VBox/MainRow/IncomeColumn" unique_id=1005930567]
 layout_mode = 2
 
-[node name="IncomeTitle" type="Label" parent="Margin/VBox/MainRow/IncomeColumn/IncomeHeader"]
+[node name="IncomeTitle" type="Label" parent="Margin/VBox/MainRow/IncomeColumn/IncomeHeader" unique_id=1148182535]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
@@ -79,35 +78,37 @@ theme_override_fonts/font = ExtResource("4_semibold")
 theme_override_font_sizes/font_size = 13
 text = "Items to sell"
 
-[node name="IncomeHint" type="Label" parent="Margin/VBox/MainRow/IncomeColumn/IncomeHeader"]
+[node name="IncomeHint" type="Label" parent="Margin/VBox/MainRow/IncomeColumn/IncomeHeader" unique_id=1574537706]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.75, 0.78, 1)
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 11
 text = "IncomeInventory · 13×8"
 
-[node name="IncomeInventoryHost" parent="Margin/VBox/MainRow/IncomeColumn" instance=ExtResource("1_income")]
+[node name="WyvenboxTemplate" parent="Margin/VBox/MainRow/IncomeColumn" unique_id=589318067 instance=ExtResource("3_scvq3")]
 layout_mode = 2
+template_name = "Income Inventory"
+inventory_size = Vector2i(13, 8)
 
-[node name="OutcomeColumn" type="VBoxContainer" parent="Margin/VBox/MainRow"]
+[node name="OutcomeColumn" type="VBoxContainer" parent="Margin/VBox/MainRow" unique_id=361294388]
 custom_minimum_size = Vector2(180, 0)
 custom_maximum_size = Vector2(200, 9999)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 8
 
-[node name="OutcomeTitle" type="Label" parent="Margin/VBox/MainRow/OutcomeColumn"]
+[node name="OutcomeTitle" type="Label" parent="Margin/VBox/MainRow/OutcomeColumn" unique_id=1956562765]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("4_semibold")
 theme_override_font_sizes/font_size = 13
 text = "You receive"
 
-[node name="OutcomePreview" type="Panel" parent="Margin/VBox/MainRow/OutcomeColumn"]
+[node name="OutcomePreview" type="Panel" parent="Margin/VBox/MainRow/OutcomeColumn" unique_id=1589066212]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_preview")
 
-[node name="PreviewMargin" type="MarginContainer" parent="Margin/VBox/MainRow/OutcomeColumn/OutcomePreview"]
+[node name="PreviewMargin" type="MarginContainer" parent="Margin/VBox/MainRow/OutcomeColumn/OutcomePreview" unique_id=831143189]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -119,16 +120,20 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="PreviewVBox" type="VBoxContainer" parent="Margin/VBox/MainRow/OutcomeColumn/OutcomePreview/PreviewMargin"]
+[node name="PreviewVBox" type="VBoxContainer" parent="Margin/VBox/MainRow/OutcomeColumn/OutcomePreview/PreviewMargin" unique_id=1853667464]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="OutcomeInventoryHost" parent="Margin/VBox/MainRow/OutcomeColumn/OutcomePreview/PreviewMargin/PreviewVBox" instance=ExtResource("2_outcome")]
+[node name="WyvenboxTemplate" parent="Margin/VBox/MainRow/OutcomeColumn/OutcomePreview/PreviewMargin/PreviewVBox" unique_id=1528567961 instance=ExtResource("3_scvq3")]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 1
+template_name = "Gold"
+inventory_size = Vector2i(2, 2)
 
-[node name="GoldAmount" type="Label" parent="Margin/VBox/MainRow/OutcomeColumn/OutcomePreview/PreviewMargin/PreviewVBox"]
+[node name="GoldAmount" type="Label" parent="Margin/VBox/MainRow/OutcomeColumn/OutcomePreview/PreviewMargin/PreviewVBox" unique_id=231475738]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("4_semibold")
@@ -136,7 +141,7 @@ theme_override_font_sizes/font_size = 16
 text = "148 gold"
 horizontal_alignment = 1
 
-[node name="RateHint" type="Label" parent="Margin/VBox/MainRow/OutcomeColumn/OutcomePreview/PreviewMargin/PreviewVBox"]
+[node name="RateHint" type="Label" parent="Margin/VBox/MainRow/OutcomeColumn/OutcomePreview/PreviewMargin/PreviewVBox" unique_id=1095379357]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.75, 0.78, 1)
 theme_override_fonts/font = ExtResource("3_font")
@@ -144,24 +149,24 @@ theme_override_font_sizes/font_size = 11
 text = "OutcomeInventory · 80% rate"
 horizontal_alignment = 1
 
-[node name="ConfirmSell" type="Button" parent="Margin/VBox/MainRow/OutcomeColumn"]
+[node name="ConfirmSell" type="Button" parent="Margin/VBox/MainRow/OutcomeColumn" unique_id=1257059912]
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
 text = "Confirm sell"
 
-[node name="ClearBtn" type="Button" parent="Margin/VBox/MainRow/OutcomeColumn"]
+[node name="ClearBtn" type="Button" parent="Margin/VBox/MainRow/OutcomeColumn" unique_id=1891119937]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
 text = "Clear"
 
-[node name="CalcHint" type="Panel" parent="Margin/VBox"]
+[node name="CalcHint" type="Panel" parent="Margin/VBox" unique_id=329132767]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_hint")
 
-[node name="CalcLabel" type="Label" parent="Margin/VBox/CalcHint"]
+[node name="CalcLabel" type="Label" parent="Margin/VBox/CalcHint" unique_id=571298980]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
