@@ -72,8 +72,8 @@ func _on_combine_pressed() -> void:
 
 func _refresh_status() -> void:
 	if _slot_occupied.get("input_a", false) and _slot_occupied.get("input_b", false):
-		set_status("Combination ready")
+		set_status(tr("CRAFTING_STATUS_COMBINATION_READY"))
 	elif _slot_occupied.get("input_a", false) or _slot_occupied.get("input_b", false):
-		set_status("Need two inputs")
+		set_status(tr("CRAFTING_STATUS_NEED_TWO"))
 	else:
-		set_status("Place items to combine")
+		set_status(tr("CRAFTING_STATUS_PLACE_ITEMS"))

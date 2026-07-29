@@ -65,26 +65,26 @@ size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_font")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_search")
-placeholder_text = "Search quests…"
+placeholder_text = "QUESTS_SEARCH"
 
 [node name="StatusAvailable" type="Button" parent="Margin/VBox/SearchRow"]
 layout_mode = 2
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_status")
-text = "Available"
+text = "QUESTS_FILTER_AVAILABLE"
 
 [node name="StatusInProgress" type="Button" parent="Margin/VBox/SearchRow"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_status")
-text = "In progress"
+text = "QUESTS_FILTER_IN_PROGRESS"
 
 [node name="StatusCompleted" type="Button" parent="Margin/VBox/SearchRow"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_status")
-text = "Completed"
+text = "QUESTS_FILTER_COMPLETED"
 
 [node name="ChapterRow" type="HBoxContainer" parent="Margin/VBox"]
 layout_mode = 2
@@ -94,26 +94,26 @@ theme_override_constants/separation = 6
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_chapter")
-text = "All"
+text = "QUESTS_FILTER_ALL"
 
 [node name="Chapter1" type="Button" parent="Margin/VBox/ChapterRow"]
 layout_mode = 2
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_chapter")
-text = "Chapter I"
+text = "QUESTS_CHAPTER_1"
 
 [node name="Chapter2" type="Button" parent="Margin/VBox/ChapterRow"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_chapter")
-text = "Chapter II"
+text = "QUESTS_CHAPTER_2"
 
 [node name="Chapter3" type="Button" parent="Margin/VBox/ChapterRow"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_chapter")
-text = "Chapter III"
+text = "QUESTS_CHAPTER_3"
 
 [node name="SkillFilters" type="HBoxContainer" parent="Margin/VBox"]
 layout_mode = 2
@@ -122,22 +122,22 @@ theme_override_constants/separation = 6
 [node name="FilterMining" type="Button" parent="Margin/VBox/SkillFilters"]
 layout_mode = 2
 toggle_mode = true
-text = "Mining"
+text = "QUESTS_SKILL_MINING"
 
 [node name="FilterCombat" type="Button" parent="Margin/VBox/SkillFilters"]
 layout_mode = 2
 toggle_mode = true
-text = "Combat"
+text = "QUESTS_SKILL_COMBAT"
 
 [node name="FilterSmithing" type="Button" parent="Margin/VBox/SkillFilters"]
 layout_mode = 2
 toggle_mode = true
-text = "Smithing"
+text = "QUESTS_SKILL_SMITHING"
 
 [node name="FilterCooking" type="Button" parent="Margin/VBox/SkillFilters"]
 layout_mode = 2
 toggle_mode = true
-text = "Cooking"
+text = "QUESTS_SKILL_COOKING"
 
 [node name="UIUpdater" type="Node" parent="."]
 script = ExtResource("2_updater")

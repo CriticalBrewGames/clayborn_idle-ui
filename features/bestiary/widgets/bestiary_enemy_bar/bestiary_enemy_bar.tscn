@@ -56,7 +56,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.95, 0.97, 0.98, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 20
-text = "Bestiary"
+text = "BESTIARY_TITLE"
 
 [node name="Discovered" type="Label" parent="Margin/VBox/HeaderRow"]
 layout_mode = 2
@@ -73,7 +73,7 @@ size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_search")
-placeholder_text = "Search enemies…"
+placeholder_text = "BESTIARY_SEARCH"
 
 [node name="Scroll" type="ScrollContainer" parent="Margin/VBox"]
 layout_mode = 2

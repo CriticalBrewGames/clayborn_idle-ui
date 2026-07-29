@@ -72,16 +72,16 @@ layout_mode = 2
 quest_name = "Tower of Gems"
 duration = "5 minute quest"
 description = "Activate the imbued gems in the correct order to open the barrier."
-status = "Available"
-action_label = "Start"
+status = "QUESTS_STATUS_AVAILABLE"
+action_label = "QUESTS_ACTION_START"
 
 [node name="QuestCard2" parent="Panel/ScrollContainer/GridContainer" instance=ExtResource("1_card")]
 layout_mode = 2
 quest_name = "Mosswood Hunt"
 duration = "Kill quest"
 description = "Clear the forest of Moss Golems before the grove is overrun."
-status = "In progress"
-action_label = "Track"
+status = "QUESTS_STATUS_IN_PROGRESS"
+action_label = "QUESTS_ACTION_TRACK"
 show_progress = true
 progress_value = 40.0
 
@@ -90,8 +90,8 @@ layout_mode = 2
 quest_name = "Ore Delivery"
 duration = "Delivery quest"
 description = "Bring copper ore to the smith once Mining reaches level 10."
-status = "Locked"
-action_label = "Start"
+status = "QUESTS_STATUS_LOCKED"
+action_label = "QUESTS_ACTION_START"
 locked = true
 
 [node name="QuestCard4" parent="Panel/ScrollContainer/GridContainer" instance=ExtResource("1_card")]
@@ -99,8 +99,8 @@ layout_mode = 2
 quest_name = "Apprentice Trials"
 duration = "Chapter quest"
 description = "Prove yourself to Xylem’s circle and unlock the next chapter."
-status = "Completed"
-action_label = "View"
+status = "QUESTS_STATUS_COMPLETED"
+action_label = "QUESTS_ACTION_VIEW"
 
 [node name="UIUpdater" type="Node" parent="."]
 script = ExtResource("2_updater")

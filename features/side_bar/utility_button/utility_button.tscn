@@ -54,7 +54,7 @@ theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_ceym7")
 theme_override_font_sizes/font_size = 13
-text = "Achievements"
+text = "SIDEBAR_ACHIEVEMENTS"
 vertical_alignment = 1
 
 [node name="UIUpdater" type="Node" parent="." unique_id=710266844]

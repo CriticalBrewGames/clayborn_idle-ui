@@ -7,11 +7,11 @@ static func time_conversion(time_in_sec: float, start_value: float = -1) -> Stri
 		start_value = time_in_sec
 
 	if time_in_sec < 1 and start_value < 1:
-		return "%.2f sec" % [time_in_sec]
+		return tr("COMBAT_TIME_SEC_FRAC") % [time_in_sec]
 
 	if start_value < 1 or (start_value < 10 and int(start_value) != start_value):
 		if time_in_sec < 10:
-			return "%.2f sec" % [time_in_sec]
+			return tr("COMBAT_TIME_SEC_FRAC") % [time_in_sec]
 
 	var ceiling_second: int = ceili(time_in_sec)
 	var seconds: int = ceiling_second % 60
@@ -19,9 +19,9 @@ static func time_conversion(time_in_sec: float, start_value: float = -1) -> Stri
 	var hours: int = int(ceiling_second / 3600)
 
 	if hours:
-		return "%02d:%02d:%02d hours" % [hours, minutes, seconds]
+		return tr("COMBAT_TIME_HMS") % [hours, minutes, seconds]
 	if minutes:
-		return "%02d:%02d minutes" % [minutes, seconds]
+		return tr("COMBAT_TIME_MS") % [minutes, seconds]
 	if seconds < 10:
-		return "%d seconds" % [seconds]
-	return "%02d seconds" % [seconds]
+		return tr("COMBAT_TIME_SECONDS") % [seconds]
+	return tr("COMBAT_TIME_SECONDS_PADDED") % [seconds]

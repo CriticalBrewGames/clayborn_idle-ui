@@ -51,13 +51,13 @@ func show_content(mode: ContentMode) -> void:
 	_options_panel.visible = mode == ContentMode.OPTIONS
 	match mode:
 		ContentMode.SAVE:
-			title_label.text = "Save"
+			title_label.text = tr("POPUP_SAVE")
 		ContentMode.LOAD:
-			title_label.text = "Load"
+			title_label.text = tr("POPUP_LOAD")
 		ContentMode.OPTIONS:
-			title_label.text = "Options"
+			title_label.text = tr("POPUP_OPTIONS")
 		_:
-			title_label.text = "Panel"
+			title_label.text = tr("POPUP_PANEL")
 
 
 func set_json_text(text: String) -> void:

@@ -60,6 +60,6 @@ func _on_discover_pressed() -> void:
 
 func _refresh_status() -> void:
 	if _slot_occupied.get("base", false):
-		set_status("Ready to discover")
+		set_status(tr("CRAFTING_STATUS_READY_DISCOVER"))
 	else:
-		set_status("Place a base item")
+		set_status(tr("CRAFTING_STATUS_PLACE_BASE"))

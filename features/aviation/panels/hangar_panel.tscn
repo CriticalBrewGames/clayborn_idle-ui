@@ -55,28 +55,28 @@ theme_override_fonts/font = ExtResource("2_font")
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_filters")
-text = "All"
+text = "AVIATION_FILTER_ALL"
 
 [node name="FilterReady" type="Button" parent="Margin/VBox/FilterRow"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_font")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_filters")
-text = "Ready"
+text = "AVIATION_FILTER_READY"
 
 [node name="FilterRepairing" type="Button" parent="Margin/VBox/FilterRow"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_font")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_filters")
-text = "Repairing"
+text = "AVIATION_FILTER_REPAIRING"
 
 [node name="FilterLocked" type="Button" parent="Margin/VBox/FilterRow"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_font")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_filters")
-text = "Locked"
+text = "AVIATION_FILTER_LOCKED"
 
 [node name="Scroll" type="ScrollContainer" parent="Margin/VBox"]
 layout_mode = 2
@@ -95,29 +95,29 @@ columns = 2
 layout_mode = 2
 plane_name = "Copper Sparrow"
 tier = "T1"
-status = "Ready"
-cargo = "8 slots"
+status = "AVIATION_STATUS_READY"
+cargo_slots = 8
 
 [node name="PlaneBay2" parent="Margin/VBox/Scroll/PlaneBayGrid" instance=ExtResource("1_bay")]
 layout_mode = 2
 plane_name = "Iron Condor"
 tier = "T2"
-status = "Ready"
-cargo = "14 slots"
+status = "AVIATION_STATUS_READY"
+cargo_slots = 14
 
 [node name="PlaneBay3" parent="Margin/VBox/Scroll/PlaneBayGrid" instance=ExtResource("1_bay")]
 layout_mode = 2
 plane_name = "Sky Freighter"
 tier = "T3"
-status = "Repairing"
-cargo = "24 slots"
+status = "AVIATION_STATUS_REPAIRING"
+cargo_slots = 24
 
 [node name="PlaneBay4" parent="Margin/VBox/Scroll/PlaneBayGrid" instance=ExtResource("1_bay")]
 layout_mode = 2
 plane_name = "Cloud Hopper"
 tier = "T1"
-status = "Selected"
-cargo = "6 slots"
+status = "AVIATION_STATUS_SELECTED"
+cargo_slots = 6
 
 [node name="UIUpdater" type="Node" parent="."]
 script = ExtResource("3_updater")

@@ -77,7 +77,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.65, 0.72, 0.78, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 14
-text = "Defeat to reveal"
+text = "BESTIARY_DEFEAT_TO_REVEAL"
 horizontal_alignment = 1
 vertical_alignment = 1
 

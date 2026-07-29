@@ -9,7 +9,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("1_781ht")
 script = ExtResource("1_0j56e")
-template_name = "Inventory Name"
+template_name = "WYVENBOX_INVENTORY_NAME"
 inventory_size = Vector2i(10, 10)
 metadata/_custom_type_script = "uid://cssilaolpeh8m"
 
@@ -29,7 +29,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.55, 0.6, 0.63, 1)
 theme_override_fonts/font = ExtResource("2_781ht")
 theme_override_font_sizes/font_size = 13
-text = "Inventory Name
-Grid: 10x10"
+text = "WYVENBOX_INVENTORY_NAME
+WYVENBOX_GRID"
 horizontal_alignment = 1
 vertical_alignment = 1

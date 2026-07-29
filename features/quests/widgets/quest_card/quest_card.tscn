@@ -121,7 +121,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("2_medium")
 theme_override_font_sizes/font_size = 13
-text = "Requirements"
+text = "QUESTS_REQUIREMENTS"
 
 [node name="Requirements" type="HBoxContainer" parent="Margin/VBox/Body/Details"]
 layout_mode = 2
@@ -144,7 +144,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("2_medium")
 theme_override_font_sizes/font_size = 13
-text = "Rewards"
+text = "QUESTS_REWARDS"
 
 [node name="Rewards" type="HBoxContainer" parent="Margin/VBox/Body/Details"]
 layout_mode = 2
@@ -178,7 +178,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.75, 0.75, 0.75, 1)
 theme_override_fonts/font = ExtResource("2_medium")
 theme_override_font_sizes/font_size = 10
-text = "XP"
+text = "QUESTS_XP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -213,12 +213,12 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.55, 0.75, 0.9, 1)
 theme_override_fonts/font = ExtResource("2_medium")
 theme_override_font_sizes/font_size = 12
-text = "Available"
+text = "QUESTS_STATUS_AVAILABLE"
 
 [node name="ActionButton" type="Button" parent="Margin/VBox/Footer"]
 custom_minimum_size = Vector2(90, 28)
 layout_mode = 2
-text = "Start"
+text = "QUESTS_ACTION_START"
 
 [node name="ProgressBar" type="ProgressBar" parent="Margin/VBox"]
 visible = false
@@ -253,6 +253,6 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("1_semibold")
 theme_override_font_sizes/font_size = 16
-text = "Locked"
+text = "QUESTS_LOCKED"
 horizontal_alignment = 1
 vertical_alignment = 1

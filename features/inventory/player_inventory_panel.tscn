@@ -97,7 +97,7 @@ theme_override_constants/separation = 13
 
 [node name="EquipmentHost" parent="Panel/VBoxContainer" unique_id=589318067 instance=ExtResource("6_2m7h1")]
 layout_mode = 2
-template_name = "Equipment Inventory"
+template_name = "INVENTORY_EQUIPMENT_GRID"
 inventory_type = 1
 
 [node name="PlayerHp" parent="Panel/VBoxContainer" unique_id=294311437 instance=ExtResource("8_hp")]
@@ -117,7 +117,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-template_name = "Player Bag"
+template_name = "INVENTORY_PLAYER_BAG"
 inventory_size = Vector2i(9, 8)
 
 [node name="StatToggle" type="Button" parent="Panel" unique_id=1595646302]
