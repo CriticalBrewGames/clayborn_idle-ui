@@ -87,7 +87,7 @@ text = "SHOP_INCOME_HINT"
 
 [node name="WyvenboxTemplate" parent="Margin/VBox/MainRow/IncomeColumn" unique_id=589318067 instance=ExtResource("3_scvq3")]
 layout_mode = 2
-template_name = "Income Inventory"
+template_name = "SHOP_INCOME_INVENTORY"
 inventory_size = Vector2i(13, 8)
 
 [node name="OutcomeColumn" type="VBoxContainer" parent="Margin/VBox/MainRow" unique_id=361294388]
@@ -130,7 +130,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
-template_name = "Gold"
+template_name = "SHOP_GOLD_INVENTORY"
 inventory_size = Vector2i(2, 2)
 
 [node name="GoldAmount" type="Label" parent="Margin/VBox/MainRow/OutcomeColumn/OutcomePreview/PreviewMargin/PreviewVBox" unique_id=231475738]

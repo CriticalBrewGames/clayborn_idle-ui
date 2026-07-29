@@ -67,7 +67,7 @@ layout_mode = 2
 [node name="EquipmentHost2" parent="Panel/VBox" unique_id=589318067 instance=ExtResource("4_k3kre")]
 custom_minimum_size = Vector2(0, 280)
 layout_mode = 2
-template_name = "Equipments"
+template_name = "INVENTORY_EQUIPMENTS_GRID"
 inventory_type = 1
 
 [node name="StatsHost" type="Control" parent="Panel/VBox" unique_id=845828118]

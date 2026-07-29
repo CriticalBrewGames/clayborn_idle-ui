@@ -24,4 +24,4 @@ static func time_conversion(time_in_sec: float, start_value: float = -1) -> Stri
 		return tr("COMBAT_TIME_MS") % [minutes, seconds]
 	if seconds < 10:
 		return tr("COMBAT_TIME_SECONDS") % [seconds]
-	return tr("COMBAT_TIME_SECONDS") % [seconds]
+	return tr("COMBAT_TIME_SECONDS_PADDED") % [seconds]
