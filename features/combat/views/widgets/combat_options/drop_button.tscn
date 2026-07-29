@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://qh38lk1sicq7"]
+
+[ext_resource type="Script" uid="uid://dqvx2hnt7y861" path="res://ui/features/buttons/button_with_payload.gd" id="1_55623"]
+
+[node name="DropButton" type="Button" unique_id=648189384]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_55623")
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"

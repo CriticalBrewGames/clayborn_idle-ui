@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cscv4bjp20n30"]
+[gd_scene format=3 uid="uid://cscv4bjp20n30"]
 
 [ext_resource type="Script" uid="uid://d0upxa2jbpjjv" path="res://ui/features/combat/views/components/combat_style_button.gd" id="1_slhxg"]
 [ext_resource type="StyleBox" uid="uid://bhjx8543pscw0" path="res://assets/theme/buttons/button_hover.tres" id="1_snmjp"]
@@ -8,18 +8,19 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0qhlk"]
 
-[node name="CombatStyleButton" type="Button"]
+[node name="CombatStyleButton" type="Button" unique_id=642586551]
 clip_children = 2
 custom_minimum_size = Vector2(33, 33)
 offset_right = 33.0
 offset_bottom = 33.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0qhlk")
-theme_override_styles/hover = ExtResource("1_snmjp")
-theme_override_styles/pressed = ExtResource("2_snmjp")
 theme_override_styles/normal = ExtResource("1_sua6t")
+theme_override_styles/pressed = ExtResource("2_snmjp")
+theme_override_styles/hover = ExtResource("1_snmjp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0qhlk")
 script = ExtResource("1_slhxg")
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2132978700]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

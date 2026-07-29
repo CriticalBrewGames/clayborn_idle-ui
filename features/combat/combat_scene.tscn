@@ -19,7 +19,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="Panel" type="Panel"]
+[node name="Panel" type="Panel" unique_id=286605064]
 custom_maximum_size = Vector2(1000, 820)
 anchors_preset = 5
 anchor_left = 0.5
@@ -31,7 +31,7 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_0ni18")
 
-[node name="CombatScene" type="VBoxContainer" parent="."]
+[node name="CombatScene" type="VBoxContainer" parent="." unique_id=444580930]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,17 +42,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 12
 
-[node name="EnemyList" parent="CombatScene" instance=ExtResource("1_enemy_list")]
+[node name="EnemyList" parent="CombatScene" unique_id=1779527755 instance=ExtResource("1_enemy_list")]
+custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
 size_flags_vertical = 3
-custom_minimum_size = Vector2(0, 180)
 
-[node name="CombatUi" parent="CombatScene" instance=ExtResource("2_snbyo")]
+[node name="CombatUi" parent="CombatScene" unique_id=1515193347 instance=ExtResource("2_snbyo")]
 layout_mode = 2
 size_flags_horizontal = 1
 size_flags_vertical = 3
 
-[node name="MobDropHost" type="PanelContainer" parent="CombatScene"]
+[node name="MobDropHost" type="PanelContainer" parent="CombatScene" unique_id=1170345046]
 visible = false
 custom_minimum_size = Vector2(0, 180)
 layout_mode = 2

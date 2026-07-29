@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bcv1ixcrlqib1"]
+
+[ext_resource type="Script" uid="uid://dqvx2hnt7y861" path="res://ui/features/buttons/button_with_payload.gd" id="1_svdn6"]
+
+[node name="EscapeButton" type="Button" unique_id=2032926062]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_svdn6")
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
+
+[node name="Label" type="Label" parent="." unique_id=2016787339]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -11.5
+offset_right = 27.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Escape"

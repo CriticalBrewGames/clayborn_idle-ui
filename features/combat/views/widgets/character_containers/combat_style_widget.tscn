@@ -4,9 +4,9 @@
 [ext_resource type="StyleBox" uid="uid://cdu4kcaou50xo" path="res://assets/theme/panels/base_panel_highlights_with_stroke.tres" id="2_7wtiy"]
 [ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="2_ve4xv"]
 [ext_resource type="PackedScene" uid="uid://cscv4bjp20n30" path="res://ui/features/combat/views/components/combat_style_button.tscn" id="3_7wtiy"]
-[ext_resource type="Script" uid="uid://b4whp7itnueyv" path="res://ui/features/combat/views/widgets/style_button_grid.gd" id="4_style_grid"]
+[ext_resource type="Script" uid="uid://b5albluo6xsy" path="res://ui/features/utils/button_group_handler/button_group_binder.gd" id="6_ostav"]
 
-[node name="CombatStyleWidget" type="Panel"]
+[node name="CombatStyleWidget" type="Panel" unique_id=1414832402]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("1_buijt")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1035259009]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_7wtiy")
 
-[node name="CombatStyleGrid" type="VBoxContainer" parent="Panel"]
+[node name="CombatStyleGrid" type="VBoxContainer" parent="Panel" unique_id=989911483]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,43 +48,48 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Panel/CombatStyleGrid"]
+[node name="Label" type="Label" parent="Panel/CombatStyleGrid" unique_id=151645075]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.108524, 0.10324, 0.0935114, 1)
 theme_override_fonts/font = ExtResource("2_ve4xv")
 text = "Combat style:"
 horizontal_alignment = 1
 
-[node name="Offensive" type="HBoxContainer" parent="Panel/CombatStyleGrid"]
+[node name="Offensive" type="HBoxContainer" parent="Panel/CombatStyleGrid" unique_id=1691901328]
 layout_mode = 2
 alignment = 1
-script = ExtResource("4_style_grid")
 
-[node name="AttackStyle" parent="Panel/CombatStyleGrid/Offensive" instance=ExtResource("3_7wtiy")]
+[node name="AttackStyle" parent="Panel/CombatStyleGrid/Offensive" unique_id=551152868 instance=ExtResource("3_7wtiy")]
 layout_mode = 2
 size_flags_horizontal = 3
-attack_type = 0
-payload = 1
 
-[node name="StrengthStyle" parent="Panel/CombatStyleGrid/Offensive" instance=ExtResource("3_7wtiy")]
+[node name="StrengthStyle" parent="Panel/CombatStyleGrid/Offensive" unique_id=863642161 instance=ExtResource("3_7wtiy")]
 layout_mode = 2
 size_flags_horizontal = 3
 attack_type = 1
-payload = 0
 
-[node name="Defensive" type="HBoxContainer" parent="Panel/CombatStyleGrid"]
+[node name="ButtonGroupBinder" type="Node" parent="Panel/CombatStyleGrid/Offensive" unique_id=1994409909 node_paths=PackedStringArray("button_container")]
+script = ExtResource("6_ostav")
+group_name = &"offensive_button_group"
+button_container = NodePath("..")
+metadata/_custom_type_script = "uid://b5albluo6xsy"
+
+[node name="Defensive" type="HBoxContainer" parent="Panel/CombatStyleGrid" unique_id=858707971]
 layout_mode = 2
 alignment = 1
-script = ExtResource("4_style_grid")
 
-[node name="DefenceStyle" parent="Panel/CombatStyleGrid/Defensive" instance=ExtResource("3_7wtiy")]
+[node name="DefenceStyle" parent="Panel/CombatStyleGrid/Defensive" unique_id=622329632 instance=ExtResource("3_7wtiy")]
 layout_mode = 2
 size_flags_horizontal = 3
 attack_type = 2
-payload = 0
 
-[node name="AgilityStyle" parent="Panel/CombatStyleGrid/Defensive" instance=ExtResource("3_7wtiy")]
+[node name="AgilityStyle" parent="Panel/CombatStyleGrid/Defensive" unique_id=618361006 instance=ExtResource("3_7wtiy")]
 layout_mode = 2
 size_flags_horizontal = 3
 attack_type = 3
-payload = 1
+
+[node name="ButtonGroupBinder" type="Node" parent="Panel/CombatStyleGrid/Defensive" unique_id=1703343865 node_paths=PackedStringArray("button_container")]
+script = ExtResource("6_ostav")
+group_name = &"defensive_button_group"
+button_container = NodePath("..")
+metadata/_custom_type_script = "uid://b5albluo6xsy"

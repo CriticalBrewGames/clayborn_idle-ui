@@ -1,13 +1,8 @@
 [gd_scene format=3 uid="uid://uq41ltf1toa8"]
 
 [ext_resource type="StyleBox" uid="uid://d0ovkjdjkcflw" path="res://assets/theme/panels/deep_panel.tres" id="1_crro3"]
-[ext_resource type="StyleBox" uid="uid://bhjx8543pscw0" path="res://assets/theme/buttons/button_hover.tres" id="2_xvkjh"]
-[ext_resource type="StyleBox" uid="uid://b6qu4yffylup7" path="res://assets/ui/orange_button_base.tres" id="3_4sawe"]
-[ext_resource type="StyleBox" uid="uid://c1tqw85kg4cki" path="res://assets/theme/buttons/button_normal.tres" id="4_106vo"]
-[ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="5_uod1f"]
-[ext_resource type="Texture2D" uid="uid://30h88uadk4jh" path="res://assets/drop_inventory.png" id="6_g5lgv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_06hix"]
+[ext_resource type="PackedScene" uid="uid://bcv1ixcrlqib1" path="res://ui/features/combat/views/widgets/combat_options/escape_button.tscn" id="2_345uf"]
+[ext_resource type="PackedScene" uid="uid://qh38lk1sicq7" path="res://ui/features/combat/views/widgets/combat_options/drop_button.tscn" id="3_5f55f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kqp83"]
 
@@ -40,55 +35,14 @@ offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EscapeButton" type="Button" parent="HBoxContainer" unique_id=1225453646]
+[node name="EscapeButton2" parent="HBoxContainer" unique_id=2032926062 instance=ExtResource("2_345uf")]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = ExtResource("4_106vo")
-theme_override_styles/pressed = ExtResource("3_4sawe")
-theme_override_styles/hover = ExtResource("2_xvkjh")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_06hix")
-
-[node name="Label" type="Label" parent="HBoxContainer/EscapeButton" unique_id=1427644935]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -27.0
-offset_top = -11.5
-offset_right = 27.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.901961, 0.866667, 0.756863, 1)
-theme_override_fonts/font = ExtResource("5_uod1f")
-text = "Escape"
+payload = "escape"
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=1186314525]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_kqp83")
 
-[node name="DropButton" type="Button" parent="HBoxContainer" unique_id=1572299539]
+[node name="DropButton" parent="HBoxContainer" unique_id=648189384 instance=ExtResource("3_5f55f")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.25
-theme_override_styles/normal = ExtResource("4_106vo")
-theme_override_styles/pressed = ExtResource("3_4sawe")
-theme_override_styles/hover = ExtResource("2_xvkjh")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_06hix")
-icon_alignment = 1
-vertical_icon_alignment = 2
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/DropButton" unique_id=55939767]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 3.0
-offset_right = -3.0
-offset_bottom = -3.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_g5lgv")
+payload = "drop"
