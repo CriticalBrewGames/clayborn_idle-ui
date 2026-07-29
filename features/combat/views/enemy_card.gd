@@ -44,7 +44,7 @@ func _apply() -> void:
 	if name_label:
 		name_label.text = display_name
 	if level_label:
-		level_label.text = "Lv %d" % level
+		level_label.text = tr("COMBAT_LEVEL") % level
 	if fight_button:
 		fight_button.disabled = locked or monster_id.is_empty()
 	if lock_overlay:
