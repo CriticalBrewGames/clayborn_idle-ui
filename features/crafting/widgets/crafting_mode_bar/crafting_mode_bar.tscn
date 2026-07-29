@@ -41,7 +41,7 @@ size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_font")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_modes")
-text = "Discovery"
+text = "CRAFTING_MODE_DISCOVERY"
 
 [node name="CombinatorBtn" type="Button" parent="Margin/Buttons"]
 layout_mode = 2
@@ -50,7 +50,7 @@ theme_override_fonts/font = ExtResource("1_font")
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_modes")
-text = "Combinator"
+text = "CRAFTING_MODE_COMBINATOR"
 
 [node name="EnchantmentsBtn" type="Button" parent="Margin/Buttons"]
 layout_mode = 2
@@ -58,4 +58,4 @@ size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_font")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_modes")
-text = "Enchantments"
+text = "CRAFTING_MODE_ENCHANTMENTS"

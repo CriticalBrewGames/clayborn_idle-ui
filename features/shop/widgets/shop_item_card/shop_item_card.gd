@@ -33,9 +33,9 @@ func _apply() -> void:
 	if name_label:
 		name_label.text = item_name
 	if price_label:
-		price_label.text = "%d gold" % price
+		price_label.text = tr("SHOP_PRICE_GOLD") % price
 	if stock:
-		stock.text = "stock %s" % stock_label
+		stock.text = tr("SHOP_STOCK") % stock_label
 	if icon_rect:
 		icon_rect.texture = icon_texture
 		icon_rect.visible = icon_texture != null

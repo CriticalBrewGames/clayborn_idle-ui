@@ -10,11 +10,11 @@ const CATALYST_SIZE := Vector2(36, 36)
 		slot_kind = value
 		_apply_size()
 
-@export var placeholder: String = "Item":
+@export var placeholder: String = "CRAFTING_SLOT_ITEM":
 	set(value):
 		placeholder = value
 		if label:
-			label.text = value
+			label.text = tr(value) if value != "" else ""
 
 @onready var label: Label = $Label
 
@@ -22,7 +22,7 @@ const CATALYST_SIZE := Vector2(36, 36)
 func _ready() -> void:
 	_apply_size()
 	if label:
-		label.text = placeholder
+		label.text = tr(placeholder) if placeholder != "" else ""
 
 
 func _apply_size() -> void:

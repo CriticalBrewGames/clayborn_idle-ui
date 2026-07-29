@@ -114,4 +114,4 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(56, 28)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_font")
-text = "Buy"
+text = "SHOP_BUY"

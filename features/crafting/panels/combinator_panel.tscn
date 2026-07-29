@@ -75,7 +75,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 13
-text = "Input A"
+text = "CRAFTING_SLOT_INPUT_A"
 horizontal_alignment = 1
 
 [node name="InputASlot" parent="Margin/VBox/InputsRow/InputAColumn" instance=ExtResource("1_slot")]
@@ -93,7 +93,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 13
-text = "Input B"
+text = "CRAFTING_SLOT_INPUT_B"
 horizontal_alignment = 1
 
 [node name="InputBSlot" parent="Margin/VBox/InputsRow/InputBColumn" instance=ExtResource("1_slot")]
@@ -119,7 +119,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 13
-text = "Output"
+text = "CRAFTING_SLOT_OUTPUT"
 horizontal_alignment = 1
 
 [node name="OutputSlot" parent="Margin/VBox/OutputColumn" instance=ExtResource("1_slot")]
@@ -156,7 +156,7 @@ size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 12
-text = "Catalyst"
+text = "CRAFTING_SLOT_CATALYST"
 
 [node name="CatalystSlot" parent="Margin/VBox/CatalystPanel/CatalystMargin/CatalystRow" instance=ExtResource("1_slot")]
 layout_mode = 2
@@ -170,7 +170,7 @@ custom_minimum_size = Vector2(140, 36)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_font")
-text = "Combine"
+text = "CRAFTING_COMBINE"
 
 [node name="StatusPanel" type="Panel" parent="Margin/VBox"]
 custom_minimum_size = Vector2(0, 36)
@@ -187,6 +187,6 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.7, 0.74, 0.76, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 12
-text = "Combination ready"
+text = "CRAFTING_STATUS_COMBINATION_READY"
 horizontal_alignment = 1
 vertical_alignment = 1
