@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dv3anpfr71yai"]
+[gd_scene format=3 uid="uid://dv3anpfr71yai"]
 
 [ext_resource type="Script" uid="uid://5eoj5ksn4ief" path="res://ui/features/combat/views/widgets/extended_progress_bar.gd" id="1_p5uni"]
 [ext_resource type="StyleBox" uid="uid://1g1k5vaglwsj" path="res://assets/theme/progress_bar/progress_bar/progress_bar_bg.tres" id="2_q7oxs"]

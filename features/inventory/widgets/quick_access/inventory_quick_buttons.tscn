@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bocrj6oo4vias" path="res://ui/features/inventory/widgets/quick_access/inventory_quick_buttons.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://vgkknq51l28s" path="res://ui/features/side_bar/bottom_icons/bottom_button.tscn" id="2_button"]
+[ext_resource type="Script" uid="uid://b5albluo6xsy" path="res://ui/features/utils/button_group_handler/button_group_binder.gd" id="4_yl368"]
 [ext_resource type="Script" uid="uid://cgqymacm051vu" path="res://ui/features/inventory/widgets/quick_access/inventory_quick_buttons_ui_updater.gd" id="6_updater"]
 
 [node name="InventoryQuickButtons" type="VBoxContainer" unique_id=1866891171]
@@ -32,3 +33,9 @@ payload = "stats"
 
 [node name="UIUpdater" type="Node" parent="." unique_id=1849987821]
 script = ExtResource("6_updater")
+
+[node name="ButtonGroupBinder" type="Node" parent="." unique_id=1818266561 node_paths=PackedStringArray("button_container")]
+script = ExtResource("4_yl368")
+group_name = &"compact_side_bar"
+button_container = NodePath("..")
+metadata/_custom_type_script = "uid://b5albluo6xsy"

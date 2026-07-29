@@ -1,15 +1,9 @@
-extends Button
+class_name SkillButton extends PayloadButton
 
-## Skill side-bar button. Main updates via Dictionary — no Core Skill types.
-## On press, emits a small string payload (skill_id) for Main to route.
-
-signal payload_pressed(payload: String)
 
 @onready var icon_node: TextureRect = $TextureButton
 @onready var level_label: Label = $Label
 
-## Navigation / identity payload Main understands (e.g. "mining", "combat").
-@export var payload: String = ""
 
 var skill_name: String = ""
 var skill_level: int = 0
@@ -60,9 +54,3 @@ func set_player_level(level: int) -> void:
 func change_icon(new_icon: Texture2D) -> void:
 	if icon_node:
 		icon_node.texture = new_icon
-
-
-func _on_pressed() -> void:
-	if payload.is_empty():
-		return
-	payload_pressed.emit(payload)

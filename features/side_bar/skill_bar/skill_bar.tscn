@@ -3,7 +3,8 @@
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="1_803at"]
 [ext_resource type="Script" uid="uid://carvpmditqqcl" path="res://ui/features/side_bar/skill_bar/skill_bar_ui_updater.gd" id="1_ye0mj"]
 [ext_resource type="PackedScene" uid="uid://csffjh8ldg2ng" path="res://ui/features/side_bar/skill_bar/skill_button.tscn" id="2_8a2jd"]
-[ext_resource type="Script" path="res://ui/features/side_bar/skill_bar/skill_bar.gd" id="3_skillbar"]
+[ext_resource type="Script" uid="uid://cfohax77qaetn" path="res://ui/features/side_bar/skill_bar/skill_bar.gd" id="3_skillbar"]
+[ext_resource type="Script" uid="uid://b5albluo6xsy" path="res://ui/features/utils/button_group_handler/button_group_binder.gd" id="5_dmgdu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jd5fe"]
 bg_color = Color(0.14509805, 0.12156863, 0.101960786, 1)
@@ -122,3 +123,9 @@ payload = "dexterity"
 [node name="UIUpdater" type="Node" parent="." unique_id=986935080]
 script = ExtResource("1_ye0mj")
 metadata/_custom_type_script = "uid://bbmfsyjbdjgao"
+
+[node name="ButtonGroupBinder" type="Node" parent="." unique_id=862893188 node_paths=PackedStringArray("button_container")]
+script = ExtResource("5_dmgdu")
+group_name = &"side_buttons"
+button_container = NodePath("../Panel/SkillBoxContainer")
+metadata/_custom_type_script = "uid://b5albluo6xsy"

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b0iwf24q2swqa" path="res://ui/features/side_bar/utility_button/utility_button.tscn" id="1_v07qw"]
 [ext_resource type="Script" uid="uid://bsvfu8ttw64h7" path="res://ui/features/side_bar/utility_button/utility_button_group_ui_updater.gd" id="2_c0jme"]
+[ext_resource type="Script" uid="uid://b5albluo6xsy" path="res://ui/features/utils/button_group_handler/button_group_binder.gd" id="3_feo0c"]
 
 [node name="UtilityButtons" type="CenterContainer" unique_id=120361669]
 offset_right = 125.0
@@ -50,3 +51,9 @@ columns = 2
 [node name="UIUpdater" type="Node" parent="." unique_id=2014957606]
 script = ExtResource("2_c0jme")
 metadata/_custom_type_script = "uid://bbmfsyjbdjgao"
+
+[node name="ButtonGroupBinder" type="Node" parent="." unique_id=482687875 node_paths=PackedStringArray("button_container")]
+script = ExtResource("3_feo0c")
+group_name = &"side_buttons"
+button_container = NodePath("../UtilityButtonBoxContainer")
+metadata/_custom_type_script = "uid://b5albluo6xsy"

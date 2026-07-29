@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://jn4anfdslcoj"]
+[gd_scene format=3 uid="uid://jn4anfdslcoj"]
 
 [ext_resource type="PackedScene" uid="uid://bthxhddcsmhyq" path="res://ui/features/combat/views/widgets/character_containers/enemy_stat_presenter.tscn" id="2_hq05o"]
 

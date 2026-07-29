@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct8ko5h83kmpi"]
+[gd_scene format=3 uid="uid://ct8ko5h83kmpi"]
 
 [ext_resource type="StyleBox" uid="uid://cdu4kcaou50xo" path="res://assets/theme/panels/base_panel_highlights_with_stroke.tres" id="1_ig0xx"]
 [ext_resource type="PackedScene" uid="uid://buba23e484wnv" path="res://ui/features/combat/views/widgets/character_containers/attack_timer/scenes/attack_timer.tscn" id="2_4m05h"]

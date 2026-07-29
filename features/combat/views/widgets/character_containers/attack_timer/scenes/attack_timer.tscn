@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://buba23e484wnv"]
+[gd_scene format=3 uid="uid://buba23e484wnv"]
 
 [ext_resource type="Script" uid="uid://j0tauoek0vu3" path="res://ui/features/combat/views/widgets/character_containers/attack_timer/scripts/helpers/attack_timer_ui.gd" id="1_7r7is"]
 [ext_resource type="Texture2D" uid="uid://c882bp8yhpefr" path="res://assets/skill_icons/strength.svg" id="2_3uvti"]

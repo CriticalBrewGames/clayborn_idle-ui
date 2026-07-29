@@ -3,7 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://5cwx3jwyubui" path="res://ui/features/side_bar/skill_bar/skill_bar.tscn" id="1_0f027"]
 [ext_resource type="PackedScene" uid="uid://cqf778bhb6rau" path="res://ui/features/side_bar/utility_button/utility_button_group_container.tscn" id="2_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://vgkknq51l28s" path="res://ui/features/side_bar/bottom_icons/bottom_button.tscn" id="3_gyfs4"]
-[ext_resource type="Script" path="res://ui/features/side_bar/side_bar.gd" id="4_sidebar"]
+[ext_resource type="Script" uid="uid://xsdgh7iau4yg" path="res://ui/features/side_bar/side_bar.gd" id="4_sidebar"]
+[ext_resource type="Script" uid="uid://b5albluo6xsy" path="res://ui/features/utils/button_group_handler/button_group_binder.gd" id="5_7wfjm"]
 
 [node name="SideBarContainer" type="VBoxContainer" unique_id=2086662701]
 anchors_preset = 9
@@ -41,3 +42,9 @@ payload = "options"
 [node name="Button4" parent="ButtomButtonContainer" unique_id=1138267299 instance=ExtResource("3_gyfs4")]
 layout_mode = 2
 payload = "wishlist"
+
+[node name="ButtonGroupBinder" type="Node" parent="." unique_id=94558831 node_paths=PackedStringArray("button_container")]
+script = ExtResource("5_7wfjm")
+group_name = &"bottom_utility_buttons"
+button_container = NodePath("../ButtomButtonContainer")
+metadata/_custom_type_script = "uid://b5albluo6xsy"
