@@ -42,11 +42,11 @@ func _update_placeholder() -> void:
 	
 	var type_text: String
 	if inventory_type == PlaceholderType.GRID:
-		type_text = "Grid: %dx%d" % [inventory_size.x, inventory_size.y]
+		type_text = tr("WYVENBOX_GRID") % [inventory_size.x, inventory_size.y]
 	else:
-		type_text = "Cell"
+		type_text = tr("WYVENBOX_CELL")
 
-	placeholder_label.text = "%s\n%s" % [template_name, type_text]
+	placeholder_label.text = "%s\n%s" % [tr(template_name) if not template_name.is_empty() else "", type_text]
 
 
 func inject_invetory(inventory: InventoryView) -> void:

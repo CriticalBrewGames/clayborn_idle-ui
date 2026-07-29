@@ -15,7 +15,7 @@ func _ready() -> void:
 	if button_icon:
 		icon_texture_rect.texture = button_icon
 	if button_text:
-		button_label.text = button_text
+		button_label.text = tr(button_text)
 	
 	if not pressed.is_connected(_on_pressed):
 		pressed.connect(_on_pressed)

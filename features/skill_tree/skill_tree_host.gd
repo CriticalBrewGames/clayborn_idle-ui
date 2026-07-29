@@ -81,4 +81,4 @@ func _on_node_deactivated(node: Node2D) -> void:
 
 func _refresh_points_label() -> void:
 	if _points_label:
-		_points_label.text = "Skill points: %d" % get_free_skill_points()
+		_points_label.text = tr("SKILL_TREE_POINTS") % get_free_skill_points()
