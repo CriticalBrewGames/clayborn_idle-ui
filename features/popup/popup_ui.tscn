@@ -69,7 +69,7 @@ theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_uw104")
 theme_override_font_sizes/font_size = 12
-text = "Panel Name"
+text = "POPUP_PANEL_NAME"
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="TilePanel"]
@@ -132,7 +132,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_uw104")
 theme_override_font_sizes/font_size = 12
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
-text = "Save data (JSON)"
+text = "POPUP_SAVE_HINT"
 
 [node name="TextEdit" type="TextEdit" parent="ContentHost/SavePanel/VBox"]
 layout_mode = 2
@@ -144,7 +144,7 @@ placeholder_text = "{ }"
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_uw104")
-text = "Save"
+text = "POPUP_SAVE"
 
 [node name="LoadPanel" type="Panel" parent="ContentHost"]
 visible = false
@@ -174,7 +174,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_uw104")
 theme_override_font_sizes/font_size = 12
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
-text = "Paste save JSON to load"
+text = "POPUP_LOAD_HINT"
 
 [node name="TextEdit" type="TextEdit" parent="ContentHost/LoadPanel/VBox"]
 layout_mode = 2
@@ -186,7 +186,7 @@ placeholder_text = "{ }"
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_uw104")
-text = "Load"
+text = "POPUP_LOAD"
 
 [node name="OptionsPanel" type="Panel" parent="ContentHost"]
 visible = false
@@ -221,7 +221,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_uw104")
 theme_override_font_sizes/font_size = 12
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
-text = "Volume"
+text = "POPUP_VOLUME"
 vertical_alignment = 1
 
 [node name="HSlider" type="HSlider" parent="ContentHost/OptionsPanel/VBox/VolumeRow"]
@@ -243,7 +243,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_uw104")
 theme_override_font_sizes/font_size = 12
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
-text = "Font Scale"
+text = "POPUP_FONT_SCALE"
 vertical_alignment = 1
 
 [node name="FontScaleSlider" type="HSlider" parent="ContentHost/OptionsPanel/VBox/FontRow"]

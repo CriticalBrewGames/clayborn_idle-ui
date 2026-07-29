@@ -75,13 +75,13 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 13
-text = "Base"
+text = "CRAFTING_SLOT_BASE"
 horizontal_alignment = 1
 
 [node name="BaseSlot" parent="Margin/VBox/SlotsRow/BaseColumn" instance=ExtResource("1_slot")]
 layout_mode = 2
 size_flags_horizontal = 4
-placeholder = "Base"
+placeholder = "CRAFTING_SLOT_BASE"
 
 [node name="Arrow" type="Label" parent="Margin/VBox/SlotsRow"]
 layout_mode = 2
@@ -103,13 +103,13 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 13
-text = "Result"
+text = "CRAFTING_SLOT_RESULT"
 horizontal_alignment = 1
 
 [node name="ResultSlot" parent="Margin/VBox/SlotsRow/ResultColumn" instance=ExtResource("1_slot")]
 layout_mode = 2
 size_flags_horizontal = 4
-placeholder = "Result"
+placeholder = "CRAFTING_SLOT_RESULT"
 
 [node name="UnlockStatsPanel" type="Panel" parent="Margin/VBox"]
 custom_minimum_size = Vector2(0, 120)
@@ -138,7 +138,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("3_semibold")
 theme_override_font_sizes/font_size = 14
-text = "Unlock item stats"
+text = "CRAFTING_DISCOVERY_STATS_TITLE"
 
 [node name="StatsBody" type="Label" parent="Margin/VBox/UnlockStatsPanel/StatsMargin/StatsVBox"]
 layout_mode = 2
@@ -146,7 +146,7 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.75, 0.78, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 12
-text = "Place a base item to preview unlocked stats and affixes here."
+text = "CRAFTING_DISCOVERY_STATS_HINT"
 autowrap_mode = 3
 
 [node name="DiscoverButton" type="Button" parent="Margin/VBox"]
@@ -154,7 +154,7 @@ custom_minimum_size = Vector2(160, 36)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_font")
-text = "Discover / Finish"
+text = "CRAFTING_DISCOVER_FINISH"
 
 [node name="StatusPanel" type="Panel" parent="Margin/VBox"]
 custom_minimum_size = Vector2(0, 36)
@@ -171,6 +171,6 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.7, 0.74, 0.76, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 12
-text = "Ready to discover"
+text = "CRAFTING_STATUS_READY_DISCOVER"
 horizontal_alignment = 1
 vertical_alignment = 1

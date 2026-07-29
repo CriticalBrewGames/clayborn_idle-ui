@@ -30,10 +30,10 @@ func bind_entry(entry: BestiaryEntry) -> void:
 		progress_bar.value = float(fill)
 
 	if mastery_label:
-		mastery_label.text = "%s / %s toward mastery" % [_format_int(fill), _format_int(cap)]
+		mastery_label.text = tr("BESTIARY_TOWARD_MASTERY") % [_format_int(fill), _format_int(cap)]
 
 	if pct_label:
-		pct_label.text = "%d%% to next" % int(progress.get("pct", 0.0))
+		pct_label.text = tr("BESTIARY_PCT_TO_NEXT") % int(progress.get("pct", 0.0))
 
 	_rebuild_markers(entry)
 	_rebuild_pills(entry)
@@ -103,13 +103,13 @@ func _rebuild_pills(entry: BestiaryEntry) -> void:
 		pill.disabled = true
 		pill.focus_mode = Control.FOCUS_NONE
 		if unlocked:
-			pill.text = "%d: %s · +%d%%" % [
+			pill.text = tr("BESTIARY_MILESTONE_PILL") % [
 				milestone.kills,
 				milestone.label,
 				int(milestone.damage_bonus_pct),
 			]
 		else:
-			pill.text = "%d: %s" % [milestone.kills, milestone.label]
+			pill.text = tr("BESTIARY_MILESTONE_PILL_SHORT") % [milestone.kills, milestone.label]
 		pills.add_child(pill)
 
 

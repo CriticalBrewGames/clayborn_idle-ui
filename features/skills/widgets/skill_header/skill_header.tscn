@@ -90,7 +90,7 @@ size_flags_horizontal = 2
 size_flags_stretch_ratio = 9.08
 theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
 theme_override_fonts/font = ExtResource("2_eqdhe")
-text = "Level 99"
+text = "SKILLS_LEVEL"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="MainPanel/VBoxContainer/HBoxContainer" unique_id=578936175]

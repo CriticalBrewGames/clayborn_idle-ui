@@ -13,9 +13,9 @@ extends Panel
 func bind_entry(entry: BestiaryEntry) -> void:
 	var discovered := entry.is_discovered()
 	if name_label:
-		name_label.text = entry.display_name if discovered else "Unknown Creature"
+		name_label.text = entry.display_name if discovered else tr("BESTIARY_UNKNOWN_CREATURE")
 	if meta_label:
-		meta_label.text = "%s · Level %d · %s" % [entry.region, entry.level, entry.style]
+		meta_label.text = tr("BESTIARY_META") % [entry.region, entry.level, entry.style]
 	if hp_value:
 		hp_value.text = str(entry.hp) if discovered else "—"
 	if armour_value:
@@ -23,9 +23,9 @@ func bind_entry(entry: BestiaryEntry) -> void:
 	if attack_value:
 		attack_value.text = str(entry.attack) if discovered else "—"
 	if speed_value:
-		speed_value.text = ("%.1fs" % entry.attack_speed) if discovered else "—"
+		speed_value.text = (tr("BESTIARY_ATTACK_SPEED_FMT") % entry.attack_speed) if discovered else "—"
 	if bonus_label:
-		bonus_label.text = "+%d%% damage" % int(entry.total_damage_bonus_pct())
+		bonus_label.text = tr("BESTIARY_DAMAGE_BONUS") % int(entry.total_damage_bonus_pct())
 	if kills_value:
 		kills_value.text = "%s" % _format_int(entry.kills)
 

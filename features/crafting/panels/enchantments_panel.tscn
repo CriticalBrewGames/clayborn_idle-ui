@@ -82,7 +82,7 @@ script = ExtResource("7_forward")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
 button_pressed = true
-text = "All"
+text = "CRAFTING_FILTER_ALL"
 script = ExtResource("5_payload")
 payload = &"all"
 metadata/_custom_type_script = "uid://dqvx2hnt7y861"
@@ -90,7 +90,7 @@ metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 [node name="FilterWeapon" type="Button" parent="Margin/VBox/FilterRow"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
-text = "Weapon"
+text = "CRAFTING_FILTER_WEAPON"
 script = ExtResource("5_payload")
 payload = &"weapon"
 metadata/_custom_type_script = "uid://dqvx2hnt7y861"
@@ -98,7 +98,7 @@ metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 [node name="FilterArmour" type="Button" parent="Margin/VBox/FilterRow"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
-text = "Armour"
+text = "CRAFTING_FILTER_ARMOUR"
 script = ExtResource("5_payload")
 payload = &"armour"
 metadata/_custom_type_script = "uid://dqvx2hnt7y861"
@@ -106,7 +106,7 @@ metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 [node name="FilterJewel" type="Button" parent="Margin/VBox/FilterRow"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
-text = "Jewel"
+text = "CRAFTING_FILTER_JEWEL"
 script = ExtResource("5_payload")
 payload = &"jewel"
 metadata/_custom_type_script = "uid://dqvx2hnt7y861"
@@ -114,7 +114,7 @@ metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 [node name="FilterTool" type="Button" parent="Margin/VBox/FilterRow"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
-text = "Tool"
+text = "CRAFTING_FILTER_TOOL"
 script = ExtResource("5_payload")
 payload = &"tool"
 metadata/_custom_type_script = "uid://dqvx2hnt7y861"
@@ -131,7 +131,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxFlat_search")
-placeholder_text = "Search enchantments…"
+placeholder_text = "CRAFTING_SEARCH_ENCHANTS"
 
 [node name="ListPanel" type="Panel" parent="Margin/VBox"]
 layout_mode = 2
@@ -161,7 +161,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.6, 0.65, 0.68, 1)
 theme_override_fonts/font = ExtResource("4_semibold")
 theme_override_font_sizes/font_size = 11
-text = "— Prefix —"
+text = "CRAFTING_PREFIX_HEADER"
 horizontal_alignment = 1
 
 [node name="Row1" parent="Margin/VBox/ListPanel/Scroll/List" instance=ExtResource("2_row")]
@@ -199,7 +199,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.6, 0.65, 0.68, 1)
 theme_override_fonts/font = ExtResource("4_semibold")
 theme_override_font_sizes/font_size = 11
-text = "— Suffix —"
+text = "CRAFTING_SUFFIX_HEADER"
 horizontal_alignment = 1
 
 [node name="Row3" parent="Margin/VBox/ListPanel/Scroll/List" instance=ExtResource("2_row")]
@@ -263,7 +263,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 12
-text = "Item"
+text = "CRAFTING_ENCHANT_ITEM"
 horizontal_alignment = 1
 
 [node name="ItemSlot" parent="Margin/VBox/CraftBar/CraftMargin/CraftRow/ItemColumn" instance=ExtResource("1_slot")]
@@ -281,7 +281,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 12
-text = "Cost"
+text = "CRAFTING_ENCHANT_COST"
 horizontal_alignment = 1
 
 [node name="CostSlots" type="HBoxContainer" parent="Margin/VBox/CraftBar/CraftMargin/CraftRow/CostColumn"]
@@ -304,4 +304,4 @@ custom_minimum_size = Vector2(110, 40)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_font")
-text = "Craft"
+text = "CRAFTING_ENCHANT_CRAFT"

@@ -76,18 +76,18 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("4_semibold")
 theme_override_font_sizes/font_size = 13
-text = "Items to sell"
+text = "SHOP_ITEMS_TO_SELL"
 
 [node name="IncomeHint" type="Label" parent="Margin/VBox/MainRow/IncomeColumn/IncomeHeader" unique_id=1574537706]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.75, 0.78, 1)
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 11
-text = "IncomeInventory · 13×8"
+text = "SHOP_INCOME_HINT"
 
 [node name="WyvenboxTemplate" parent="Margin/VBox/MainRow/IncomeColumn" unique_id=589318067 instance=ExtResource("3_scvq3")]
 layout_mode = 2
-template_name = "Income Inventory"
+template_name = "SHOP_INCOME_INVENTORY"
 inventory_size = Vector2i(13, 8)
 
 [node name="OutcomeColumn" type="VBoxContainer" parent="Margin/VBox/MainRow" unique_id=361294388]
@@ -102,7 +102,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.89411765, 0.85882354, 0.7490196, 1)
 theme_override_fonts/font = ExtResource("4_semibold")
 theme_override_font_sizes/font_size = 13
-text = "You receive"
+text = "SHOP_YOU_RECEIVE"
 
 [node name="OutcomePreview" type="Panel" parent="Margin/VBox/MainRow/OutcomeColumn" unique_id=1589066212]
 layout_mode = 2
@@ -130,7 +130,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
-template_name = "Gold"
+template_name = "SHOP_GOLD_INVENTORY"
 inventory_size = Vector2i(2, 2)
 
 [node name="GoldAmount" type="Label" parent="Margin/VBox/MainRow/OutcomeColumn/OutcomePreview/PreviewMargin/PreviewVBox" unique_id=231475738]
@@ -146,20 +146,20 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.75, 0.78, 1)
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 11
-text = "OutcomeInventory · 80% rate"
+text = "SHOP_OUTCOME_RATE"
 horizontal_alignment = 1
 
 [node name="ConfirmSell" type="Button" parent="Margin/VBox/MainRow/OutcomeColumn" unique_id=1257059912]
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
-text = "Confirm sell"
+text = "SHOP_CONFIRM_SELL"
 
 [node name="ClearBtn" type="Button" parent="Margin/VBox/MainRow/OutcomeColumn" unique_id=1891119937]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
-text = "Clear"
+text = "SHOP_CLEAR"
 
 [node name="CalcHint" type="Panel" parent="Margin/VBox" unique_id=329132767]
 custom_minimum_size = Vector2(0, 40)
@@ -178,6 +178,6 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.75, 0.8, 0.82, 1)
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 12
-text = "SellingCalculation · floor(price × 0.8) per unit · min 1 gold"
+text = "SHOP_SELL_CALC_HINT"
 horizontal_alignment = 1
 vertical_alignment = 1

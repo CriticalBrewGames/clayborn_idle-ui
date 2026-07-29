@@ -52,7 +52,7 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.108524, 0.10324, 0.0935114, 1)
 theme_override_fonts/font = ExtResource("2_ve4xv")
-text = "Combat style:"
+text = "COMBAT_STYLE"
 horizontal_alignment = 1
 
 [node name="Offensive" type="HBoxContainer" parent="Panel/CombatStyleGrid" unique_id=1691901328]

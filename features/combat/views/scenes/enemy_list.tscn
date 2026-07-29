@@ -65,7 +65,7 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 12
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cl6b7")
 theme_override_styles/normal = ExtResource("3_1tr7y")
-placeholder_text = "Search"
+placeholder_text = "COMBAT_SEARCH"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2

@@ -58,7 +58,7 @@ stretch_mode = 5
 [node name="FightButton" type="Button" parent="Margin/VBox"]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
-text = "Fight"
+text = "COMBAT_FIGHT"
 
 [node name="LockOverlay" type="ColorRect" parent="."]
 visible = false
