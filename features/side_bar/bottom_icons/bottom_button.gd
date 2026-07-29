@@ -1,10 +1,10 @@
 extends Button
 
-## Bottom icon button. Emits a small string payload for Main to route.
+## Bottom icon button. Emits a small StringName payload for Main to route.
 
-signal payload_pressed(payload: String)
+signal payload_pressed(payload: StringName)
 
-@export var payload: String = ""
+@export var payload: StringName = &""
 
 
 func _ready() -> void:

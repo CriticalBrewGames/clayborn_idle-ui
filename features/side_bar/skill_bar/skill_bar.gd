@@ -1,9 +1,9 @@
 extends Control
 
 ## Side bar skill binding. Main pushes Dictionary skill data.
-## Buttons emit string payloads; this bubbles them as payload_pressed.
+## Buttons emit StringName payloads; this bubbles them as payload_pressed.
 
-signal payload_pressed(payload: String)
+signal payload_pressed(payload: StringName)
 
 @onready var skill_box: BoxContainer = $Panel/SkillBoxContainer
 
@@ -58,7 +58,7 @@ func _ready() -> void:
 				btn.payload_pressed.connect(_on_payload_pressed)
 
 
-func _on_payload_pressed(payload: String) -> void:
+func _on_payload_pressed(payload: StringName) -> void:
 	payload_pressed.emit(payload)
 
 

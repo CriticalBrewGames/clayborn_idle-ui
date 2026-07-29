@@ -4,7 +4,7 @@ extends Control
 ## SM/MD: bottom-left quick buttons emit payloads for Main to route.
 ## LG+: archive-style desktop panel anchored bottom-right.
 
-signal payload_pressed(payload: String)
+signal payload_pressed(payload: StringName)
 signal heal_requested(amount: int)
 signal apply_effect_requested(effect_id: String)
 signal stats_looked_at(toggled: bool, data: Dictionary)
@@ -94,5 +94,5 @@ func _connect_desktop_signals() -> void:
 		_desktop_panel.stat_panel_toggled.connect(func(open): stat_panel_toggled.emit(open))
 
 
-func _forward_payload(payload: String) -> void:
+func _forward_payload(payload: StringName) -> void:
 	payload_pressed.emit(payload)

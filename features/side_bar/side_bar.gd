@@ -1,9 +1,9 @@
 extends Control
 
-## Top-level side bar. Bubbles small string payloads from skill / utility / bottom buttons.
+## Top-level side bar. Bubbles small StringName payloads from skill / utility / bottom buttons.
 ## Main routes payloads; this scene never opens scenes itself.
 
-signal payload_pressed(payload: String)
+signal payload_pressed(payload: StringName)
 
 @onready var skill_bar: Control = $SkillBar
 @onready var utility_buttons: Control = $UtilityButtons
@@ -50,5 +50,5 @@ func _wire_payload_buttons(root: Node) -> void:
 		_wire_payload_buttons(child)
 
 
-func _forward_payload(payload: String) -> void:
+func _forward_payload(payload: StringName) -> void:
 	payload_pressed.emit(payload)

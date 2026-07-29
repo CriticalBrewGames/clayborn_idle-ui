@@ -1,8 +1,9 @@
 class_name PayloadButton extends Button
 
-signal payload_pressed(payload: String)
+signal payload_pressed(payload: StringName)
 
-@export var payload: String = ""
+@export var payload: StringName = &""
+
 
 func _on_pressed() -> void:
 	if payload.is_empty():

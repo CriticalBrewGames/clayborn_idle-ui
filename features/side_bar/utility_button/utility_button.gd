@@ -1,10 +1,10 @@
 extends Button
 
-## Utility side-bar button. Emits a small string payload for Main to route.
+## Utility side-bar button. Emits a small StringName payload for Main to route.
 
-signal payload_pressed(payload: String)
+signal payload_pressed(payload: StringName)
 
-@export var payload: String = ""
+@export var payload: StringName = &""
 @export var button_icon: Texture2D
 @export var button_text: String
 

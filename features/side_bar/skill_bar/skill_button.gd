@@ -25,7 +25,7 @@ func _ready() -> void:
 ## data keys: skill_id, name, level, xp, icon (Texture2D)
 func update_from_data(data: Dictionary) -> void:
 	if data.has("skill_id"):
-		payload = str(data["skill_id"])
+		payload = StringName(str(data["skill_id"]))
 	if data.has("name"):
 		set_skill_name(str(data["name"]))
 	if data.has("level"):
