@@ -17,11 +17,6 @@ var skill_id: String:
 		payload = value
 
 
-func _ready() -> void:
-	if not pressed.is_connected(_on_pressed):
-		pressed.connect(_on_pressed)
-
-
 ## data keys: skill_id, name, level, xp, icon (Texture2D)
 func update_from_data(data: Dictionary) -> void:
 	if data.has("skill_id"):
