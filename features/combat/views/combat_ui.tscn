@@ -1,34 +1,26 @@
-[gd_scene format=3 uid="uid://dbj86ld8dpkva"]
+[gd_scene load_steps=18 format=3 uid="uid://dbj86ld8dpkva"]
 
-[ext_resource type="Texture2D" uid="uid://c882bp8yhpefr" path="res://assets/skill_icons/strength.svg" id="8_wp6pe"]
-[ext_resource type="PackedScene" uid="uid://dx1dln0nvj5si" path="res://ui/features/combat/views/widgets/character_containers/player_container.tscn" id="11_rj5ps"]
-[ext_resource type="StyleBox" uid="uid://dbujs0fxvutpm" path="res://assets/theme/inventory_background.tres" id="12_dqj0o"]
-[ext_resource type="PackedScene" uid="uid://uq41ltf1toa8" path="res://ui/features/combat/views/widgets/combat_options.tscn" id="13_7ax37"]
-[ext_resource type="Script" uid="uid://b8ffm0651qv66" path="res://ui/features/combat/views/combat_ui_ui_updater.gd" id="13_quh7u"]
-[ext_resource type="StyleBox" uid="uid://ix568exgjks7" path="res://assets/theme/panels/enemy_compact_stats.tres" id="14_dqj0o"]
-[ext_resource type="Texture2D" uid="uid://b6l1gvq052785" path="res://assets/skill_icons/hitpoint.svg" id="15_0y0am"]
-[ext_resource type="Texture2D" uid="uid://bamal228y4qx4" path="res://assets/skill_icons/defence.svg" id="16_f2wf1"]
-[ext_resource type="Texture2D" uid="uid://dno87kd64gbva" path="res://assets/skill_icons/agility.svg" id="17_vi8vq"]
-[ext_resource type="Texture2D" uid="uid://wjh7l7kcgr0p" path="res://assets/skill_icons/attack.svg" id="18_msuyl"]
-[ext_resource type="StyleBox" uid="uid://d0ovkjdjkcflw" path="res://assets/theme/panels/deep_panel.tres" id="19_eju0a"]
-[ext_resource type="PackedScene" uid="uid://ct8ko5h83kmpi" path="res://ui/features/combat/views/widgets/character_containers/attack_timer/attack_timers_collection/attack_timers_collection.tscn" id="29_1np8x"]
+[ext_resource type="Texture2D" uid="uid://c882bp8yhpefr" path="res://assets/skill_icons/strength.svg" id="1_strength"]
+[ext_resource type="StyleBox" uid="uid://c8combatarena01" path="res://assets/theme/panels/combat_arena.tres" id="2_arena"]
+[ext_resource type="Texture2D" uid="uid://k6fkfdqyfnwg" path="res://assets/ui/button/bg/clay.webp" id="3_clay"]
+[ext_resource type="Script" uid="uid://brdu5ow61luop" path="res://ui/features/combat/views/combat_layout_profile.gd" id="4_profile"]
+[ext_resource type="Script" uid="uid://c77b06cxswdle" path="res://ui/features/combat/views/combat_hud_view.gd" id="5_hud"]
+[ext_resource type="Script" uid="uid://b8ffm0651qv66" path="res://ui/features/combat/views/combat_ui_ui_updater.gd" id="6_ui_updater"]
+[ext_resource type="Script" uid="uid://dws04k576ptf7" path="res://ui/features/combat/views/combat_ui_updater.gd" id="7_root_updater"]
+[ext_resource type="StyleBox" uid="uid://ix568exgjks7" path="res://assets/theme/panels/enemy_compact_stats.tres" id="8_compact"]
+[ext_resource type="Texture2D" uid="uid://b6l1gvq052785" path="res://assets/skill_icons/hitpoint.svg" id="9_hp"]
+[ext_resource type="Texture2D" uid="uid://bamal228y4qx4" path="res://assets/skill_icons/defence.svg" id="10_def"]
+[ext_resource type="Texture2D" uid="uid://dno87kd64gbva" path="res://assets/skill_icons/agility.svg" id="11_agi"]
+[ext_resource type="Texture2D" uid="uid://wjh7l7kcgr0p" path="res://assets/skill_icons/attack.svg" id="12_atk"]
+[ext_resource type="PackedScene" uid="uid://dx1dln0nvj5si" path="res://ui/features/combat/views/widgets/character_containers/player_container.tscn" id="13_player"]
+[ext_resource type="PackedScene" uid="uid://drri0043lgerx" path="res://ui/features/combat/views/widgets/character_containers/enemy_container.tscn" id="14_enemy"]
+[ext_resource type="PackedScene" uid="uid://ct8ko5h83kmpi" path="res://ui/features/combat/views/widgets/character_containers/attack_timer/attack_timers_collection/attack_timers_collection.tscn" id="15_timers"]
+[ext_resource type="PackedScene" uid="uid://uq41ltf1toa8" path="res://ui/features/combat/views/widgets/combat_options.tscn" id="16_options"]
+[ext_resource type="PackedScene" uid="uid://bqx7quickactions" path="res://ui/features/combat/views/widgets/quick_actions.tscn" id="17_quick"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f2wf1"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sep"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4fjw"]
-bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
-border_width_bottom = 309
-border_color = Color(0.08280597, 0.2814471, 0.37715098, 1)
-border_blend = true
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_color = Color(0, 0, 0, 0.39215687)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_smqfi"]
-
-[node name="CombatUi" type="Control" unique_id=1626700648]
+[node name="CombatUi" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,72 +30,148 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="PlayerSidePanel" type="Panel" parent="." unique_id=1032833634]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = -51.0
-offset_top = -112.0
-offset_right = 4.0
-offset_bottom = 122.0
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("12_dqj0o")
+[node name="CombatLayoutProfile" type="Node" parent="."]
+script = ExtResource("4_profile")
+player_hp_bar = NodePath("ArenaPanel/MarginContainer/MainRow/PlayerColumn/PlayerContainer/NamePlate/PlayerHp")
+player_sprite = NodePath("ArenaPanel/MarginContainer/MainRow/PlayerColumn/PlayerContainer/CharacterCard/Sprite")
+player_attack_bar = NodePath("ArenaPanel/MarginContainer/MainRow/CenterColumn/AttackTimersCollection/BoxContainer3/PlayerAttackTimer/PlayerAttackBar")
+player_panel = NodePath("ArenaPanel/MarginContainer/MainRow/PlayerColumn/PlayerContainer/CharacterCard")
+player_container = NodePath("ArenaPanel/MarginContainer/MainRow/PlayerColumn/PlayerContainer")
+player_sprite_panel = NodePath("ArenaPanel/MarginContainer/MainRow/PlayerColumn/PlayerContainer/CharacterCard")
+enemy_hp_bar = NodePath("ArenaPanel/MarginContainer/MainRow/EnemyColumn/EnemyContainer/Panel/EnemyHp")
+enemy_sprite = NodePath("ArenaPanel/MarginContainer/MainRow/EnemyColumn/EnemyContainer/Panel2/Sprite")
+enemy_attack_bar = NodePath("ArenaPanel/MarginContainer/MainRow/CenterColumn/AttackTimersCollection/BoxContainer3/EnemyAttackTimer/PlayerAttackBar")
+enemy_panel = NodePath("ArenaPanel/MarginContainer/MainRow/EnemyColumn/EnemyContainer/Panel2")
+enemy_container = NodePath("ArenaPanel/MarginContainer/MainRow/EnemyColumn/EnemyContainer")
+enemy_sprite_panel = NodePath("ArenaPanel/MarginContainer/MainRow/EnemyColumn/EnemyContainer/Panel2")
+enemy_stats_panel = NodePath("ArenaPanel/MarginContainer/MainRow/EnemyColumn/EnemyContainer/EnemyStatsPanel")
+enemy_attack_type = NodePath("ArenaPanel/MarginContainer/MainRow/CenterColumn/AttackTimersCollection/BoxContainer3/EnemyAttackTimer/Panel/OffensiveType")
+enemy_name = NodePath("ArenaPanel/MarginContainer/MainRow/EnemyColumn/EnemyContainer/Panel/EnemyName")
+base_container = NodePath("ArenaPanel")
+cooldown_panel = NodePath("ArenaPanel/MarginContainer/MainRow/CenterColumn/AttackTimersCollection")
+countdown_container = NodePath("ArenaPanel/MarginContainer/MainRow/CenterColumn/AttackTimersCollection/BoxContainer3")
+friendly_cooldown_container = NodePath("ArenaPanel/MarginContainer/MainRow/CenterColumn/AttackTimersCollection/BoxContainer3/PlayerAttackTimer")
+enemy_cooldown_container = NodePath("ArenaPanel/MarginContainer/MainRow/CenterColumn/AttackTimersCollection/BoxContainer3/EnemyAttackTimer")
+middle_section = NodePath("ArenaPanel/MarginContainer/MainRow/CenterColumn")
+default_stat_panel = NodePath("ArenaPanel/MarginContainer/MainRow/EnemyColumn/EnemyContainer/EnemyStatsPanel")
+compact_stat_panel = NodePath("EnemyStatMinimalPanel")
+combat_style_panel = NodePath("ArenaPanel/MarginContainer/MainRow/PlayerColumn/PlayerContainer/CombatStyleWidget")
+str_button = NodePath("ArenaPanel/MarginContainer/MainRow/PlayerColumn/PlayerContainer/CombatStyleWidget/Panel/CombatStyleGrid/Offensive/StrengthStyle")
+attack_button = NodePath("ArenaPanel/MarginContainer/MainRow/PlayerColumn/PlayerContainer/CombatStyleWidget/Panel/CombatStyleGrid/Offensive/AttackStyle")
+defence_button = NodePath("ArenaPanel/MarginContainer/MainRow/PlayerColumn/PlayerContainer/CombatStyleWidget/Panel/CombatStyleGrid/Defensive/DefenceStyle")
+agility_button = NodePath("ArenaPanel/MarginContainer/MainRow/PlayerColumn/PlayerContainer/CombatStyleWidget/Panel/CombatStyleGrid/Defensive/AgilityStyle")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PlayerSidePanel" unique_id=1944877073]
+[node name="CombatHudView" type="Node" parent="."]
+script = ExtResource("5_hud")
+layout_profile = NodePath("../CombatLayoutProfile")
+
+[node name="ArenaPanel" type="Panel" parent="."]
+clip_children = 2
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -15.5
-offset_top = -102.0
-offset_right = 16.5
-offset_bottom = 102.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_arena")
 
-[node name="SpellButton" type="Panel" parent="PlayerSidePanel/VBoxContainer" unique_id=2040249088]
-custom_minimum_size = Vector2(32, 32)
+[node name="ClayBackdrop" type="TextureRect" parent="ArenaPanel"]
+modulate = Color(0.0823529, 0.207843, 0.34902, 0.329412)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_clay")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="ArenaPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="MainRow" type="HBoxContainer" parent="ArenaPanel/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_styles/panel = ExtResource("19_eju0a")
+theme_override_constants/separation = 16
+alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="PlayerSidePanel/VBoxContainer" unique_id=1181362544]
+[node name="PlayerColumn" type="VBoxContainer" parent="ArenaPanel/MarginContainer/MainRow"]
 layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_f2wf1")
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.1
+theme_override_constants/separation = 8
 
-[node name="EatButton" type="Panel" parent="PlayerSidePanel/VBoxContainer" unique_id=702255271]
-custom_minimum_size = Vector2(32, 32)
+[node name="PlayerContainer" parent="ArenaPanel/MarginContainer/MainRow/PlayerColumn" instance=ExtResource("13_player")]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("19_eju0a")
+size_flags_vertical = 3
 
-[node name="HSeparator2" type="HSeparator" parent="PlayerSidePanel/VBoxContainer" unique_id=1157852643]
+[node name="QuickActions" parent="ArenaPanel/MarginContainer/MainRow/PlayerColumn" instance=ExtResource("17_quick")]
 layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_f2wf1")
 
-[node name="PotionButton" type="Panel" parent="PlayerSidePanel/VBoxContainer" unique_id=173623513]
-custom_minimum_size = Vector2(32, 32)
+[node name="CenterColumn" type="VBoxContainer" parent="ArenaPanel/MarginContainer/MainRow"]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("19_eju0a")
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.85
+theme_override_constants/separation = 12
+alignment = 1
 
-[node name="EnemyStatMinimalPanel" type="Panel" parent="." unique_id=1404105989]
+[node name="VsLabel" type="Label" parent="ArenaPanel/MarginContainer/MainRow/CenterColumn"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.637, 0.812, 0.937, 0.6)
+theme_override_font_sizes/font_size = 18
+text = "VS"
+horizontal_alignment = 1
+
+[node name="AttackTimersCollection" parent="ArenaPanel/MarginContainer/MainRow/CenterColumn" instance=ExtResource("15_timers")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HSeparator" type="HSeparator" parent="ArenaPanel/MarginContainer/MainRow/CenterColumn"]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sep")
+
+[node name="CombatOptions" parent="ArenaPanel/MarginContainer/MainRow/CenterColumn" instance=ExtResource("16_options")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="EnemyColumn" type="VBoxContainer" parent="ArenaPanel/MarginContainer/MainRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.1
+
+[node name="EnemyContainer" parent="ArenaPanel/MarginContainer/MainRow/EnemyColumn" instance=ExtResource("14_enemy")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EnemyStatMinimalPanel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -4.0
+offset_left = -66.0
 offset_top = -153.0
-offset_right = 62.0
+offset_right = 4.0
 offset_bottom = 153.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("14_dqj0o")
+theme_override_styles/panel = ExtResource("8_compact")
 
-[node name="Panel" type="Panel" parent="EnemyStatMinimalPanel" unique_id=1999410067]
+[node name="InnerPanel" type="Panel" parent="EnemyStatMinimalPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -115,7 +183,7 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="EnemyStatMinimalPanel/Panel" unique_id=521305885]
+[node name="VBoxContainer" type="VBoxContainer" parent="EnemyStatMinimalPanel/InnerPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -129,135 +197,90 @@ offset_bottom = 131.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=882610167]
+[node name="TextureRect" type="TextureRect" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("15_0y0am")
+texture = ExtResource("9_hp")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=1233191948]
+[node name="Label" type="Label" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 layout_mode = 2
 text = "15"
 horizontal_alignment = 1
 
-[node name="HSeparator2" type="HSeparator" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=1439128821]
+[node name="HSeparator2" type="HSeparator" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=821247487]
+[node name="TextureRect2" type="TextureRect" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("16_f2wf1")
+texture = ExtResource("10_def")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Label2" type="Label" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=311344137]
+[node name="Label2" type="Label" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 layout_mode = 2
 text = "15"
 horizontal_alignment = 1
 
-[node name="HSeparator3" type="HSeparator" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=2138966273]
+[node name="HSeparator3" type="HSeparator" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=83058593]
+[node name="TextureRect3" type="TextureRect" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("17_vi8vq")
+texture = ExtResource("11_agi")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Label3" type="Label" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=1587425019]
+[node name="Label3" type="Label" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 layout_mode = 2
 text = "15"
 horizontal_alignment = 1
 
-[node name="HSeparator4" type="HSeparator" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=1004487789]
+[node name="HSeparator4" type="HSeparator" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect4" type="TextureRect" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=306654552]
+[node name="TextureRect4" type="TextureRect" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("18_msuyl")
+texture = ExtResource("12_atk")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Label4" type="Label" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=2058531570]
+[node name="Label4" type="Label" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 layout_mode = 2
 text = "15"
 horizontal_alignment = 1
 
-[node name="HSeparator5" type="HSeparator" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=812839825]
+[node name="HSeparator5" type="HSeparator" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect5" type="TextureRect" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=388301211]
+[node name="TextureRect5" type="TextureRect" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("8_wp6pe")
+texture = ExtResource("1_strength")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Label5" type="Label" parent="EnemyStatMinimalPanel/Panel/VBoxContainer" unique_id=39773374]
+[node name="Label5" type="Label" parent="EnemyStatMinimalPanel/InnerPanel/VBoxContainer"]
 layout_mode = 2
 text = "15"
 horizontal_alignment = 1
 
-[node name="Panel" type="Panel" parent="." unique_id=254574940]
-clip_children = 2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_q4fjw")
+[node name="UIUpdater" type="Node" parent="."]
+script = ExtResource("6_ui_updater")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=560660939]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 63.0
-offset_top = 68.0
-offset_right = -63.0
-offset_bottom = -68.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="CharacterContainer" parent="Panel/HBoxContainer" unique_id=2021944381 instance=ExtResource("11_rj5ps")]
-layout_mode = 2
-size_flags_horizontal = 6
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=392632354]
-layout_mode = 2
-alignment = 1
-
-[node name="AttackTimersCollection" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1446027187 instance=ExtResource("29_1np8x")]
-layout_mode = 2
-
-[node name="HSeparator" type="HSeparator" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1523332400]
-layout_mode = 2
-theme_override_constants/separation = 50
-theme_override_styles/separator = SubResource("StyleBoxEmpty_smqfi")
-
-[node name="CombatOptions" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1357646223 instance=ExtResource("13_7ax37")]
-layout_mode = 2
-size_flags_vertical = 8
-
-[node name="CharacterContainer2" parent="Panel/HBoxContainer" unique_id=1509468104 instance=ExtResource("11_rj5ps")]
-layout_mode = 2
-size_flags_horizontal = 6
-
-[node name="UIUpdater" type="Node" parent="." unique_id=309139835]
-script = ExtResource("13_quh7u")
-metadata/_custom_type_script = "uid://bbmfsyjbdjgao"
+[node name="RootUIUpdater" type="Node" parent="."]
+script = ExtResource("7_root_updater")

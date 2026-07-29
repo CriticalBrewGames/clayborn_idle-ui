@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://daq80hna71hyl"]
+[gd_scene load_steps=3 format=3 uid="uid://daq80hna71hyl"]
 
 [ext_resource type="PackedScene" uid="uid://cgqnjxe2usdw4" path="res://ui/features/combat/views/scenes/enemy_list.tscn" id="1_enemy_list"]
-[ext_resource type="PackedScene" uid="uid://dbj86ld8dpkva" path="res://ui/features/combat/views/combat_ui.tscn" id="2_snbyo"]
+[ext_resource type="PackedScene" uid="uid://dbj86ld8dpkva" path="res://ui/features/combat/views/combat_ui.tscn" id="2_combat_ui"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ni18"]
-bg_color = Color(0.06666667, 0.12156863, 0.16470589, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shell"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -12,7 +12,7 @@ corner_radius_bottom_left = 10
 shadow_color = Color(0, 0, 0, 0.32156864)
 shadow_size = 15
 
-[node name="Panel" type="Panel" unique_id=286605064]
+[node name="CombatScene" type="Panel"]
 custom_maximum_size = Vector2(1000, 820)
 anchors_preset = 5
 anchor_left = 0.5
@@ -22,25 +22,27 @@ offset_right = 500.0
 offset_bottom = 720.0
 grow_horizontal = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_0ni18")
+theme_override_styles/panel = SubResource("StyleBoxFlat_shell")
 
-[node name="CombatScene" type="VBoxContainer" parent="." unique_id=444580930]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_constants/separation = 12
 
-[node name="EnemyList" parent="CombatScene" unique_id=1779527755 instance=ExtResource("1_enemy_list")]
-custom_minimum_size = Vector2(0, 180)
+[node name="EnemyList" parent="VBoxContainer" instance=ExtResource("1_enemy_list")]
+custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 0
 
-[node name="CombatUi" parent="CombatScene" unique_id=1515193347 instance=ExtResource("2_snbyo")]
+[node name="CombatUi" parent="VBoxContainer" instance=ExtResource("2_combat_ui")]
 layout_mode = 2
-size_flags_horizontal = 1
+size_flags_horizontal = 3
 size_flags_vertical = 3

@@ -11,14 +11,9 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cl6b7"]
 
 [node name="EnemyList" type="Control"]
-layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -500.0
-offset_right = 500.0
-offset_bottom = 350.0
-grow_horizontal = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_list")
 
 [node name="Panel" type="Panel" parent="."]

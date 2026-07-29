@@ -1,7 +1,7 @@
 extends UIUpdaterBreakpoint
 
-const ROOT_SM_SIZE = Vector2(300, 500)
-const ROOT_MD_SIZE = Vector2(920, 780)
+const ROOT_SM_SIZE = Vector2(320, 480)
+const ROOT_MD_SIZE = Vector2(960, 560)
 
 @onready var root = $".."
 
