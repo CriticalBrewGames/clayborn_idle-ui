@@ -62,10 +62,12 @@ alignment = 1
 [node name="AttackStyle" parent="Panel/CombatStyleGrid/Offensive" unique_id=551152868 instance=ExtResource("3_7wtiy")]
 layout_mode = 2
 size_flags_horizontal = 3
+payload = &"attack"
 
 [node name="StrengthStyle" parent="Panel/CombatStyleGrid/Offensive" unique_id=863642161 instance=ExtResource("3_7wtiy")]
 layout_mode = 2
 size_flags_horizontal = 3
+payload = &"strength"
 attack_type = 1
 
 [node name="ButtonGroupBinder" type="Node" parent="Panel/CombatStyleGrid/Offensive" unique_id=1994409909 node_paths=PackedStringArray("button_container")]
@@ -81,11 +83,13 @@ alignment = 1
 [node name="DefenceStyle" parent="Panel/CombatStyleGrid/Defensive" unique_id=622329632 instance=ExtResource("3_7wtiy")]
 layout_mode = 2
 size_flags_horizontal = 3
+payload = &"defence"
 attack_type = 2
 
 [node name="AgilityStyle" parent="Panel/CombatStyleGrid/Defensive" unique_id=618361006 instance=ExtResource("3_7wtiy")]
 layout_mode = 2
 size_flags_horizontal = 3
+payload = &"agility"
 attack_type = 3
 
 [node name="ButtonGroupBinder" type="Node" parent="Panel/CombatStyleGrid/Defensive" unique_id=1703343865 node_paths=PackedStringArray("button_container")]

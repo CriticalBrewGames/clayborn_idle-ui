@@ -16,32 +16,32 @@ size_flags_stretch_ratio = 0.45
 
 [node name="Button" parent="UtilityButtonBoxContainer" unique_id=1363086837 instance=ExtResource("1_v07qw")]
 layout_mode = 2
-payload = "achievements"
+payload = &"achievements"
 button_text = "SIDEBAR_ACHIEVEMENTS"
 
 [node name="Button2" parent="UtilityButtonBoxContainer" unique_id=1247596458 instance=ExtResource("1_v07qw")]
 layout_mode = 2
-payload = "quest"
+payload = &"quest"
 button_text = "SIDEBAR_QUESTS"
 
 [node name="Button3" parent="UtilityButtonBoxContainer" unique_id=1242623442 instance=ExtResource("1_v07qw")]
 layout_mode = 2
-payload = "shop"
+payload = &"shop"
 button_text = "SIDEBAR_SHOP"
 
 [node name="Button4" parent="UtilityButtonBoxContainer" unique_id=1115358711 instance=ExtResource("1_v07qw")]
 layout_mode = 2
-payload = "bank"
+payload = &"bank"
 button_text = "SIDEBAR_BANK"
 
 [node name="Button5" parent="UtilityButtonBoxContainer" unique_id=1852368873 instance=ExtResource("1_v07qw")]
 layout_mode = 2
-payload = "bestiary"
+payload = &"bestiary"
 button_text = "SIDEBAR_BESTIARY"
 
 [node name="Button6" parent="UtilityButtonBoxContainer" unique_id=374283456 instance=ExtResource("1_v07qw")]
 layout_mode = 2
-payload = "crafting"
+payload = &"crafting"
 button_text = "SIDEBAR_CRAFTING"
 
 [node name="UtilityButtonGridContainer" type="GridContainer" parent="." unique_id=972403771]

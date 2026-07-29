@@ -6,8 +6,8 @@ extends Node
 
 
 func _ready() -> void:
-	if mode_buttons and mode_buttons.has_signal("mode_changed"):
-		mode_buttons.mode_changed.connect(_on_mode_changed)
+	if mode_buttons and mode_buttons.has_signal("payload_pressed"):
+		mode_buttons.payload_pressed.connect(_on_mode_changed)
 	_show_mode(&"buy")
 
 

@@ -29,6 +29,7 @@ theme_override_styles/pressed = ExtResource("2_orqn8")
 theme_override_styles/hover = ExtResource("3_pbddq")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_smqfi")
 script = ExtResource("7_payload")
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=257239526]
 layout_mode = 1

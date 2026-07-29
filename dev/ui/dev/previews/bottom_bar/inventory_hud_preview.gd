@@ -26,6 +26,6 @@ func _ready() -> void:
 			_hud.payload_pressed.connect(_on_hud_payload)
 
 
-func _on_hud_payload(payload: String) -> void:
+func _on_hud_payload(payload: StringName) -> void:
 	if _hint:
 		_hint.text = "Payload emitted: %s (Main handles routing)" % payload

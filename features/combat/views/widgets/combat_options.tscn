@@ -37,7 +37,7 @@ grow_vertical = 2
 
 [node name="EscapeButton2" parent="HBoxContainer" unique_id=2032926062 instance=ExtResource("2_345uf")]
 layout_mode = 2
-payload = "escape"
+payload = &"escape"
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=1186314525]
 layout_mode = 2
@@ -45,4 +45,4 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_kqp83")
 
 [node name="DropButton" parent="HBoxContainer" unique_id=648189384 instance=ExtResource("3_5f55f")]
 layout_mode = 2
-payload = "drop"
+payload = &"drop"

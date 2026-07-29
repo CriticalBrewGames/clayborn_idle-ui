@@ -1,9 +1,9 @@
 extends Control
 
 ## Bottom-left quick access buttons for inventory / gear / stats on small and medium breakpoints.
-## Emits string payloads for Main to route (e.g. open inventory, gear, or stats views).
+## Emits StringName payloads for Main to route (e.g. open inventory, gear, or stats views).
 
-signal payload_pressed(payload: String)
+signal payload_pressed(payload: StringName)
 
 @onready var _inventory_button: Button = $InventoryButton
 @onready var _gear_button: Button = $GearButton
@@ -28,5 +28,5 @@ func _wire_payload_button(button: Node) -> void:
 			button.payload_pressed.connect(_forward_payload)
 
 
-func _forward_payload(payload: String) -> void:
+func _forward_payload(payload: StringName) -> void:
 	payload_pressed.emit(payload)

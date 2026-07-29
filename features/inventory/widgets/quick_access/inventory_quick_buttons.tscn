@@ -21,15 +21,15 @@ script = ExtResource("1_script")
 
 [node name="InventoryButton" parent="." unique_id=1764330543 instance=ExtResource("2_button")]
 layout_mode = 2
-payload = "inventory"
+payload = &"inventory"
 
 [node name="GearButton" parent="." unique_id=1158590077 instance=ExtResource("2_button")]
 layout_mode = 2
-payload = "gear"
+payload = &"gear"
 
 [node name="StatsButton" parent="." unique_id=1462569443 instance=ExtResource("2_button")]
 layout_mode = 2
-payload = "stats"
+payload = &"stats"
 
 [node name="UIUpdater" type="Node" parent="." unique_id=1849987821]
 script = ExtResource("6_updater")

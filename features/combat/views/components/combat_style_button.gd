@@ -14,6 +14,7 @@ const COMBAT_MAPPING = {
 @export var attack_type: AttackType
 
 func _ready() -> void:
+	super._ready()
 	_set_icon_content(attack_type)
 
 

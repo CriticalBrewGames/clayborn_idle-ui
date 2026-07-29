@@ -1,9 +1,9 @@
 [gd_scene format=3]
 
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="1_font"]
-[ext_resource type="Script" path="res://ui/features/aviation/widgets/aviation_mode_bar/aviation_mode_bar.gd" id="2_script"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_modes"]
+[ext_resource type="Script" uid="uid://b1d46b59ba1b2" path="res://ui/features/buttons/payload_button_row.gd" id="2_script"]
+[ext_resource type="Script" uid="uid://dqvx2hnt7y861" path="res://ui/features/buttons/button_with_payload.gd" id="3_payload"]
+[ext_resource type="Script" uid="uid://b5albluo6xsy" path="res://ui/features/utils/button_group_handler/button_group_binder.gd" id="4_binder"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar"]
 bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
@@ -39,15 +39,23 @@ script = ExtResource("2_script")
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_font")
-toggle_mode = true
 button_pressed = true
-button_group = SubResource("ButtonGroup_modes")
 text = "AVIATION_MODE_TRAVEL"
+script = ExtResource("3_payload")
+payload = &"travel"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="HangarBtn" type="Button" parent="Margin/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_font")
-toggle_mode = true
-button_group = SubResource("ButtonGroup_modes")
 text = "AVIATION_MODE_HANGAR"
+script = ExtResource("3_payload")
+payload = &"hangar"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
+
+[node name="ButtonGroupBinder" type="Node" parent="Margin/Buttons" node_paths=PackedStringArray("button_container")]
+script = ExtResource("4_binder")
+group_name = &"aviation_mode_buttons"
+button_container = NodePath("..")
+metadata/_custom_type_script = "uid://b5albluo6xsy"
