@@ -23,7 +23,7 @@ func bind_entry(entry: BestiaryEntry) -> void:
 	var next := entry.next_milestone()
 
 	if count_label:
-		count_label.text = "%d / %d entries" % [unlocked.size(), entry.milestones.size()]
+		count_label.text = tr("BESTIARY_LORE_COUNT") % [unlocked.size(), entry.milestones.size()]
 
 	for child in entries_box.get_children():
 		if child == empty_label:
@@ -40,7 +40,7 @@ func bind_entry(entry: BestiaryEntry) -> void:
 		if next:
 			var remaining: int = next.kills - entry.kills
 			locked_label.visible = true
-			locked_label.text = "Locked · %s — %d more kills · +%d%% damage" % [
+			locked_label.text = tr("BESTIARY_LORE_LOCKED") % [
 				next.label,
 				remaining,
 				int(next.damage_bonus_pct),
@@ -68,7 +68,7 @@ func _make_lore_card(milestone: BestiaryMilestone) -> PanelContainer:
 	header.add_child(title)
 
 	var meta := Label.new()
-	meta.text = "%d kills · +%d%%" % [milestone.kills, int(milestone.damage_bonus_pct)]
+	meta.text = tr("BESTIARY_LORE_META") % [milestone.kills, int(milestone.damage_bonus_pct)]
 	meta.add_theme_font_size_override("font_size", 11)
 	meta.add_theme_color_override("font_color", Color(0.7, 0.78, 0.84, 1))
 	header.add_child(meta)

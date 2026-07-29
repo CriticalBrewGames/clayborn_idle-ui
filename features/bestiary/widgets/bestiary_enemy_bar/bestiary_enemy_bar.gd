@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func set_header(discovered_count: int, total_count: int) -> void:
 	if discovered_label:
-		discovered_label.text = "%d / %d discovered" % [discovered_count, total_count]
+		discovered_label.text = tr("BESTIARY_DISCOVERED") % [discovered_count, total_count]
 
 
 func populate(entries: Array[BestiaryEntry], selected_id: String) -> void:

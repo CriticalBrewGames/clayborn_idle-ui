@@ -91,7 +91,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.9, 0.93, 0.95, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 11
-text = "Unknown"
+text = "BESTIARY_UNKNOWN"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -100,7 +100,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.78, 0.84, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 10
-text = "Lv 1"
+text = "BESTIARY_LEVEL"
 horizontal_alignment = 1
 
 [node name="SelectButton" type="Button" parent="."]

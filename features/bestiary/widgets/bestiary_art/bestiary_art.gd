@@ -12,6 +12,6 @@ func bind_entry(entry: BestiaryEntry) -> void:
 		art.visible = discovered and entry.sprite != null
 	if placeholder:
 		placeholder.visible = not (discovered and entry.sprite != null)
-		placeholder.text = "Defeat to reveal" if not discovered else "No art"
+		placeholder.text = tr("BESTIARY_DEFEAT_TO_REVEAL") if not discovered else tr("BESTIARY_NO_ART")
 	if caption:
-		caption.text = entry.id if discovered else "undiscovered"
+		caption.text = entry.id if discovered else tr("BESTIARY_UNDISCOVERED")

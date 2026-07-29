@@ -60,7 +60,7 @@ func progress_to_next() -> Dictionary:
 			"current": kills,
 			"target": cap,
 			"pct": 100.0,
-			"label": "All milestones unlocked",
+			"label": tr("BESTIARY_ALL_MILESTONES"),
 			"next": null,
 		}
 
@@ -70,6 +70,6 @@ func progress_to_next() -> Dictionary:
 		"current": kills,
 		"target": next.kills,
 		"pct": clampf((into / span) * 100.0, 0.0, 100.0),
-		"label": "Next · %s at %d kills" % [next.label, next.kills],
+		"label": tr("BESTIARY_NEXT_MILESTONE") % [next.label, next.kills],
 		"next": next,
 	}

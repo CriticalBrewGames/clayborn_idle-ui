@@ -3,7 +3,7 @@ extends Panel
 signal selected(entry_id: String)
 
 @export var entry_id: String = ""
-@export var display_name: String = "Unknown"
+@export var display_name: String = "BESTIARY_UNKNOWN"
 @export var level: int = 1
 @export var discovered: bool = false
 @export var is_selected: bool = false
@@ -52,9 +52,9 @@ func set_selected(value: bool) -> void:
 
 func _apply() -> void:
 	if name_label:
-		name_label.text = display_name if discovered else "Unknown"
+		name_label.text = display_name if discovered else tr("BESTIARY_UNKNOWN")
 	if level_label:
-		level_label.text = "Lv %d" % level
+		level_label.text = tr("BESTIARY_LEVEL") % level
 	if art:
 		art.texture = sprite if discovered else null
 		art.visible = discovered and sprite != null

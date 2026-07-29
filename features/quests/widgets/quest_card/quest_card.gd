@@ -3,8 +3,8 @@ extends Panel
 @export var quest_name: String = "Tower of Gems"
 @export var duration: String = "5 minute quest"
 @export_multiline var description: String = "Activate the imbued gems in the correct order to open the barrier."
-@export var status: String = "Available"
-@export var action_label: String = "Start"
+@export var status: String = "QUESTS_STATUS_AVAILABLE"
+@export var action_label: String = "QUESTS_ACTION_START"
 @export var show_progress: bool = false
 @export var progress_value: float = 0.0
 @export var locked: bool = false
@@ -30,9 +30,9 @@ func _apply() -> void:
 	if description_label:
 		description_label.text = description
 	if status_label:
-		status_label.text = status
+		status_label.text = tr(status)
 	if action_button:
-		action_button.text = action_label
+		action_button.text = tr(action_label)
 		action_button.disabled = locked
 	if progress_bar:
 		progress_bar.visible = show_progress

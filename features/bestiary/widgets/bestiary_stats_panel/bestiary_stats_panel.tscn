@@ -61,7 +61,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.9, 0.93, 0.95, 1)
 theme_override_fonts/font = ExtResource("3_medium")
 theme_override_font_sizes/font_size = 14
-text = "Combat stats"
+text = "BESTIARY_COMBAT_STATS"
 
 [node name="Stats" type="VBoxContainer" parent="Margin/VBox"]
 layout_mode = 2
@@ -76,7 +76,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.7, 0.78, 0.84, 1)
 theme_override_fonts/font = ExtResource("3_medium")
 theme_override_font_sizes/font_size = 13
-text = "HP"
+text = "BESTIARY_STAT_HP"
 
 [node name="Value" type="Label" parent="Margin/VBox/Stats/HP"]
 layout_mode = 2
@@ -95,7 +95,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.7, 0.78, 0.84, 1)
 theme_override_fonts/font = ExtResource("3_medium")
 theme_override_font_sizes/font_size = 13
-text = "Armour"
+text = "BESTIARY_STAT_ARMOUR"
 
 [node name="Value" type="Label" parent="Margin/VBox/Stats/Armour"]
 layout_mode = 2
@@ -114,7 +114,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.7, 0.78, 0.84, 1)
 theme_override_fonts/font = ExtResource("3_medium")
 theme_override_font_sizes/font_size = 13
-text = "Attack"
+text = "BESTIARY_STAT_ATTACK"
 
 [node name="Value" type="Label" parent="Margin/VBox/Stats/Attack"]
 layout_mode = 2
@@ -133,7 +133,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.7, 0.78, 0.84, 1)
 theme_override_fonts/font = ExtResource("3_medium")
 theme_override_font_sizes/font_size = 13
-text = "Attack speed"
+text = "BESTIARY_STAT_ATTACK_SPEED"
 
 [node name="Value" type="Label" parent="Margin/VBox/Stats/Speed"]
 layout_mode = 2
@@ -156,21 +156,21 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.9, 0.93, 0.95, 1)
 theme_override_fonts/font = ExtResource("3_medium")
 theme_override_font_sizes/font_size = 14
-text = "Kill mastery bonus"
+text = "BESTIARY_MASTERY_BONUS"
 
 [node name="Bonus" type="Label" parent="Margin/VBox/BonusRow"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.55, 0.92, 0.7, 1)
 theme_override_fonts/font = ExtResource("3_medium")
 theme_override_font_sizes/font_size = 13
-text = "+2% damage"
+text = "BESTIARY_DAMAGE_BONUS"
 
 [node name="BonusHint" type="Label" parent="Margin/VBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.78, 0.84, 1)
 theme_override_fonts/font = ExtResource("3_medium")
 theme_override_font_sizes/font_size = 12
-text = "Cumulative from unlocked milestones. Applied when fighting this enemy in Combat."
+text = "BESTIARY_MASTERY_HINT"
 autowrap_mode = 3
 
 [node name="HSep3" type="HSeparator" parent="Margin/VBox"]
@@ -185,7 +185,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.7, 0.78, 0.84, 1)
 theme_override_fonts/font = ExtResource("3_medium")
 theme_override_font_sizes/font_size = 13
-text = "Lifetime kills"
+text = "BESTIARY_LIFETIME_KILLS"
 
 [node name="Value" type="Label" parent="Margin/VBox/KillsRow"]
 layout_mode = 2
