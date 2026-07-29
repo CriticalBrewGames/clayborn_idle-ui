@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bq1yjcj4rbrks" path="res://assets/skill_icons/herblore.svg" id="4_herblore"]
 [ext_resource type="Texture2D" uid="uid://wjh7l7kcgr0p" path="res://assets/skill_icons/attack.svg" id="5_attack"]
 [ext_resource type="Texture2D" uid="uid://bamal228y4qx4" path="res://assets/skill_icons/defence.svg" id="6_defence"]
-[ext_resource type="Script" path="res://ui/features/shop/widgets/shop_category_bar/shop_category_bar.gd" id="7_script"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_categories"]
+[ext_resource type="Script" uid="uid://b1d46b59ba1b2" path="res://ui/features/buttons/payload_button_row.gd" id="7_script"]
+[ext_resource type="Script" uid="uid://dqvx2hnt7y861" path="res://ui/features/buttons/button_with_payload.gd" id="8_payload"]
+[ext_resource type="Script" uid="uid://b5albluo6xsy" path="res://ui/features/utils/button_group_handler/button_group_binder.gd" id="9_binder"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar"]
 bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
@@ -49,54 +49,66 @@ script = ExtResource("7_script")
 [node name="MiningBtn" type="Button" parent="Margin/Scroll/Buttons"]
 custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
-toggle_mode = true
 button_pressed = true
-button_group = SubResource("ButtonGroup_categories")
 icon = ExtResource("1_mining")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("8_payload")
+payload = &"mining"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="SmithingBtn" type="Button" parent="Margin/Scroll/Buttons"]
 custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_categories")
 icon = ExtResource("2_smithing")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("8_payload")
+payload = &"smithing"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="CookingBtn" type="Button" parent="Margin/Scroll/Buttons"]
 custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_categories")
 icon = ExtResource("3_cooking")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("8_payload")
+payload = &"cooking"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="HerbloreBtn" type="Button" parent="Margin/Scroll/Buttons"]
 custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_categories")
 icon = ExtResource("4_herblore")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("8_payload")
+payload = &"herblore"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="AttackBtn" type="Button" parent="Margin/Scroll/Buttons"]
 custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_categories")
 icon = ExtResource("5_attack")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("8_payload")
+payload = &"attack"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="DefenceBtn" type="Button" parent="Margin/Scroll/Buttons"]
 custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_categories")
 icon = ExtResource("6_defence")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("8_payload")
+payload = &"defence"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
+
+[node name="ButtonGroupBinder" type="Node" parent="Margin/Scroll/Buttons" node_paths=PackedStringArray("button_container")]
+script = ExtResource("9_binder")
+group_name = &"shop_category_buttons"
+button_container = NodePath("..")
+metadata/_custom_type_script = "uid://b5albluo6xsy"

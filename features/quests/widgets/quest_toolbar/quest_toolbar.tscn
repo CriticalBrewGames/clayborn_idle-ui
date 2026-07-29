@@ -2,6 +2,9 @@
 
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="1_font"]
 [ext_resource type="Script" path="res://ui/features/quests/widgets/quest_toolbar/quest_toolbar_ui_updater.gd" id="2_updater"]
+[ext_resource type="Script" uid="uid://dqvx2hnt7y861" path="res://ui/features/buttons/button_with_payload.gd" id="3_payload"]
+[ext_resource type="Script" uid="uid://b5albluo6xsy" path="res://ui/features/utils/button_group_handler/button_group_binder.gd" id="4_binder"]
+[ext_resource type="Script" uid="uid://b1d46b59ba1b2" path="res://ui/features/buttons/payload_button_row.gd" id="5_row"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_outer"]
 bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
@@ -22,10 +25,6 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_status"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_chapter"]
 
 [node name="QuestToolbar" type="Panel"]
 custom_minimum_size = Vector2(0, 130)
@@ -57,6 +56,7 @@ theme_override_constants/separation = 8
 [node name="SearchRow" type="HBoxContainer" parent="Margin/VBox"]
 layout_mode = 2
 theme_override_constants/separation = 8
+script = ExtResource("5_row")
 
 [node name="Search" type="LineEdit" parent="Margin/VBox/SearchRow"]
 custom_minimum_size = Vector2(180, 32)
@@ -69,75 +69,108 @@ placeholder_text = "Search quests…"
 
 [node name="StatusAvailable" type="Button" parent="Margin/VBox/SearchRow"]
 layout_mode = 2
-toggle_mode = true
 button_pressed = true
-button_group = SubResource("ButtonGroup_status")
 text = "Available"
+script = ExtResource("3_payload")
+payload = &"available"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="StatusInProgress" type="Button" parent="Margin/VBox/SearchRow"]
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_status")
 text = "In progress"
+script = ExtResource("3_payload")
+payload = &"in_progress"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="StatusCompleted" type="Button" parent="Margin/VBox/SearchRow"]
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_status")
 text = "Completed"
+script = ExtResource("3_payload")
+payload = &"completed"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
+
+[node name="StatusButtonGroupBinder" type="Node" parent="Margin/VBox/SearchRow" node_paths=PackedStringArray("button_container")]
+script = ExtResource("4_binder")
+group_name = &"quest_status_buttons"
+button_container = NodePath("..")
+metadata/_custom_type_script = "uid://b5albluo6xsy"
 
 [node name="ChapterRow" type="HBoxContainer" parent="Margin/VBox"]
 layout_mode = 2
 theme_override_constants/separation = 6
+script = ExtResource("5_row")
 
 [node name="ChapterAll" type="Button" parent="Margin/VBox/ChapterRow"]
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_chapter")
 text = "All"
+script = ExtResource("3_payload")
+payload = &"all"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="Chapter1" type="Button" parent="Margin/VBox/ChapterRow"]
 layout_mode = 2
-toggle_mode = true
 button_pressed = true
-button_group = SubResource("ButtonGroup_chapter")
 text = "Chapter I"
+script = ExtResource("3_payload")
+payload = &"chapter_1"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="Chapter2" type="Button" parent="Margin/VBox/ChapterRow"]
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_chapter")
 text = "Chapter II"
+script = ExtResource("3_payload")
+payload = &"chapter_2"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="Chapter3" type="Button" parent="Margin/VBox/ChapterRow"]
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_chapter")
 text = "Chapter III"
+script = ExtResource("3_payload")
+payload = &"chapter_3"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
+
+[node name="ChapterButtonGroupBinder" type="Node" parent="Margin/VBox/ChapterRow" node_paths=PackedStringArray("button_container")]
+script = ExtResource("4_binder")
+group_name = &"quest_chapter_buttons"
+button_container = NodePath("..")
+metadata/_custom_type_script = "uid://b5albluo6xsy"
 
 [node name="SkillFilters" type="HBoxContainer" parent="Margin/VBox"]
 layout_mode = 2
 theme_override_constants/separation = 6
+script = ExtResource("5_row")
 
 [node name="FilterMining" type="Button" parent="Margin/VBox/SkillFilters"]
 layout_mode = 2
 toggle_mode = true
 text = "Mining"
+script = ExtResource("3_payload")
+payload = &"mining"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="FilterCombat" type="Button" parent="Margin/VBox/SkillFilters"]
 layout_mode = 2
 toggle_mode = true
 text = "Combat"
+script = ExtResource("3_payload")
+payload = &"combat"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="FilterSmithing" type="Button" parent="Margin/VBox/SkillFilters"]
 layout_mode = 2
 toggle_mode = true
 text = "Smithing"
+script = ExtResource("3_payload")
+payload = &"smithing"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="FilterCooking" type="Button" parent="Margin/VBox/SkillFilters"]
 layout_mode = 2
 toggle_mode = true
 text = "Cooking"
+script = ExtResource("3_payload")
+payload = &"cooking"
+metadata/_custom_type_script = "uid://dqvx2hnt7y861"
 
 [node name="UIUpdater" type="Node" parent="."]
 script = ExtResource("2_updater")
