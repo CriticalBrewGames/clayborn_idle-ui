@@ -49,10 +49,43 @@ func _update_placeholder() -> void:
 	placeholder_label.text = "%s\n%s" % [tr(template_name) if not template_name.is_empty() else "", type_text]
 
 
-func inject_invetory(inventory: InventoryView) -> void:
-	injected_inventory = inventory
-	placeholder_label.visible = false
+func _get_inventory_view(root: Node) -> InventoryView:
+	if not root:
+		return null
 	
+	if root is InventoryView:
+		return root as InventoryView
+	
+	if root.get_child_count() > 0:
+		var first_child = root.get_child(0)
+		if first_child is InventoryView:
+			return first_child as InventoryView
+
+	return null
+
+
+func inject_inventory(inventory_scene: PackedScene) -> void:
+	if not inventory_scene:
+		push_warning("WyvenboxTemplate: No PackedScene provided for injection.")
+		return
+	
+	if is_instance_valid(injected_inventory):
+		var root_to_free = injected_inventory.get_parent() if injected_inventory.get_parent() != self else injected_inventory
+		root_to_free.queue_free()
+	
+	var instance = inventory_scene.instantiate()
+	
+	var view = _get_inventory_view(instance)
+	
+	if not view:
+		push_error("WyvenboxTemplate: Neither root nor first child of '%s' is an InventoryView." % inventory_scene.resource_path)
+		instance.queue_free()
+		return
+	
+	injected_inventory = view
+	
+	if placeholder_label:
+		placeholder_label.visible = false
 	add_theme_stylebox_override("panel", _EMPTY_STYLE)
 	
-	add_child(inventory)
+	add_child(instance)
