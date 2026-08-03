@@ -49,6 +49,9 @@ func get_equipment_host() -> Control:
 func _mount_into(host: Control, view: Control) -> void:
 	if not host or not view:
 		return
+	if host.has_method("inject_inventory_view") and view is InventoryView:
+		host.inject_inventory_view(view)
+		return
 	for child in host.get_children():
 		if child is Label and child.name == "Placeholder":
 			child.visible = false

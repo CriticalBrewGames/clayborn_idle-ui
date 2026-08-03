@@ -84,3 +84,4 @@ horizontal_scroll_mode = 0
 custom_minimum_size = Vector2(448, 480)
 layout_mode = 2
 template_name = "BANK_INVENTORY_GRID"
+inventory_size = Vector2i(12, 10)
