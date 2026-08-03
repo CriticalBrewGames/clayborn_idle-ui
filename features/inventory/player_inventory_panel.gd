@@ -1,20 +1,20 @@
 extends Control
 
 ## Player inventory chrome: bag host, equipment host, stats, effect icons, HP bar.
-## Main attaches Wyvernbox InventoryView into the host Controls and drives stats/effects
-## via Dictionary APIs — no Core types in this script.
+## Main attaches Wyvernbox InventoryView into the WyvenboxTemplate hosts and drives
+## stats/effects via Dictionary APIs — no Core types in this script.
 
 signal heal_requested(amount: int)
 signal apply_effect_requested(effect_id: String)
 signal stats_looked_at(toggled: bool, data: Dictionary)
 signal stat_panel_toggled(open: bool)
 
-@onready var bag_host: Control = $Panel/BagWrap/BagHost
-@onready var equipment_host: Control = $Panel/EquipmentHost
+@onready var bag_host: Control = $Panel/VBoxContainer/BagWrap/WyvenboxTemplate
+@onready var equipment_host: Control = $Panel/VBoxContainer/EquipmentHost
 @onready var effect_icons_host: Control = $EffectIconsHost
 @onready var stat_panel: Control = $StatMenu/Control/StatPanel
 @onready var stat_toggle: Button = $Panel/StatToggle
-@onready var hp_bar: Control = $Panel/PlayerHp
+@onready var hp_bar: Control = $Panel/VBoxContainer/PlayerHp
 
 
 func _ready() -> void:
@@ -68,7 +68,7 @@ func mount_bag_inventory(view: Control) -> void:
 	_mount_into(bag_host, view)
 
 
-## Mount a Wyvernbox InventoryView into the equipment host (replaces chrome Cells visibility optionally).
+## Mount a Wyvernbox InventoryView into the equipment host.
 func mount_equipment_inventory(view: Control) -> void:
 	_mount_into(equipment_host, view)
 
@@ -88,7 +88,9 @@ func get_effect_icons_host() -> Control:
 func _mount_into(host: Control, view: Control) -> void:
 	if not host or not view:
 		return
-	# Hide placeholder labels if present
+	if host.has_method("inject_inventory_view") and view is InventoryView:
+		host.inject_inventory_view(view)
+		return
 	for child in host.get_children():
 		if child is Label and child.name == "Placeholder":
 			child.visible = false
