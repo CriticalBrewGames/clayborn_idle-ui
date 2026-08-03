@@ -91,7 +91,8 @@ func _on_mouse_exit() -> void:
 	emit_signal("looked_at", false, {})
 
 
-func _open_stat_menu(open: bool) -> void:
+## Slide the stat menu in or out. Public so parent chrome can toggle it.
+func set_open(open: bool) -> void:
 	var tween := get_tree().create_tween()
 	if not open:
 		tween.tween_property(self, "position:x", -254.0, 0.1)
