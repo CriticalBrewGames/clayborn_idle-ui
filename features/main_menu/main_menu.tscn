@@ -4,7 +4,6 @@
 [ext_resource type="StyleBox" uid="uid://b4x46khuqns01" path="res://assets/theme/panels/default_panel.tres" id="2_d87u0"]
 [ext_resource type="PackedScene" uid="uid://dllpnor8ux0eg" path="res://ui/features/buttons/button_with_text.tscn" id="3_2vaot"]
 [ext_resource type="FontFile" uid="uid://bdiyspkytp7n0" path="res://assets/font/fredoka/Fredoka-Regular.ttf" id="3_regular"]
-[ext_resource type="PackedScene" uid="uid://dup8hmhwm4iei" path="res://ui/features/main_menu/character_creation_popup.tscn" id="6_popup"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_list"]
 bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
@@ -19,11 +18,18 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="MainMenu" type="Node" unique_id=492812910]
+[node name="MainMenu" type="Panel" unique_id=1987488931]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_script")
-metadata/_custom_type_script = "uid://djxj51ho7md86"
 
 [node name="Center" type="CenterContainer" parent="." unique_id=453199855]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -101,6 +107,3 @@ layout_mode = 2
 size_flags_horizontal = 3
 label_text = "NEW_CHARACTER"
 payload = &"new_character"
-
-[node name="CharacterCreationPopup" parent="." unique_id=1888051570 instance=ExtResource("6_popup")]
-visible = false
