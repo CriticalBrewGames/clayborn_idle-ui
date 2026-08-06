@@ -1,6 +1,6 @@
 # Recreate local Godot path mirrors after clone.
 # Root `features/`, `singleton/`, `assets/` are the source of truth.
-# When mounted under Main (sparse: no dev/), only verifies publishable layout.
+# When mounted under Main (local clone/link: no dev/), only verifies publishable layout.
 # Requires: Developer Mode or elevated shell for mklink /J on Windows.
 
 $ErrorActionPreference = "Stop"
@@ -36,7 +36,7 @@ foreach ($name in @("features", "singleton", "assets")) {
 
 $devProject = Join-Path $Dev "project.godot"
 if (-not (Test-Path $devProject)) {
-    Write-Host "UI: Main/sparse layout detected (no dev/). Publishable folders OK."
+    Write-Host "UI: Main local mount detected (no dev/). Publishable folders OK."
     exit 0
 }
 

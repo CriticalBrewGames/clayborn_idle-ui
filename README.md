@@ -26,7 +26,7 @@ Then open `dev/project.godot` (Godot **4.7**).
 | `dev/ui/singleton` | Junction → `../../singleton` |
 | `dev/assets` | Junction → `../../assets` |
 
-Main sparse-checkouts **`features/`**, **`singleton/`**, **`assets/`** (+ setup scripts), not `dev/`.
+Main links **`features/`**, **`singleton/`**, **`assets/`** locally via `setup.sh` (not `dev/`).
 
 ## Development
 
