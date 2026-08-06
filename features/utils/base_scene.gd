@@ -1,6 +1,7 @@
 class_name SceneBase extends Node
 
 signal destroy_request(scene_to_destroy: SceneBase)
+## Delayed destroy only destory the scene if it's cached/next time beeing cached
 signal delayed_destroy(scene: SceneBase)
 ## Emitted by content scenes that want the Router to open another payload.
 signal new_page_request(payload: StringName, content_id: String)
@@ -23,13 +24,15 @@ var is_node_processing: bool:
 
 
 func _ready() -> void:
-	for node in get_children():
-		if node is PayloadButton and node.button_export == true:
-				match node.handleing:
-					PayloadButton.Handleing.REQUEST:
-						node.payload_pressed.connect(send_request)
-					PayloadButton.Handleing.ACTION:
-						node.action_request.connect(send_action)
+	var buttons = find_children("", "PayloadButton", true, false)
+	for button in buttons:
+		if not button.button_export:
+			continue
+		match button.handleing:
+			PayloadButton.Handleing.REQUEST:
+				button.payload_pressed.connect(new_page_request.emit)
+			PayloadButton.Handleing.ACTION:
+				button.action_request.connect(action_request.emit)
 
 
 func send_request(payload: StringName, content_id: String = ""):
@@ -42,6 +45,9 @@ func send_action(payload: StringName, content_id: String = "", parms: Dictionary
 func initialize_dependencies(dependencies: Dictionary):
 	pass
 
+
+func connect_method_to_page_request(signal_name: StringName, callable: Callable, flags: int = 0):
+	pass
 
 func autostart(_content_id: String):
 	pass
