@@ -113,8 +113,7 @@ func _on_select_pressed() -> void:
 	var entry := get_selected()
 	if entry == null:
 		return
-	character_selected.emit(entry)
-	new_page_request.emit(&"select_character")
+	new_page_request.emit(&"select_character", entry.character_name)
 
 
 func _on_new_pressed() -> void:
