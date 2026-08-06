@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dbj86ld8dpkva"]
 
 [ext_resource type="Texture2D" uid="uid://c882bp8yhpefr" path="res://assets/skill_icons/strength.svg" id="8_wp6pe"]
+[ext_resource type="StyleBox" uid="uid://b4x46khuqns01" path="res://assets/theme/panels/default_panel.tres" id="9_q4fjw"]
 [ext_resource type="PackedScene" uid="uid://dx1dln0nvj5si" path="res://ui/features/combat/views/widgets/character_containers/player_container.tscn" id="11_rj5ps"]
 [ext_resource type="StyleBox" uid="uid://dbujs0fxvutpm" path="res://assets/theme/inventory_background.tres" id="12_dqj0o"]
 [ext_resource type="PackedScene" uid="uid://uq41ltf1toa8" path="res://ui/features/combat/views/widgets/combat_options.tscn" id="13_7ax37"]
@@ -14,17 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://ct8ko5h83kmpi" path="res://ui/features/combat/views/widgets/character_containers/attack_timer/attack_timers_collection/attack_timers_collection.tscn" id="29_1np8x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f2wf1"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4fjw"]
-bg_color = Color(0.09803922, 0.31764707, 0.42352942, 1)
-border_width_bottom = 309
-border_color = Color(0.08280597, 0.2814471, 0.37715098, 1)
-border_blend = true
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_color = Color(0, 0, 0, 0.39215687)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_smqfi"]
 
@@ -219,7 +209,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_q4fjw")
+theme_override_styles/panel = ExtResource("9_q4fjw")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=560660939]
 layout_mode = 1

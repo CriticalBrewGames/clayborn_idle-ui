@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene format=3 uid="uid://dup8hmhwm4iei"]
 
-[ext_resource type="Script" path="res://ui/features/main_menu/character_creation_popup.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://clbf2i4qw5rhc" path="res://ui/features/main_menu/character_creation_popup.gd" id="1_script"]
 [ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="2_semibold"]
 [ext_resource type="FontFile" uid="uid://bdiyspkytp7n0" path="res://assets/font/fredoka/Fredoka-Regular.ttf" id="3_regular"]
-[ext_resource type="StyleBox" uid="uid://bth30da0dkao7" path="res://assets/ui/button/regular_button/button_normal.tres" id="4_btn_normal"]
-[ext_resource type="StyleBox" uid="uid://xqs0ss1r403v" path="res://assets/ui/button/regular_button/button_hover.tres" id="5_btn_hover"]
+[ext_resource type="PackedScene" uid="uid://dllpnor8ux0eg" path="res://ui/features/buttons/button_with_text.tscn" id="5_nssei"]
 [ext_resource type="StyleBox" uid="uid://dcirmk71heunm" path="res://assets/ui/line_edit.tres" id="6_line_edit"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
@@ -24,27 +23,22 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="CharacterCreationPopup" type="Control"]
+[node name="CharacterCreationPopup" type="Control" unique_id=1982499617]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -151.0
+offset_right = 232.0
+offset_bottom = 151.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
 script = ExtResource("1_script")
 
-[node name="Dimmer" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 0
-color = Color(0.02, 0.04, 0.06, 0.72)
-
-[node name="Center" type="VBoxContainer" parent="."]
+[node name="Center" type="VBoxContainer" parent="." unique_id=903659387]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,34 +46,34 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -220.0
-offset_top = -120.0
+offset_top = -130.0
 offset_right = 220.0
-offset_bottom = 140.0
+offset_bottom = 130.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="Panel" type="PanelContainer" parent="Center"]
+[node name="Panel" type="PanelContainer" parent="Center" unique_id=1916506410]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="Margin" type="MarginContainer" parent="Center/Panel"]
+[node name="Margin" type="MarginContainer" parent="Center/Panel" unique_id=1789684515]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin"]
+[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin" unique_id=907872342]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="NameRow" type="HBoxContainer" parent="Center/Panel/Margin/VBox"]
+[node name="NameRow" type="HBoxContainer" parent="Center/Panel/Margin/VBox" unique_id=1450161216]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="NameLabel" type="Label" parent="Center/Panel/Margin/VBox/NameRow"]
+[node name="NameLabel" type="Label" parent="Center/Panel/Margin/VBox/NameRow" unique_id=1087275023]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_fonts/font = ExtResource("2_semibold")
@@ -87,7 +81,7 @@ theme_override_font_sizes/font_size = 16
 text = "Character name:"
 vertical_alignment = 1
 
-[node name="NameEdit" type="LineEdit" parent="Center/Panel/Margin/VBox/NameRow"]
+[node name="NameEdit" type="LineEdit" parent="Center/Panel/Margin/VBox/NameRow" unique_id=1728472799]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -98,11 +92,11 @@ theme_override_styles/focus = ExtResource("6_line_edit")
 max_length = 24
 caret_blink = true
 
-[node name="ModeColumn" type="VBoxContainer" parent="Center/Panel/Margin/VBox"]
+[node name="ModeColumn" type="VBoxContainer" parent="Center/Panel/Margin/VBox" unique_id=809307328]
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="Softcore" type="CheckBox" parent="Center/Panel/Margin/VBox/ModeColumn"]
+[node name="Softcore" type="CheckBox" parent="Center/Panel/Margin/VBox/ModeColumn" unique_id=965977103]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_fonts/font = ExtResource("2_semibold")
@@ -110,18 +104,18 @@ theme_override_font_sizes/font_size = 15
 button_pressed = true
 text = "Softcore"
 
-[node name="Hardcore" type="CheckBox" parent="Center/Panel/Margin/VBox/ModeColumn"]
+[node name="Hardcore" type="CheckBox" parent="Center/Panel/Margin/VBox/ModeColumn" unique_id=746873720]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_fonts/font = ExtResource("2_semibold")
 theme_override_font_sizes/font_size = 15
 text = "Hardcore"
 
-[node name="HardcoreHintMargin" type="MarginContainer" parent="Center/Panel/Margin/VBox/ModeColumn"]
+[node name="HardcoreHintMargin" type="MarginContainer" parent="Center/Panel/Margin/VBox/ModeColumn" unique_id=976693302]
 layout_mode = 2
 theme_override_constants/margin_left = 28
 
-[node name="HardcoreHint" type="Label" parent="Center/Panel/Margin/VBox/ModeColumn/HardcoreHintMargin"]
+[node name="HardcoreHint" type="Label" parent="Center/Panel/Margin/VBox/ModeColumn/HardcoreHintMargin" unique_id=1412842594]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75, 0.78, 0.82, 1)
 theme_override_fonts/font = ExtResource("3_regular")
@@ -129,29 +123,20 @@ theme_override_font_sizes/font_size = 12
 text = "Cooldown on eating, cannot escape from monsters"
 autowrap_mode = 3
 
-[node name="Actions" type="HBoxContainer" parent="Center"]
+[node name="Actions" type="HBoxContainer" parent="Center" unique_id=1271171536]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="CancelButton" type="Button" parent="Center/Actions"]
-custom_minimum_size = Vector2(0, 44)
+[node name="ButtonWithText" parent="Center/Actions" unique_id=1680442783 instance=ExtResource("5_nssei")]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("2_semibold")
-theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = ExtResource("4_btn_normal")
-theme_override_styles/hover = ExtResource("5_btn_hover")
-theme_override_styles/pressed = ExtResource("5_btn_hover")
-text = "Cancel"
+label_text = "CANCEL_BUTTON"
+payload = &"cancel_character_creation"
 
-[node name="CreateButton" type="Button" parent="Center/Actions"]
-custom_minimum_size = Vector2(0, 44)
+[node name="ButtonWithText2" parent="Center/Actions" unique_id=311976748 instance=ExtResource("5_nssei")]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("2_semibold")
-theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = ExtResource("4_btn_normal")
-theme_override_styles/hover = ExtResource("5_btn_hover")
-theme_override_styles/pressed = ExtResource("5_btn_hover")
 disabled = true
-text = "New character"
+label_text = "NEW_CHARACTER"
+payload = &"create_new_character"

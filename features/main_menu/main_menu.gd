@@ -5,11 +5,11 @@ signal character_selected(entry: CharacterEntry)
 
 const CHARACTER_ROW_SCENE := preload("res://ui/features/main_menu/widgets/character_row.tscn")
 
-@onready var list_host: VBoxContainer = $Center/Column/ListPanel/Margin/Scroll/ListHost
+@onready var list_host: VBoxContainer = $Center/Column/Panel/ListPanel/Margin/Scroll/ListHost
 @onready var select_button: Button = $Center/Column/Actions/SelectButton
 @onready var new_button: Button = $Center/Column/Actions/NewButton
 @onready var creation_popup: Control = $CharacterCreationPopup
-@onready var empty_label: Label = $Center/Column/ListPanel/Margin/Scroll/ListHost/EmptyLabel
+@onready var empty_label: Label = $Center/Column/Panel/ListPanel/Margin/Scroll/ListHost/EmptyLabel
 
 @export var seed_characters: Array[CharacterEntry] = []
 
