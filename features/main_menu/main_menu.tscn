@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://ccwlrvngn7w30"]
+
+[ext_resource type="Script" uid="uid://ojysp15sws7k" path="res://ui/features/main_menu/main_menu.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="2_semibold"]
+[ext_resource type="FontFile" uid="uid://bdiyspkytp7n0" path="res://assets/font/fredoka/Fredoka-Regular.ttf" id="3_regular"]
+[ext_resource type="StyleBox" uid="uid://bth30da0dkao7" path="res://assets/ui/button/regular_button/button_normal.tres" id="4_btn_normal"]
+[ext_resource type="StyleBox" uid="uid://xqs0ss1r403v" path="res://assets/ui/button/regular_button/button_hover.tres" id="5_btn_hover"]
+[ext_resource type="PackedScene" path="res://ui/features/main_menu/character_creation_popup.tscn" id="6_popup"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_list"]
+bg_color = Color(0.105882354, 0.1764706, 0.23137255, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.06666667, 0.12156863, 0.16470589, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="MainMenu" type="Node" unique_id=492812910]
+script = ExtResource("1_script")
+metadata/_custom_type_script = "uid://djxj51ho7md86"
+
+[node name="Center" type="CenterContainer" parent="." unique_id=453199855]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Column" type="VBoxContainer" parent="Center" unique_id=954309102]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="ListPanel" type="PanelContainer" parent="Center/Column" unique_id=1857914098]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_list")
+
+[node name="Margin" type="MarginContainer" parent="Center/Column/ListPanel" unique_id=174058151]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Scroll" type="ScrollContainer" parent="Center/Column/ListPanel/Margin" unique_id=1343400875]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ListHost" type="VBoxContainer" parent="Center/Column/ListPanel/Margin/Scroll" unique_id=1961147359]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="EmptyLabel" type="Label" parent="Center/Column/ListPanel/Margin/Scroll/ListHost" unique_id=1279604357]
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.7, 0.74, 0.78, 1)
+theme_override_fonts/font = ExtResource("3_regular")
+theme_override_font_sizes/font_size = 14
+text = "No characters yet — create one"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Actions" type="HBoxContainer" parent="Center/Column" unique_id=1346481810]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SelectButton" type="Button" parent="Center/Column/Actions" unique_id=1348204491]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_semibold")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("4_btn_normal")
+theme_override_styles/pressed = ExtResource("5_btn_hover")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "Select character"
+
+[node name="NewButton" type="Button" parent="Center/Column/Actions" unique_id=1478505523]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_semibold")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("4_btn_normal")
+theme_override_styles/pressed = ExtResource("5_btn_hover")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "New character"
+
+[node name="CharacterCreationPopup" parent="." unique_id=1888051570 instance=ExtResource("6_popup")]
+visible = false
