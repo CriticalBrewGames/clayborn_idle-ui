@@ -94,6 +94,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 label_text = "SELECT_CHARACTER"
 payload = &"select_character"
+handleing = 1
 
 [node name="NewButton" parent="Center/Column/Actions" unique_id=1401882055 instance=ExtResource("3_2vaot")]
 layout_mode = 2

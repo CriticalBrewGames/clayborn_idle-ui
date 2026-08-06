@@ -128,15 +128,10 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="ButtonWithText" parent="Center/Actions" unique_id=1680442783 instance=ExtResource("5_nssei")]
-layout_mode = 2
-size_flags_horizontal = 3
-label_text = "CANCEL_BUTTON"
-payload = &"cancel_character_creation"
-
 [node name="ButtonWithText2" parent="Center/Actions" unique_id=311976748 instance=ExtResource("5_nssei")]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 label_text = "NEW_CHARACTER"
 payload = &"create_new_character"
+handleing = 1
