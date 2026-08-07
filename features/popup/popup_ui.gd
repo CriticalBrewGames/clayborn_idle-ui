@@ -19,7 +19,8 @@ func _close_request():
 	close_pressed.emit(scene_name)
 
 
-func inject_popup_describer(describer: PopupDescriber):
+## Window chrome only (title / size / position). Content is mounted separately.
+func apply_describer(describer: PopupDescriber) -> void:
 	scene_name = describer.popup_name
 	_setup_visuals(
 		describer.size,
@@ -27,6 +28,25 @@ func inject_popup_describer(describer: PopupDescriber):
 		describer.popup_title
 	)
 
+
+## Mount an already-built content node (typically InjectableScene → popup scene).
+func mount_content(node: Node) -> void:
+	if node == null:
+		return
+	content_host.add_child(node)
+	if node is Control:
+		var control := node as Control
+		control.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		control.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		control.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		_content = control
+	elif node.has_method("get_mounted_ui"):
+		_content = node.get_mounted_ui()
+
+
+## Legacy: apply describer visuals and instantiate content PackedScene directly.
+func inject_popup_describer(describer: PopupDescriber):
+	apply_describer(describer)
 	_populate_scene(describer.content)
 
 
