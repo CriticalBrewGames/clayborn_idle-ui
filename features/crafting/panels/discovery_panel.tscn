@@ -1,6 +1,6 @@
 [gd_scene format=3]
 
-[ext_resource type="PackedScene" path="res://ui/features/crafting/widgets/item_slot/item_slot.tscn" id="1_slot"]
+[ext_resource type="PackedScene" uid="uid://dbhl3ltdvox7u" path="res://ui/features/utils/wyvenbox_template/wyvenbox_template.tscn" id="1_slot"]
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="2_font"]
 [ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="3_semibold"]
 [ext_resource type="Script" path="res://ui/features/crafting/panels/discovery_panel.gd" id="4_script"]
@@ -79,9 +79,12 @@ text = "CRAFTING_SLOT_BASE"
 horizontal_alignment = 1
 
 [node name="BaseSlot" parent="Margin/VBox/SlotsRow/BaseColumn" instance=ExtResource("1_slot")]
+custom_minimum_size = Vector2(93, 128)
 layout_mode = 2
 size_flags_horizontal = 4
-placeholder = "CRAFTING_SLOT_BASE"
+template_name = "SMITHING_DISCOVERY_BASE"
+inventory_size = Vector2i(1, 1)
+inventory_type = 1
 
 [node name="Arrow" type="Label" parent="Margin/VBox/SlotsRow"]
 layout_mode = 2
@@ -107,9 +110,12 @@ text = "CRAFTING_SLOT_RESULT"
 horizontal_alignment = 1
 
 [node name="ResultSlot" parent="Margin/VBox/SlotsRow/ResultColumn" instance=ExtResource("1_slot")]
+custom_minimum_size = Vector2(93, 128)
 layout_mode = 2
 size_flags_horizontal = 4
-placeholder = "CRAFTING_SLOT_RESULT"
+template_name = "SMITHING_DISCOVERY_RESULT"
+inventory_size = Vector2i(1, 1)
+inventory_type = 1
 
 [node name="UnlockStatsPanel" type="Panel" parent="Margin/VBox"]
 custom_minimum_size = Vector2(0, 120)

@@ -1,6 +1,6 @@
 [gd_scene format=3]
 
-[ext_resource type="PackedScene" path="res://ui/features/crafting/widgets/item_slot/item_slot.tscn" id="1_slot"]
+[ext_resource type="PackedScene" uid="uid://dbhl3ltdvox7u" path="res://ui/features/utils/wyvenbox_template/wyvenbox_template.tscn" id="1_slot"]
 [ext_resource type="FontFile" uid="uid://dsg22w75k1nun" path="res://assets/font/fredoka/Fredoka-Medium.ttf" id="2_font"]
 [ext_resource type="FontFile" uid="uid://bexgb2dys0bxf" path="res://assets/font/fredoka/Fredoka-SemiBold.ttf" id="3_semibold"]
 [ext_resource type="Script" path="res://ui/features/crafting/panels/combinator_panel.gd" id="4_script"]
@@ -79,9 +79,12 @@ text = "CRAFTING_SLOT_INPUT_A"
 horizontal_alignment = 1
 
 [node name="InputASlot" parent="Margin/VBox/InputsRow/InputAColumn" instance=ExtResource("1_slot")]
+custom_minimum_size = Vector2(93, 128)
 layout_mode = 2
 size_flags_horizontal = 4
-placeholder = "Item A"
+template_name = "SMITHING_COMBINATOR_INPUT_A"
+inventory_size = Vector2i(1, 1)
+inventory_type = 1
 
 [node name="InputBColumn" type="VBoxContainer" parent="Margin/VBox/InputsRow"]
 layout_mode = 2
@@ -97,9 +100,12 @@ text = "CRAFTING_SLOT_INPUT_B"
 horizontal_alignment = 1
 
 [node name="InputBSlot" parent="Margin/VBox/InputsRow/InputBColumn" instance=ExtResource("1_slot")]
+custom_minimum_size = Vector2(93, 128)
 layout_mode = 2
 size_flags_horizontal = 4
-placeholder = "Item B"
+template_name = "SMITHING_COMBINATOR_INPUT_B"
+inventory_size = Vector2i(1, 1)
+inventory_type = 1
 
 [node name="MergeHint" type="Label" parent="Margin/VBox"]
 layout_mode = 2
@@ -123,9 +129,12 @@ text = "CRAFTING_SLOT_OUTPUT"
 horizontal_alignment = 1
 
 [node name="OutputSlot" parent="Margin/VBox/OutputColumn" instance=ExtResource("1_slot")]
+custom_minimum_size = Vector2(93, 128)
 layout_mode = 2
 size_flags_horizontal = 4
-placeholder = "Result"
+template_name = "SMITHING_COMBINATOR_OUTPUT"
+inventory_size = Vector2i(1, 1)
+inventory_type = 1
 
 [node name="CatalystPanel" type="Panel" parent="Margin/VBox"]
 custom_minimum_size = Vector2(0, 56)
@@ -159,11 +168,13 @@ theme_override_font_sizes/font_size = 12
 text = "CRAFTING_SLOT_CATALYST"
 
 [node name="CatalystSlot" parent="Margin/VBox/CatalystPanel/CatalystMargin/CatalystRow" instance=ExtResource("1_slot")]
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-slot_kind = 1
-placeholder = ""
+template_name = "SMITHING_COMBINATOR_CATALYST"
+inventory_size = Vector2i(1, 1)
+inventory_type = 1
 
 [node name="CombineButton" type="Button" parent="Margin/VBox"]
 custom_minimum_size = Vector2(140, 36)
