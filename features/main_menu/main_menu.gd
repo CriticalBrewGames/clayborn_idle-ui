@@ -1,3 +1,5 @@
+#outdated
+## UI character select incorrectly extends Main SceneBase; needs a Main InjectableScene wrapper + route.
 extends SceneBase
 
 signal character_selected(entry: CharacterEntry)
