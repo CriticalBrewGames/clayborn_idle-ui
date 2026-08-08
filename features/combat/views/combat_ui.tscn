@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://wjh7l7kcgr0p" path="res://assets/skill_icons/attack.svg" id="18_msuyl"]
 [ext_resource type="StyleBox" uid="uid://d0ovkjdjkcflw" path="res://assets/theme/panels/deep_panel.tres" id="19_eju0a"]
 [ext_resource type="PackedScene" uid="uid://ct8ko5h83kmpi" path="res://ui/features/combat/views/widgets/character_containers/attack_timer/attack_timers_collection/attack_timers_collection.tscn" id="29_1np8x"]
+[ext_resource type="PackedScene" uid="uid://dbhl3ltdvox7u" path="res://ui/features/utils/wyvenbox_template/wyvenbox_template.tscn" id="30_drop"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f2wf1"]
 
@@ -251,3 +252,20 @@ size_flags_horizontal = 6
 [node name="UIUpdater" type="Node" parent="." unique_id=309139835]
 script = ExtResource("13_quh7u")
 metadata/_custom_type_script = "uid://bbmfsyjbdjgao"
+
+[node name="MobDropHost" parent="." instance=ExtResource("30_drop")]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -180.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+template_name = "COMBAT_MOB_DROP"
+inventory_size = Vector2i(6, 4)
