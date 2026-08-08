@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ddrsp4vbs7b04"]
+
+[ext_resource type="PackedScene" uid="uid://dbhl3ltdvox7u" path="res://ui/features/utils/wyvenbox_template/wyvenbox_template.tscn" id="1_47gjm"]
+[ext_resource type="PackedScene" path="res://ui/features/inventory/widgets/stat_panel/stat_panel.tscn" id="2_3id01"]
+[ext_resource type="Script" uid="uid://n2d4a8kh8jr7" path="res://ui/features/popups/floating_gear/floating_gear_ui_updater.gd" id="3_3id01"]
+
+[node name="FloatingGear" type="Control" unique_id=33499246]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=208902775]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -150.0
+offset_right = 295.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="EquipmentHost" parent="HBoxContainer" unique_id=589318067 instance=ExtResource("1_47gjm")]
+custom_minimum_size = Vector2(306, 277)
+custom_maximum_size = Vector2(306, 277)
+layout_mode = 2
+template_name = &"INVENTORY_EQUIPMENT_GRID"
+inventory_type = 1
+
+[node name="StatPanel" parent="HBoxContainer" unique_id=142574037 instance=ExtResource("2_3id01")]
+custom_minimum_size = Vector2(246, 300)
+layout_mode = 2
+
+[node name="UIUpdaterBreakpoint" type="Node" parent="." unique_id=776868845]
+script = ExtResource("3_3id01")
+metadata/_custom_type_script = "uid://b3wswdr1fe68s"

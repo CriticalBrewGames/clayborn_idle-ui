@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://1uychlc6sbbm"]
+
+[ext_resource type="PackedScene" uid="uid://dbhl3ltdvox7u" path="res://ui/features/utils/wyvenbox_template/wyvenbox_template.tscn" id="1_lywuk"]
+
+[node name="FloatingInv" type="Control" unique_id=87433782]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WyvenboxTemplate" parent="." unique_id=589318067 instance=ExtResource("1_lywuk")]
+custom_minimum_size = Vector2(306, 278)
+custom_maximum_size = Vector2(306, 278)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_right = 153.0
+grow_horizontal = 2
+grow_vertical = 2
+template_name = &"INVENTORY_PLAYER_BAG"
+inventory_size = Vector2i(9, 8)
