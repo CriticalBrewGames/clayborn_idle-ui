@@ -73,31 +73,21 @@ func _get_inventory_view(root: Node) -> InventoryView:
 ## Instantiate a PackedScene that roots (or wraps) an InventoryView and host it.
 ## Applies [member inventory_size] to GridInventory when size is positive.
 ## Returns the hosted InventoryView, or null on failure.
-func inject_inventory(inventory_scene: PackedScene) -> InventoryView:
+func inject_inventory(inventory_scene: InventoryView) -> InventoryView:
 	if not inventory_scene:
 		push_warning("WyvenboxTemplate[%s]: No PackedScene provided for injection." % template_name)
 		return null
-
+	
 	_clear_previous_injection()
-
-	var instance = inventory_scene.instantiate()
-	var view := _get_inventory_view(instance)
-	if not view:
-		push_error(
-			"WyvenboxTemplate[%s]: Neither root nor first child of '%s' is an InventoryView."
-			% [template_name, inventory_scene.resource_path]
-		)
-		instance.queue_free()
-		return null
-
-	_ensure_inventory(view)
-	_apply_size_to_view(view)
+	
+	_ensure_inventory(inventory_scene)
+	_apply_size_to_view(inventory_scene)
 	_prepare_host_chrome()
-	add_child(instance)
-	_layout_injected(view if instance == view else instance)
-	injected_inventory = view
+	add_child(inventory_scene)
+	_layout_injected(inventory_scene)
+	injected_inventory = inventory_scene
 	_owns_injected = true
-	return view
+	return inventory_scene
 
 
 ## Re-host an existing InventoryView (e.g. player bag moved between desktop / popup).
