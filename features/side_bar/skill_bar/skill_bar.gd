@@ -42,34 +42,6 @@ func set_skill_xp(skill_id: String, xp: float) -> void:
 	apply_skill({"skill_id": skill_id, "xp": xp})
 
 
-## Back-compat aliases used by current SideBarScene / SideBar.
-func update_skills(skills) -> void:
-	var list: Array = []
-	if skills is Dictionary:
-		for key in skills.keys():
-			var entry = skills[key]
-			var data := _as_skill_dict(entry)
-			if data.is_empty():
-				continue
-			if not data.has("skill_id"):
-				data["skill_id"] = str(key)
-			list.append(data)
-	elif skills is Array:
-		for entry in skills:
-			var data := _as_skill_dict(entry)
-			if not data.is_empty():
-				list.append(data)
-	else:
-		return
-	apply_skills(list)
-
-
-func update_skill(skill_id: String, data: Dictionary) -> void:
-	var merged := data.duplicate()
-	merged["skill_id"] = skill_id
-	apply_skill(merged)
-
-
 func _as_skill_dict(entry: Variant) -> Dictionary:
 	if entry is Dictionary:
 		return (entry as Dictionary).duplicate()
