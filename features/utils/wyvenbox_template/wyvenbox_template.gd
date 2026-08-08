@@ -13,7 +13,7 @@ static var _EMPTY_STYLE: StyleBoxEmpty = StyleBoxEmpty.new()
 
 @onready var placeholder_label: Label = $Placeholder
 
-@export var template_name: String = "":
+@export var template_name: StringName = &"":
 	set(value):
 		template_name = value
 		_update_placeholder()
